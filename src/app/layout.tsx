@@ -46,7 +46,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body className={quickSand.className}>
+      <body
+        className={`${quickSand.className} mx-auto max-w-screen-2xl text-[#e6ebff]`}
+      >
+        <NavBar />
         {children}
         <FooterCredit />
       </body>
