@@ -10,3 +10,7 @@ export interface fetchData {
   message: string;
   name: string;
 }
+export interface projectIconType {
+  link: string;
+  Icon: any;
+}
