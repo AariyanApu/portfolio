@@ -27,9 +27,9 @@ import LovelyMusic from '/public/asset/projects/lovelyMusic.png';
 import lovelytube from '/public/asset/projects/lovelytube.png';
 import lranslate from '/public/asset/projects/lranslate.png';
 import sumz from '/public/asset/projects/sumz.png';
-import fiverr from '/public/fiverr.png';
-import freelancer from '/public/freelancer.jpeg';
-import upwork from '/public/upwork.png';
+import fiverr from '/public/asset/fiverr.png';
+import freelancer from '/public/asset/freelancer.jpeg';
+import upwork from '/public/asset/upwork.png';
 
 export {
   LovelyMusic,
