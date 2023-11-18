@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { fadeIn, textContainer, textVariant2 } from '@/utils/motion';
 
-export const TypingTitle = ({ title }: { title: string }) => (
+export const TypingTitle = ({ title }: { title: string | string[] }) => (
   <motion.div
     variants={textContainer}
     className='flex flex-row text-center text-2xl  text-primary-color sm:text-left '
