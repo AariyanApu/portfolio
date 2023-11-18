@@ -33,3 +33,12 @@ export interface socialIconType {
   textStyle?: string;
   width?: string;
 }
+
+export interface reviewType {
+  title: string;
+  body: string;
+  author: string;
+  rating?: number;
+  className?: string;
+  imgSrc?: any;
+}

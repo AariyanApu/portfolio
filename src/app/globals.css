@@ -1,3 +1,38 @@
+:root {
+  --background-color: #0c182e;
+  --primary-color: #64ffda;
+  --secondary-color: #101f3b;
+  --navy-color: #233554;
+  --slate-color: #8892b0;
+  --slate-color-light: #a8b2d1;
+  --slate-color-lighter: #ccd6f6;
+  --slate-color-lightest: #e6ebff;
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  /* put all custom group utilities here.*/
+  .button_style {
+    @apply items-center justify-center rounded-lg border  border-primary-color  bg-background-color px-4 py-2  text-sm  font-extrabold text-primary-color transition-all duration-300 ease-in hover:bg-secondary-color focus:outline-none focus:ring-2 focus:ring-primary-color focus:ring-offset-2;
+  }
+  .input_style {
+    @apply my-1.5 w-full rounded-lg bg-secondary-color   p-4 text-left text-sm leading-normal text-slate-color-lighter placeholder-slate-color focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-color;
+  }
+}
+
+html,
+body {
+  overflow-x: hidden;
+  background-color: #0c182e;
+  scroll-behavior: smooth;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.color_animation {
+  @apply transition-colors duration-500 ease-in-out;
+}
+.all_animation {
+  @apply transition-all duration-500 ease-in-out;
+}
