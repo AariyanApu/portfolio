@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { Quicksand } from 'next/font/google';
 import './globals.css';
+import NavBar from '@/components/NavBar';
+import FooterCredit from '@/components/FooterCredit';
 
 const quickSand = Quicksand({ subsets: ['latin'], weight: ['400', '700'] });
 
@@ -44,7 +46,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body className={quickSand.className}>{children}</body>
+      <body className={quickSand.className}>
+        {children}
+        <FooterCredit />
+      </body>
     </html>
   );
 }
