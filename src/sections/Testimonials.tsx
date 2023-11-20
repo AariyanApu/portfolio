@@ -1,12 +1,11 @@
 'use client';
+import { TypingTitle } from '@/components/CustomTexts';
+import { reviewType } from '@/types/utilityTypes';
+import { reviews } from '@/utils/data';
 import clsx from 'clsx';
 import { motion, useInView } from 'framer-motion';
 import Image from 'next/image';
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { TypingTitle } from '@/components/CustomTexts';
-import { reviews } from '@/utils/data';
-import { staggerContainer } from '@/utils/motion';
-import { reviewType } from '@/types/utilityTypes';
 
 function Review({
   title,

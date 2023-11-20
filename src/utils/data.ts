@@ -210,10 +210,10 @@ export const projects = [
   },
 ];
 export const navigation = [
-  { name: ' ALL ABOUT ME', href: '/about-me', current: false },
-  { name: ' ALL PROJECTS', href: '/archive', current: false },
-  { name: 'BLOG', href: '/blog', current: false },
-  { name: 'RESUME', href: '/resume.pdf', current: false },
+  { name: ' ALL ABOUT ME', href: '/about-me' },
+  { name: ' ALL PROJECTS', href: '/archive' },
+  { name: 'BLOG', href: '/blog' },
+  { name: 'RESUME', href: '/resume.pdf' },
 ];
 
 export { fiverr, freelancer, upwork };
