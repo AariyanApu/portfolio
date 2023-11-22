@@ -14,3 +14,11 @@ export interface projectIconType {
   link: string;
   Icon: any;
 }
+export interface blogPostType {
+  id: string;
+  title: string;
+  imgUrl: string;
+  createdAt: string;
+  slug: string;
+  desc: string;
+}
