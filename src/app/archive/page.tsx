@@ -1,8 +1,8 @@
 'use client';
 
-import Container from '@/components/Container';
+import Container from '@/components/utility/Container';
 import ProjectIconCard from '@/components/ProjectIconCard';
-import TextContainer from '@/components/TextContainer';
+import TextContainer from '@/components/utility/TextContainer';
 import Loading from '@/components/utility/Loading';
 import { projects } from '@/utils/data';
 import { heroTitle } from '@/utils/fonts';

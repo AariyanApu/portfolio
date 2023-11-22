@@ -3,7 +3,7 @@ import { CldImage, CldUploadButton } from 'next-cloudinary';
 import { ChangeEvent, useState } from 'react';
 import useSWR from 'swr';
 import * as Yup from 'yup';
-import Loading from './utility/Loading';
+import Loading from '../utility/Loading';
 import { SkillData } from '@/types/dataTypes';
 
 export default function DashboardSkills() {

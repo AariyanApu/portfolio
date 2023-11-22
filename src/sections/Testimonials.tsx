@@ -1,5 +1,5 @@
 'use client';
-import { TypingTitle } from '@/components/CustomTexts';
+import { TypingTitle } from '@/components/utility/CustomTexts';
 import { reviewType } from '@/types/utilityTypes';
 import { reviews } from '@/utils/data';
 import clsx from 'clsx';

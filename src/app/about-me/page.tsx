@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 
-import Container from '@/components/Container';
-import { TypingTitle } from '@/components/CustomTexts';
+import Container from '@/components/utility/Container';
+import { TypingTitle } from '@/components/utility/CustomTexts';
 import GithubCalendarComponent from '@/components/utility/GithubCalendar';
 import About from '@/sections/About';
 import Testimonial from '@/sections/Testimonials';

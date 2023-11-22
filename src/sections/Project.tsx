@@ -4,9 +4,9 @@ import { projects } from '@/utils/data';
 import { EyeIcon, GithubIconRounded } from '@/utils/icons';
 import { fadeIn } from '@/utils/motion';
 import Image from 'next/image';
-import Container from '@/components/Container';
-import TextContainer from '@/components/TextContainer';
-import { TypingTitle } from '@/components/CustomTexts';
+import Container from '@/components/utility/Container';
+import TextContainer from '@/components/utility/TextContainer';
+import { TypingTitle } from '@/components/utility/CustomTexts';
 import ProjectButton from '@/components/ProjectButton';
 import ProjectIconCard from '@/components/ProjectIconCard';
 

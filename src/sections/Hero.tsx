@@ -1,20 +1,20 @@
-"use client";
-import { motion } from "framer-motion";
-import { heroTitle } from "@/utils/fonts";
-import { textContainer, textVariant } from "@/utils/motion";
-import Container from "@/components/Container";
-import TextContainer from "@/components/TextContainer";
+'use client';
+import { motion } from 'framer-motion';
+import { heroTitle } from '@/utils/fonts';
+import { textContainer, textVariant } from '@/utils/motion';
+import Container from '@/components/utility/Container';
+import TextContainer from '@/components/utility/TextContainer';
 
 export default function Hero() {
   return (
-    <Container customStyles="mx-6 my-24 sm:mx-12 md:ml-16 md:mt-32 lg:ml-40  lg:mt-44 ">
+    <Container customStyles='mx-6 my-24 sm:mx-12 md:ml-16 md:mt-32 lg:ml-40  lg:mt-44 '>
       <TextContainer variants={textContainer}>
         <motion.div
           variants={textVariant(0.7)}
-          className="text-primary-color lg:text-lg "
+          className='text-primary-color lg:text-lg '
         >
-          {" "}
-          Hi, my name is{" "}
+          {' '}
+          Hi, my name is{' '}
         </motion.div>
         <motion.div
           variants={textVariant(0.8)}
@@ -30,7 +30,7 @@ export default function Hero() {
         </motion.div>
         <motion.p
           variants={textVariant(1)}
-          className=" mt-2 w-full pr-3 text-justify text-base tracking-normal text-slate-color sm:w-4/6 md:w-3/4  lg:mt-6 lg:w-[500px] lg:text-lg 2xl:w-[580px]"
+          className=' mt-2 w-full pr-3 text-justify text-base tracking-normal text-slate-color sm:w-4/6 md:w-3/4  lg:mt-6 lg:w-[500px] lg:text-lg 2xl:w-[580px]'
         >
           crafting engaging and accessible front-end web solutions for a
           seamless digital experience.
