@@ -24,3 +24,8 @@ export const getDataNoStoreLocal = async (id: string) => {
   }
   return res.json();
 };
+
+export const fetcher = async (...args: Parameters<typeof fetch>) => {
+  const res = await fetch(...args);
+  return res.json();
+};

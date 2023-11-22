@@ -1,7 +1,7 @@
 'use client';
 import { fetchData } from '@/types/dataTypes';
 import { projects } from '@/utils/data';
-import { getDataNoStoreLocal } from '@/utils/getData';
+import { fetcher, getDataNoStoreLocal } from '@/utils/getData';
 import { CldImage, CldUploadButton } from 'next-cloudinary';
 import { useState } from 'react';
 import useSWR, { SWRResponse } from 'swr';
@@ -59,10 +59,10 @@ export default function DashboardProjects() {
 
   const tags: string[] = [];
 
-  const fetcher = async (...args: Parameters<typeof fetch>) => {
-    const res = await fetch(...args);
-    return res.json();
-  };
+  // const fetcher = async (...args: Parameters<typeof fetch>) => {
+  //   const res = await fetch(...args);
+  //   return res.json();
+  // };
 
   const { data, error, isLoading, mutate }: SWRResponse<fetchData, any> =
     useSWR('/api/projects', fetcher);
