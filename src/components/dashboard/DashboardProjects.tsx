@@ -1,11 +1,13 @@
 'use client';
 import { fetchData } from '@/types/dataTypes';
+import { projects } from '@/utils/data';
 import { CldImage, CldUploadButton } from 'next-cloudinary';
 import { useState } from 'react';
 import useSWR, { SWRResponse } from 'swr';
 import * as Yup from 'yup';
 
 export default function DashboardProjects() {
+  const [data, setData] = useState(projects);
   const [loading, setLoading] = useState(false);
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [post, setPost] = useState({
@@ -50,22 +52,22 @@ export default function DashboardProjects() {
     } catch (error) {
       console.log(error);
     } finally {
-      mutate();
+      // mutate();
       setLoading(false);
     }
   };
 
   const tags: string[] = [];
 
-  const fetcher = async (...args: Parameters<typeof fetch>) => {
-    const res = await fetch(...args);
-    return res.json();
-  };
+  // const fetcher = async (...args: Parameters<typeof fetch>) => {
+  //   const res = await fetch(...args);
+  //   return res.json();
+  // };
 
-  const { data, error, isLoading, mutate }: SWRResponse<fetchData, any> =
-    useSWR('/api/projects', fetcher);
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>Failed to load user</div>;
+  // const { data, error, isLoading, mutate }: SWRResponse<fetchData, any> =
+  //   useSWR('/api/projects', fetcher);
+  // if (isLoading) return <div>Loading...</div>;
+  // if (error) return <div>Failed to load user</div>;
   const handleDelete = async (id: string) => {
     try {
       await fetch(`/api/projects/${id}`, {
@@ -74,7 +76,7 @@ export default function DashboardProjects() {
     } catch (error) {
       console.log(error);
     } finally {
-      mutate();
+      // mutate();
     }
   };
   return (
