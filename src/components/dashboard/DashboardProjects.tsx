@@ -7,12 +7,23 @@ import useSWR, { SWRResponse } from 'swr';
 import * as Yup from 'yup';
 
 export default function DashboardProjects() {
+  const projects = [
+    {
+      id: '1',
+      title: 'FawFlix',
+      imgUrl: '/asset/react.jpg',
+      projectLink: 'https://fawflix.vercel.app/',
+      codeLink: 'https://fawflix.vercel.app/',
+      description: 'FawFlix is a netflix clone website with  movie streaming ',
+      tags: ['MERN', 'React.js', 'Tailwind CSS'],
+    },
+  ];
   const [data, setData] = useState(projects);
   const [loading, setLoading] = useState(false);
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [post, setPost] = useState({
     title: '',
-    imageUrl: '',
+    imgUrl: '',
     description: '',
     projectLink: '',
     codeLink: '',
@@ -28,7 +39,7 @@ export default function DashboardProjects() {
   });
 
   const handleUpload = (result: any) => {
-    setPost({ ...post, imageUrl: result.info.public_id });
+    setPost({ ...post, imgUrl: result.info.public_id });
   };
 
   const handleSubmit = async (e: React.ChangeEvent<HTMLFormElement>) => {
@@ -43,7 +54,7 @@ export default function DashboardProjects() {
       setIsFormSubmitted(true);
       setPost({
         title: '',
-        imageUrl: '',
+        imgUrl: '',
         description: '',
         projectLink: '',
         codeLink: '',
@@ -68,17 +79,17 @@ export default function DashboardProjects() {
   //   useSWR('/api/projects', fetcher);
   // if (isLoading) return <div>Loading...</div>;
   // if (error) return <div>Failed to load user</div>;
-  const handleDelete = async (id: string) => {
-    try {
-      await fetch(`/api/projects/${id}`, {
-        method: 'DELETE',
-      });
-    } catch (error) {
-      console.log(error);
-    } finally {
-      // mutate();
-    }
-  };
+  // const handleDelete = async (id: string) => {
+  //   try {
+  //     await fetch(`/api/projects/${id}`, {
+  //       method: 'DELETE',
+  //     });
+  //   } catch (error) {
+  //     console.log(error);
+  //   } finally {
+  //     // mutate();
+  //   }
+  // };
   return (
     <div className='w-full px-8'>
       <h1 className='mt-5 text-center text-3xl font-semibold text-primary-color'>
@@ -155,10 +166,9 @@ export default function DashboardProjects() {
             {Array.isArray(data) &&
               data?.reverse().map((project) => (
                 <div
-                  key={project._id}
+                  key={project.id}
                   className='my-5 flex w-96 flex-col rounded-lg border-2 border-secondary-color p-5'
                 >
-                  <h1 className='text-xl'>{project.name}</h1>
                   <h1 className='text-xl'>{project.title}</h1>
                   <h1>{project.tags.map((tag: any) => ` #${tag}`)}</h1>
                   <h1>{project.description}</h1>
@@ -168,14 +178,14 @@ export default function DashboardProjects() {
                   <CldImage
                     width={300}
                     height={300}
-                    src={project.imageUrl}
+                    src={project.imgUrl}
                     alt={project.title}
                     className='h-20 w-20  p-1'
                   />
                   <div className='flex w-full gap-x-5'>
                     <button
                       className='button_style mt-2'
-                      onClick={() => handleDelete(project._id)}
+                      // onClick={() => handleDelete(project.id)}
                     >
                       Delete
                     </button>
