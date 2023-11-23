@@ -12,7 +12,9 @@ export default function Dashboard() {
 
   return (
     <div className=' max-w-6xl mx-auto'>
-      <div className='text-3xl font-semibold text-center my-8'>Dashboard</div>
+      <div className=' my-8 mt-5 text-center text-3xl font-semibold text-primary-color'>
+        Dashboard
+      </div>
       {session?.data?.user?.email === 'aariyanapubooks@gmail.com' ? (
         <div>
           <button

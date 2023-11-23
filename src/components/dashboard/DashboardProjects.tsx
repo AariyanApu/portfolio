@@ -109,9 +109,6 @@ export default function DashboardProjects() {
 
   return (
     <div className='w-full px-8'>
-      <h1 className='mt-5 text-center text-3xl font-semibold text-primary-color'>
-        Project Dashboard
-      </h1>
       <div className='flex w-full  flex-row justify-between px-10'>
         <div>
           <form onSubmit={handleSubmit} className='mt-10 flex w-96 flex-col'>
