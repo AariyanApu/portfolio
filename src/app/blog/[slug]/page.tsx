@@ -1,4 +1,3 @@
-// import { getData, getDataNoStore, getDataNoStoreLocal } from '@/utils/getData'
 import { getDataNoStoreLocal } from '@/utils/getData';
 import Image from 'next/image';
 
