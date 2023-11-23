@@ -19,7 +19,7 @@ export default async function SingleBlog({ params }: any) {
       <div className='flex flex-col gap-y-6'>
         <div className=' mt-8 flex flex-row gap-x-20'>
           <p className=''> CREATED AT : {data.createdAt.substring(0, 10)}</p>
-          <p className=''>VIEWED BY : {data.views} PEOPLE.</p>
+          <p className=''>VIEWED : {data.views} TIMES.</p>
         </div>
         <h1 className='text-2xl sm:text-3xl'>{data.title}</h1>
         <div
