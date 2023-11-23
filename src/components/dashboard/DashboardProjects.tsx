@@ -1,11 +1,11 @@
 'use client';
 import { fetchData } from '@/types/dataTypes';
-import { projects } from '@/utils/data';
-import { fetcher, getDataNoStoreLocal } from '@/utils/getData';
+import { fetcher } from '@/utils/getData';
 import { CldImage, CldUploadButton } from 'next-cloudinary';
 import { useState } from 'react';
 import useSWR, { SWRResponse } from 'swr';
 import * as Yup from 'yup';
+import Loading from '../utility/Loading';
 
 export default function DashboardProjects() {
   const [loading, setLoading] = useState(false);
@@ -17,6 +17,7 @@ export default function DashboardProjects() {
     projectLink: '',
     codeLink: '',
     tags: [] as string[],
+    slug: '',
   });
   const validationSchema = Yup.object().shape({
     title: Yup.string().required('Title is required'),
@@ -28,17 +29,40 @@ export default function DashboardProjects() {
   });
 
   const handleUpload = (result: any) => {
-    setPost({ ...post, imgUrl: result.info.public_id });
+    setPost({
+      ...post,
+      imgUrl: result.info.public_id,
+    });
   };
 
+  const slugify = (str: string) => {
+    console.log(str); // Add this line to check the value of str
+    return str
+      .toLowerCase()
+      .trim()
+      .replace(/[^\w\s-]/g, '')
+      .replace(/[\s_-]+/g, '-')
+      .replace(/^-+|-+$/g, '');
+  };
   const handleSubmit = async (e: React.ChangeEvent<HTMLFormElement>) => {
     setLoading(true);
+    console.log('handleSubmit called');
+    console.log(slugify(post.title)); // Add this line
+
     e.preventDefault();
     try {
       await validationSchema.validate(post);
       await fetch('/api/projects', {
         method: 'POST',
-        body: JSON.stringify(post),
+        body: JSON.stringify({
+          title: post.title,
+          imgUrl: post.imgUrl,
+          description: post.description,
+          projectLink: post.projectLink,
+          codeLink: post.codeLink,
+          tags: post.tags,
+          slug: slugify(post.title),
+        }),
       });
       setIsFormSubmitted(true);
       setPost({
@@ -48,6 +72,7 @@ export default function DashboardProjects() {
         projectLink: '',
         codeLink: '',
         tags: [],
+        slug: '',
       });
     } catch (error) {
       console.log(error);
@@ -59,26 +84,29 @@ export default function DashboardProjects() {
 
   const tags: string[] = [];
 
-  // const fetcher = async (...args: Parameters<typeof fetch>) => {
-  //   const res = await fetch(...args);
-  //   return res.json();
-  // };
-
   const { data, error, isLoading, mutate }: SWRResponse<fetchData, any> =
     useSWR('/api/projects', fetcher);
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <Loading />;
   if (error) return <div>Failed to load user</div>;
-  // const handleDelete = async (id: string) => {
-  //   try {
-  //     await fetch(`/api/projects/${id}`, {
-  //       method: 'DELETE',
-  //     });
-  //   } catch (error) {
-  //     console.log(error);
-  //   } finally {
-  //     // mutate();
-  //   }
-  // };
+
+  const handleDelete = async (slug: string) => {
+    try {
+      const response = await fetch(`/api/projects/${slug}`, {
+        method: 'DELETE',
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+      } else {
+        const errorResult = await response.json();
+        console.error('Error deleting post:', errorResult);
+      }
+      mutate();
+    } catch (error) {
+      console.error('Error deleting post:', error);
+    }
+  };
+
   return (
     <div className='w-full px-8'>
       <h1 className='mt-5 text-center text-3xl font-semibold text-primary-color'>
@@ -174,7 +202,7 @@ export default function DashboardProjects() {
                   <div className='flex w-full gap-x-5'>
                     <button
                       className='button_style mt-2'
-                      // onClick={() => handleDelete(project.id)}
+                      onClick={() => handleDelete(project.slug)}
                     >
                       Delete
                     </button>
