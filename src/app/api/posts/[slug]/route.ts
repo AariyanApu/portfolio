@@ -23,7 +23,6 @@ export const GET = async (
       } as ExtendedPostUpdateInput,
     });
 
-    console.log('post', post);
     return new NextResponse(JSON.stringify(post));
   } catch (error) {
     return new NextResponse('Database Error', { status: 500 });

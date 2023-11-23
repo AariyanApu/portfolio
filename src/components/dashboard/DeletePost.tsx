@@ -1,6 +1,7 @@
 'use client';
 
 import useSWR, { SWRResponse } from 'swr';
+import Loading from '../utility/Loading';
 
 export default function DeletePost() {
   const fetcher = async (...args: Parameters<typeof fetch>) => {
@@ -12,8 +13,7 @@ export default function DeletePost() {
     fetcher
   );
   if (error) return <div>failed to load</div>;
-  if (!data) return <div>loading...</div>;
-  console.log(data);
+  if (!data) return <Loading />;
 
   const deletePost = async (slug: string) => {
     try {
