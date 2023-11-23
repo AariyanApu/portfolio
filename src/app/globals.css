@@ -36,3 +36,9 @@ body {
 .all_animation {
   @apply transition-all duration-500 ease-in-out;
 }
+.ql-container {
+  font-size: 28px !important;
+}
+.quill > .ql-container > .ql-editor.ql-blank::before {
+  color: #b3b3b1;
+}
