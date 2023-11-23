@@ -1,3 +1,4 @@
+import { getAuthSession } from '@/utils/auth';
 import prisma from '@/utils/connect';
 import { NextResponse } from 'next/server';
 
@@ -35,6 +36,11 @@ export const DELETE = async (
   { params }: { params: { slug: string } }
 ) => {
   const { slug } = params;
+  const session = await getAuthSession();
+
+  if (!session) {
+    return new NextResponse(JSON.stringify({ message: 'Not Authenticated!' }));
+  }
 
   try {
     // Delete the post by slug
