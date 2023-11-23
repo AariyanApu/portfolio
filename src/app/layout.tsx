@@ -3,6 +3,7 @@ import { Quicksand } from 'next/font/google';
 import './globals.css';
 import NavBar from '@/components/NavBar';
 import FooterCredit from '@/components/FooterCredit';
+import AuthProvider from '@/utils/AuthProvider';
 
 const quickSand = Quicksand({ subsets: ['latin'], weight: ['400', '700'] });
 
@@ -49,9 +50,11 @@ export default function RootLayout({
       <body
         className={`${quickSand.className} mx-auto max-w-screen-2xl text-[#e6ebff]`}
       >
-        <NavBar />
-        {children}
-        <FooterCredit />
+        <AuthProvider>
+          <NavBar />
+          {children}
+          <FooterCredit />
+        </AuthProvider>
       </body>
     </html>
   );

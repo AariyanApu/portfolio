@@ -20,6 +20,9 @@
   .input_style {
     @apply my-1.5 w-full rounded-lg bg-secondary-color   p-4 text-left text-sm leading-normal text-slate-color-lighter placeholder-slate-color focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-color;
   }
+  .dashboard_button {
+    @apply px-4 py-2 rounded-md border border-primary-color text-primary-color hover:text-white transition-colors  duration-300 ease-in-out mb-5 ml-8;
+  }
 }
 
 html,
