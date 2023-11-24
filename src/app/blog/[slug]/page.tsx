@@ -6,23 +6,23 @@ export default async function SingleBlog({ params }: any) {
   const data = await getDataNoStoreLocal(`posts/${slug}`);
 
   return (
-    <div className={`mx-auto my-4 max-w-5xl px-4 lg:px-0 `}>
+    <div className={`mx-auto my-4 max-w-6xl px-4 lg:px-0 `}>
       <Image
         src={'/asset/react.jpg'}
         alt={''}
         height={800}
         width={800}
-        className='w-full my-8 rounded object-cover object-center lg:h-96 lg:w-[700px]'
+        className='w-full my-8 rounded object-cover object-center lg:h-96 lg:w-[800px]'
       />
 
-      <div className='flex flex-col gap-y-6'>
+      <div className='flex flex-col gap-y-6 w-full'>
         <div className=' mt-8 flex flex-row gap-x-20'>
           <p className=''> CREATED AT : {data.createdAt.substring(0, 10)}</p>
           <p className=''>VIEWED : {data.views} TIMES.</p>
         </div>
-        <h1 className='text-2xl sm:text-3xl'>{data.title}</h1>
+        <h1 className='text-2xl sm:text-4xl font-semibold'>{data.title}</h1>
         <div
-          className='md:text-sm lg:text-base prose text-slate-100  prose-headings:text-slate-50 prose-lg:text-slate-50'
+          className='md:text-sm lg:text-base prose-base    prose-slate prose-invert prose-a:text-sky-400 hover:prose-a:text-sky-500 prose-img:rounded-md prose-img:shadow-md prose-img:overflow-hidden prose-img:object-cover prose-img:object-center  prose-img:my-8 prose-img:w-[800px] prose-img:h-96'
           dangerouslySetInnerHTML={{
             __html: data.desc,
           }}
