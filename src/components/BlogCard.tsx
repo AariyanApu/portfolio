@@ -24,7 +24,7 @@ export default function BlogPostCard({ item }: { item: blogPostType }) {
         <div
           className='md:text-sm lg:text-base'
           dangerouslySetInnerHTML={{
-            __html: item.desc.substring(0, 250),
+            __html: item.desc.substring(0, 200),
           }}
         />
         <Link
