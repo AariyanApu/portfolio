@@ -1,5 +1,4 @@
 import { blogPostType } from '@/types/dataTypes';
-import Image from 'next/image';
 import Link from 'next/link';
 import CloudImage from './utility/CloudImage';
 

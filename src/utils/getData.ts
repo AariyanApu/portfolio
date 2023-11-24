@@ -6,7 +6,7 @@ export const getData = async (id: string) => {
   return res.json();
 };
 export const getDataNoStore = async (id: string) => {
-  const res = await fetch(`https://aaru.vercel.app/api/${id}`, {
+  const res = await fetch(`https://aariyanapu.com/api/${id}`, {
     cache: 'no-store',
   });
   if (!res.ok) {
