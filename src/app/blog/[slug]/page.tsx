@@ -1,9 +1,9 @@
-import { getDataNoStoreLocal } from '@/utils/getData';
+import { getDataNoStore } from '@/utils/getData';
 import Image from 'next/image';
 
 export default async function SingleBlog({ params }: any) {
   const { slug } = params;
-  const data = await getDataNoStoreLocal(`posts/${slug}`);
+  const data = await getDataNoStore(`posts/${slug}`);
 
   return (
     <div className={`mx-auto my-4 max-w-6xl px-4 lg:px-0 `}>
