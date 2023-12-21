@@ -1,3 +1,4 @@
+import CloudImage from '@/components/utility/CloudImage';
 import { getDataNoStore } from '@/utils/getData';
 import Image from 'next/image';
 
@@ -7,12 +8,12 @@ export default async function SingleBlog({ params }: any) {
 
   return (
     <div className={`mx-auto my-4 max-w-6xl px-4 lg:px-0 `}>
-      <Image
-        src={'/asset/react.jpg'}
-        alt={''}
+      <CloudImage
+        src={data.imgUrl}
+        alt={data.title}
         height={800}
         width={800}
-        className='w-full my-8 rounded object-cover object-center lg:h-96 lg:w-[800px]'
+        customStyles='w-full my-8 rounded object-cover object-center lg:h-96 lg:w-[800px]'
       />
 
       <div className='flex flex-col gap-y-6 w-full'>

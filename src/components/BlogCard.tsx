@@ -17,13 +17,15 @@ export default function BlogPostCard({ item }: { item: blogPostType }) {
       />
       <div className=' mt-10 flex flex-col gap-y-2 pb-1 pl-1 sm:pl-8 px-4'>
         <p className='mt-4 text-sm'>{item.createdAt.substring(0, 10)}</p>
-        <h1 className='text-3xl font-semibold md:text-2xl'>{item.title}</h1>
+        <h1 className='text-3xl font-semibold md:text-2xl'>
+          {item.title.substring(0, 50)}
+        </h1>
 
         <div></div>
         <div
           className='md:text-sm lg:text-base'
           dangerouslySetInnerHTML={{
-            __html: item.desc.substring(0, 200),
+            __html: item.desc.substring(0, 100),
           }}
         />
         <Link
