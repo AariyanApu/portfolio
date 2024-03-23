@@ -38,6 +38,9 @@ export const metadata: Metadata = {
     'next.js developer',
     'react developer',
   ],
+  viewport:
+    'minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover',
+  metadataBase: new URL('https://aariyanapu.com'),
 };
 
 export default function RootLayout({
