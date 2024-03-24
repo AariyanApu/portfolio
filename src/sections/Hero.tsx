@@ -30,7 +30,7 @@ export default function Hero() {
         </motion.div>
         <motion.p
           variants={textVariant(1)}
-          className=' mt-2 w-full pr-3 text-justify text-base tracking-normal text-slate-color sm:w-4/6 md:w-3/4  lg:mt-6 lg:w-[500px] lg:text-lg 2xl:w-[580px]'
+          className=' mt-2 w-full pr-3 sm:text-justify text-base text-slate-color sm:w-4/6 md:w-3/4  lg:mt-6 lg:w-[500px] lg:text-lg 2xl:w-[580px]'
         >
           crafting engaging and accessible front-end web solutions for a
           seamless digital experience.
