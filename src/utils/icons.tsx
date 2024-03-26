@@ -1,4 +1,4 @@
-import { AiFillEye } from 'react-icons/ai';
+import { AiFillEye } from "react-icons/ai";
 import {
   FaFacebookSquare,
   FaGithubSquare,
@@ -7,15 +7,12 @@ import {
   FaTelegramPlane,
   FaTwitterSquare,
   FaWhatsappSquare,
-} from 'react-icons/fa';
-import { FiGithub } from 'react-icons/fi';
-import { IoIosMail, IoIosPhonePortrait } from 'react-icons/io';
-import { FaBeer } from 'react-icons/fa';
+} from "react-icons/fa";
+import { FiGithub } from "react-icons/fi";
+import { IoIosMail, IoIosPhonePortrait } from "react-icons/io";
 
-import { BiChevronRight } from 'react-icons/bi';
 export const EyeIcon = () => <AiFillEye size={30} />;
 export const GithubIconRounded = () => <FiGithub size={26} />;
-export const RightIcon = () => <BiChevronRight size={16} color='#64ffda' />;
 export const GithubIcon = () => <FaGithubSquare size={35} />;
 export const FacebookIcon = () => <FaFacebookSquare size={35} />;
 export const TwitterIcon = () => <FaTwitterSquare size={35} />;
