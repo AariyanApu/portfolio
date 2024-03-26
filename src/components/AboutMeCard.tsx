@@ -1,5 +1,3 @@
-import { RightIcon } from "@/utils/icons";
-
 import { BiChevronRight } from "react-icons/bi";
 
 export default function AboutMeCard({ skill }: { skill: string }) {
