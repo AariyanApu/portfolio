@@ -20,13 +20,13 @@ export default function Hero() {
           variants={textVariant(0.8)}
           className={`mt-2 text-5xl font-medium  tracking-wide text-slate-color-lighter  sm:mt-1 lg:text-7xl 2xl:text-8xl ${heroTitle.className}`}
         >
-          Aariyan Apu.
+          Aariyan Apu,
         </motion.div>
         <motion.div
           variants={textVariant(0.9)}
           className={` ${heroTitle.className}  mt-3 text-2xl font-medium tracking-wide text-slate-color-light sm:text-4xl md:pt-2 md:text-5xl  lg:text-6xl 2xl:text-7xl `}
         >
-          I build things for the web,
+          I build things for the web.
         </motion.div>
         <motion.p
           variants={textVariant(1)}
