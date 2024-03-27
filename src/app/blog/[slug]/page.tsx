@@ -24,7 +24,7 @@ export default async function SingleBlog({ params }: any) {
         </div>
         <h1 className='text-2xl sm:text-4xl font-semibold'>{data.title}</h1>
         <div
-          className='md:text-sm lg:text-base prose-base    prose-slate prose-invert prose-a:text-sky-400 hover:prose-a:text-sky-500 prose-img:rounded-md prose-img:shadow-md prose-img:overflow-hidden prose-img:object-cover prose-img:object-center  prose-img:my-8 prose-img:w-[800px] prose-img:h-96'
+          className='md:text-sm lg:text-lg prose-base    prose-slate prose-invert prose-a:text-sky-400 hover:prose-a:text-sky-500 prose-img:rounded-md prose-img:shadow-md prose-img:overflow-hidden prose-img:object-cover prose-img:object-center  prose-img:my-8 prose-img:w-[800px] prose-img:h-96'
           dangerouslySetInnerHTML={{
             __html: sanitizedHtml,
           }}
