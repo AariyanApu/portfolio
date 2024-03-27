@@ -16,7 +16,7 @@ const Footer = () => {
   return (
     <Container customStyles='mx-auto max-w-7xl px-4 pb-5 pt-5 text-slate-color sm:px-6   sm:pt-32 lg:px-8'>
       <TypingTitle title="Let's talk" />
-      <p className=' text-md mt-8 w-full px-2 text-justify leading-normal sm:w-[550px] sm:px-5 sm:text-lg lg:ml-20 lg:w-[700px] lg:px-0 '>
+      <p className=' text-md mt-8 w-full px-2 text-justify sm:text-left  sm:w-[550px] sm:px-5 sm:text-lg lg:ml-20 lg:w-[700px] lg:px-0 '>
         As a freelancer, I&apos;ve worked remotely with designers, small
         agencies, and businesses. Feel free to reach out – I&apos;m here to help
         and chat!
