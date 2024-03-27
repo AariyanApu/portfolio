@@ -39,7 +39,7 @@ export default function Skills() {
               customStyles=' group m-4 flex flex-col items-center justify-center text-center'
               key={skill.name}
             >
-              <div className=' all_animation flex h-[70px] w-[70px]   items-center justify-center rounded-full  bg-secondary-color shadow-sm  group-hover:shadow-emerald-300 sm:h-[60px] sm:w-[60px]'>
+              <div className=' all_animation flex h-[70px] w-[70px]   items-center justify-center rounded-full  bg-secondary-color shadow-sm  group-hover:shadow-primary-color sm:h-[60px] sm:w-[60px]'>
                 <Image
                   height={50}
                   width={50}

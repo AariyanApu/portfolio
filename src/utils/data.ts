@@ -91,8 +91,8 @@ export const mySkills = [
     icon: prisma,
   },
   {
-    name: 'Vite',
-    icon: vite,
+    name: 'PostgreSQL',
+    icon: postgreSql,
   },
   {
     name: 'Docker',
