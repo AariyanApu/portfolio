@@ -24,7 +24,7 @@ export default function BlogCard({ item }: { item: blogPostType }) {
       />
       <div className=' my-2 flex flex-col gap-y-2 pb-1 pl-4 sm:pl-8 px-4 sm:py-6 '>
         <p className='mt-4 text-sm'>{item.createdAt.substring(0, 10)}</p>
-        <h1 className='lg:text-3xl text-lg font-semibold md:text-2xl'>
+        <h1 className='lg:text-3xl text-xl font-semibold md:text-2xl'>
           {item.title.substring(0, 50)}
         </h1>
         <div
