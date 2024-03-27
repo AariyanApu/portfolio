@@ -73,7 +73,7 @@ export default function Skills() {
                   <TextContainer
                     whileInView={{ opacity: [0, 1] }}
                     transition={{ duration: 0.5 }}
-                    customStyles=' mb-4 flex flex-col items-start justify-start  '
+                    customStyles=' mb-4 flex flex-col items-start justify-start px-1 text-left'
                     data-tip
                     data-for={work.name}
                     key={work.name}
