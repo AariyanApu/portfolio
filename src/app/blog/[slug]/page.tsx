@@ -1,11 +1,12 @@
 import CloudImage from '@/components/utility/CloudImage';
 import { getDataNoStore } from '@/utils/getData';
-import Image from 'next/image';
+import DOMPurify from 'isomorphic-dompurify';
 
 export default async function SingleBlog({ params }: any) {
   const { slug } = params;
   const data = await getDataNoStore(`posts/${slug}`);
-
+  const htmlContent = data.desc;
+  const sanitizedHtml = DOMPurify.sanitize(htmlContent);
   return (
     <div className={`mx-auto my-4 max-w-6xl px-4 lg:px-0 `}>
       <CloudImage
@@ -25,7 +26,7 @@ export default async function SingleBlog({ params }: any) {
         <div
           className='md:text-sm lg:text-base prose-base    prose-slate prose-invert prose-a:text-sky-400 hover:prose-a:text-sky-500 prose-img:rounded-md prose-img:shadow-md prose-img:overflow-hidden prose-img:object-cover prose-img:object-center  prose-img:my-8 prose-img:w-[800px] prose-img:h-96'
           dangerouslySetInnerHTML={{
-            __html: data.desc,
+            __html: sanitizedHtml,
           }}
         />
       </div>

@@ -1,12 +1,19 @@
 import { blogPostType } from '@/types/dataTypes';
-import Link from 'next/link';
+import DOMPurify from 'isomorphic-dompurify';
 import CloudImage from './utility/CloudImage';
 
 export default function BlogPostCard({ item }: { item: blogPostType }) {
+  const htmlContent = `${item.desc.substring(
+    0,
+    100
+  )} <a class='text-sm font-semibold hover:text-primary-color transition-colors duration-500 ease-in-out pb-4 md:text-base lg:text-lg' href="/blog/${
+    item.slug
+  }">...Read More</a>`;
+  const sanitizedHtml = DOMPurify.sanitize(htmlContent);
   return (
     <div
       key={item.id}
-      className='mx-4 flex flex-col justify-start gap-x-16 rounded-md bg-secondary-color transition-all duration-500 ease-in-out hover:bg-[#132444] lg:flex-row xl:mx-0  overflow-hidden border-2 border-secondary-color hover:border-[#1d3666]'
+      className='mx-4 flex flex-col justify-start gap-x-16 rounded-md bg-secondary-color transition-all duration-500 ease-in-out hover:bg-[#132444] lg:flex-row xl:mx-0  overflow-hidden border border-secondary-color hover:border-[#1d3666]'
     >
       <CloudImage
         src={item.imgUrl}
@@ -20,20 +27,12 @@ export default function BlogPostCard({ item }: { item: blogPostType }) {
         <h1 className='text-3xl font-semibold md:text-2xl'>
           {item.title.substring(0, 50)}
         </h1>
-
-        <div></div>
         <div
           className='md:text-sm lg:text-base'
           dangerouslySetInnerHTML={{
-            __html: item.desc.substring(0, 100),
+            __html: sanitizedHtml,
           }}
         />
-        <Link
-          href={`/blog/${item.slug}`}
-          className='text-sm font-semibold text-primary-color pb-4 md:text-base lg:text-lg'
-        >
-          Read More...
-        </Link>
       </div>
     </div>
   );
