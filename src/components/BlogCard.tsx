@@ -2,7 +2,7 @@ import { blogPostType } from '@/types/dataTypes';
 import DOMPurify from 'isomorphic-dompurify';
 import CloudImage from './utility/CloudImage';
 
-export default function BlogPostCard({ item }: { item: blogPostType }) {
+export default function BlogCard({ item }: { item: blogPostType }) {
   const htmlContent = `${item.desc.substring(
     0,
     100
@@ -22,9 +22,9 @@ export default function BlogPostCard({ item }: { item: blogPostType }) {
         width={500}
         customStyles='h-72 lg:w-[550px] w-full rounded-t-md object-cover opacity-95 transition-opacity duration-300 ease-in-out hover:opacity-100 sm:rounded-s-md sm:rounded-tr-none md:h-80'
       />
-      <div className=' mt-2 flex flex-col gap-y-2 pb-1 pl-4 sm:pl-8 px-4 sm:py-6 '>
+      <div className=' my-2 flex flex-col gap-y-2 pb-1 pl-4 sm:pl-8 px-4 sm:py-6 '>
         <p className='mt-4 text-sm'>{item.createdAt.substring(0, 10)}</p>
-        <h1 className='text-3xl font-semibold md:text-2xl'>
+        <h1 className='lg:text-3xl text-lg font-semibold md:text-2xl'>
           {item.title.substring(0, 50)}
         </h1>
         <div
