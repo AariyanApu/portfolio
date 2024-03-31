@@ -2,8 +2,7 @@
 import AddSiglePost from '@/components/dashboard/AddSinglePost';
 import DashboardProjects from '@/components/dashboard/DashboardProjects';
 import DeletePost from '@/components/dashboard/DeletePost';
-import { signIn, signOut, useSession } from 'next-auth/react';
-import Link from 'next/link';
+import { signOut, useSession } from 'next-auth/react';
 import { useState } from 'react';
 
 export default function Dashboard() {
