@@ -1,6 +1,6 @@
 'use client';
-import React, { useRef } from 'react';
 import { Editor } from '@tinymce/tinymce-react';
+import { useRef } from 'react';
 
 export default function TextEditor({
   desc,
@@ -16,10 +16,12 @@ export default function TextEditor({
       setDesc((editorRef.current as any).getContent());
     }
   };
+
+  const apikey = process.env.NEXT_PUBLIC_EDITOR_API_KEY;
   return (
     <>
       <Editor
-        apiKey='goguvd9rjb71i2z7xk6lijncr14qjtvfgsvnd3nypne4o6di'
+        apiKey={apikey}
         onInit={(evt, editor) => (editorRef.current = editor as any)}
         initialValue={desc}
         init={{
