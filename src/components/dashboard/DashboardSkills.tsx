@@ -1,22 +1,22 @@
-'use client';
-import { CldImage, CldUploadButton } from 'next-cloudinary';
-import { ChangeEvent, useState } from 'react';
-import useSWR from 'swr';
-import * as Yup from 'yup';
-import Loading from '../utility/Loading';
-import { SkillData } from '@/types/dataTypes';
+"use client";
+import { CldImage, CldUploadButton } from "next-cloudinary";
+import { ChangeEvent, useState } from "react";
+import useSWR from "swr";
+import * as Yup from "yup";
+import Loading from "../utility/Loading";
+import { SkillData } from "@/types/dataTypes";
 
 export default function DashboardSkills() {
   const [loading, setLoading] = useState(false);
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [post, setPost] = useState({
-    name: '',
-    icon: '',
+    name: "",
+    icon: "",
   });
 
   const validationSchema = Yup.object().shape({
-    name: Yup.string().required('Title is required'),
-    icon: Yup.string().required('Icon is required'),
+    name: Yup.string().required("Title is required"),
+    icon: Yup.string().required("Icon is required"),
   });
 
   const handleUpload = (result: any) => {
@@ -27,14 +27,14 @@ export default function DashboardSkills() {
     e.preventDefault();
     try {
       await validationSchema.validate(post);
-      await fetch('/api/skills', {
-        method: 'POST',
+      await fetch("/api/skills", {
+        method: "POST",
         body: JSON.stringify(post),
       });
       setIsFormSubmitted(true);
       setPost({
-        name: '',
-        icon: '',
+        name: "",
+        icon: "",
       });
     } catch (error) {
       console.log(error);
@@ -49,7 +49,7 @@ export default function DashboardSkills() {
     const res = await fetch(...args);
     return res.json();
   };
-  const { data, error, isLoading, mutate } = useSWR('/api/skills', fetcher);
+  const { data, error, isLoading, mutate } = useSWR("/api/skills", fetcher);
   if (isLoading) return <Loading />;
   if (error) return <div>Failed to load user</div>;
 
@@ -57,7 +57,7 @@ export default function DashboardSkills() {
   const handleDelete = async (id: string) => {
     try {
       await fetch(`/api/skills/${id}`, {
-        method: 'DELETE',
+        method: "DELETE",
       });
     } catch (error) {
       console.log(error);
@@ -67,65 +67,65 @@ export default function DashboardSkills() {
   };
 
   return (
-    <div className='w-full px-8'>
-      <h1 className='mt-5 text-center text-3xl font-semibold text-primary-color'>
+    <div className="w-full px-8">
+      <h1 className="mt-5 text-center text-3xl font-semibold text-primary-color">
         Skills Dashboard
       </h1>
-      <div className='flex w-full  flex-row justify-between px-10'>
+      <div className="flex w-full  flex-row justify-between px-10">
         <div>
-          <form onSubmit={handleSubmit} className='mt-10 flex w-96 flex-col'>
-            <p className='py-3 text-2xl text-primary-color '>
+          <form onSubmit={handleSubmit} className="mt-10 flex w-96 flex-col">
+            <p className="py-3 text-2xl text-primary-color ">
               Add Skills Here!
             </p>
             <input
-              type='text'
-              placeholder='Title'
+              type="text"
+              placeholder="Title"
               value={post.name}
               onChange={(e) => setPost({ ...post, name: e.target.value })}
-              className='input_style'
+              className="input_style"
             />
 
             <CldUploadButton
-              uploadPreset='skills'
-              className='button_style mt-2'
+              uploadPreset="skills"
+              className="button_style mt-2"
               onUpload={handleUpload}
             />
-            <button type='submit' className='button_style my-5 w-full'>
-              {loading ? 'Submitting...' : 'Submit'}
+            <button type="submit" className="button_style my-5 w-full">
+              {loading ? "Submitting..." : "Submit"}
             </button>
           </form>
           {isFormSubmitted && (
-            <p className='text-primary-color'>Skills submitted successfully!</p>
+            <p className="text-primary-color">Skills submitted successfully!</p>
           )}
         </div>
-        <div className='mt-10'>
-          <h1 className='text-center text-2xl text-primary-color'>
+        <div className="mt-10">
+          <h1 className="text-center text-2xl text-primary-color">
             All Reviews
           </h1>
-          <div className='flex flex-col'>
+          <div className="flex flex-col">
             {data?.reverse().map((skill: SkillData) => (
               <div
                 key={skill._id}
-                className='my-5 flex w-96 flex-col rounded-lg border-2 border-secondary-color p-5'
+                className="my-5 flex w-96 flex-col rounded-lg border-2 border-secondary-color p-5"
               >
-                <h1 className='text-xl'>{skill.name}</h1>
+                <h1 className="text-xl">{skill.name}</h1>
 
                 <CldImage
                   width={300}
                   height={300}
                   src={skill.icon}
                   alt={skill.title}
-                  className='h-20 w-20  p-1'
+                  className="h-20 w-20  p-1"
                 />
-                <div className='flex w-full gap-x-5'>
+                <div className="flex w-full gap-x-5">
                   <button
-                    className='button_style mt-2'
+                    className="button_style mt-2"
                     onClick={() => handleDelete(skill._id)}
                   >
                     Delete
                   </button>
 
-                  <button className='button_style mt-2 px-5'>Edit</button>
+                  <button className="button_style mt-2 px-5">Edit</button>
                 </div>
               </div>
             ))}

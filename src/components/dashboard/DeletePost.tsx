@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import useSWR, { SWRResponse } from 'swr';
-import Loading from '../utility/Loading';
+import useSWR, { SWRResponse } from "swr";
+import Loading from "../utility/Loading";
 
 export default function DeletePost() {
   const fetcher = async (...args: Parameters<typeof fetch>) => {
@@ -9,8 +9,8 @@ export default function DeletePost() {
     return res.json();
   };
   const { data, error, mutate }: SWRResponse<any, any> = useSWR(
-    '/api/posts',
-    fetcher
+    "/api/posts",
+    fetcher,
   );
   if (error) return <div>failed to load</div>;
   if (!data) return <Loading />;
@@ -18,7 +18,7 @@ export default function DeletePost() {
   const deletePost = async (slug: string) => {
     try {
       const response = await fetch(`/api/posts/${slug}`, {
-        method: 'DELETE',
+        method: "DELETE",
       });
 
       if (response.ok) {
@@ -26,12 +26,12 @@ export default function DeletePost() {
         // setDeleteMessage(result.message)
       } else {
         const errorResult = await response.json();
-        console.error('Error deleting post:', errorResult);
+        console.error("Error deleting post:", errorResult);
         // setDeleteMessage('Error deleting post')
       }
       mutate();
     } catch (error) {
-      console.error('Error deleting post:', error);
+      console.error("Error deleting post:", error);
     }
   };
 
@@ -41,12 +41,12 @@ export default function DeletePost() {
         data?.map((item: any) => (
           <div
             key={item.id}
-            className='flex flex-row items-center justify-start gap-x-8 p-4'
+            className="flex flex-row items-center justify-start gap-x-8 p-4"
           >
             <p>{item.title.substring(0, 60)}</p>
             <button
               onClick={() => deletePost(item.slug)}
-              className=' rounded-md bg-red-500 px-4 py-2 text-white'
+              className=" rounded-md bg-red-500 px-4 py-2 text-white"
             >
               Delete
             </button>

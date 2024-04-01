@@ -1,5 +1,5 @@
-import { socialIconType } from '@/types/utilityTypes';
-import Link from 'next/link';
+import { socialIconType } from "@/types/utilityTypes";
+import Link from "next/link";
 
 export default function SocialIcon({
   aHref,
@@ -11,7 +11,7 @@ export default function SocialIcon({
 }: socialIconType) {
   return (
     <div
-      className={`m-1 flex p-2  lg:m-2 lg:ml-0 ${width} all_animation  cursor-pointer items-center justify-center  rounded-lg bg-secondary-color  hover:text-primary-color lg:p-2 shadow hover:shadow-primary-color  `}
+      className={`m-1 flex p-2  lg:m-2 lg:ml-0 ${width} all_animation  cursor-pointer items-center justify-center  rounded-lg bg-secondary-color  shadow hover:text-primary-color hover:shadow-primary-color lg:p-2  `}
     >
       <Link href={aHref!}>{largeIcon}</Link>
       <Link href={aHref!} className={textStyle}>

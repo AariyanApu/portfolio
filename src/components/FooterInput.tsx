@@ -1,4 +1,4 @@
-import { inputType } from '@/types/utilityTypes';
+import { inputType } from "@/types/utilityTypes";
 
 export default function FooterInput({
   value,

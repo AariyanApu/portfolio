@@ -22,7 +22,7 @@ export default function AboutMe() {
       </TextContainer>
       <div className="flex   flex-row justify-evenly p-5 ">
         <TextContainer variants={fadeIn("up", "tween", 0.4, 0.7)}>
-          <div className=" mb-10 mt-2 w-full text-left sm:text-justify text-base text-slate-color sm:w-[380px] lg:mt-5 lg:w-[580px]  lg:text-lg">
+          <div className="mb-10  mt-2 w-full text-left text-base text-slate-color sm:w-[380px] sm:text-justify lg:mt-5  lg:w-[580px]  lg:text-lg">
             Experienced in Next.js and the MERN Stack, I specialize in crafting
             exceptional user experiences. With years of dedicated practice,
             I&apos;m a results-driven problem solver committed to continuous
