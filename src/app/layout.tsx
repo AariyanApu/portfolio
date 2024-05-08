@@ -4,6 +4,7 @@ import "./globals.css";
 import NavBar from "@/components/NavBar";
 import FooterCredit from "@/components/FooterCredit";
 import AuthProvider from "@/utils/AuthProvider";
+import { Analytics } from "@vercel/analytics/react";
 
 const quickSand = Quicksand({ subsets: ["latin"], weight: ["400", "700"] });
 
@@ -52,6 +53,7 @@ export default function RootLayout({
         className={`${quickSand.className} mx-auto max-w-screen-2xl text-[#e6ebff]`}
       >
         <AuthProvider>
+          <Analytics />
           <NavBar />
           {children}
           <FooterCredit />
