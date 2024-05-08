@@ -53,10 +53,10 @@ export default function RootLayout({
         className={`${quickSand.className} mx-auto max-w-screen-2xl text-[#e6ebff]`}
       >
         <AuthProvider>
-          <Analytics />
           <NavBar />
           {children}
           <FooterCredit />
+          <Analytics />
         </AuthProvider>
       </body>
     </html>
