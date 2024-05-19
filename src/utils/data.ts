@@ -108,7 +108,17 @@ export const mySkills = [
 
 export const myExperiences = [
   {
-    year: "2017 - Present",
+    year: "2019 - 2023",
+    work: [
+      {
+        name: "Former Assistant Software Engineer",
+        company: "Target Peoples for Development Organization (TPDO)",
+        desc: " I Provided technical support and troubleshooting for all IT-related issues. Manage Social media, implement IT policies, procedures, and best practices",
+      },
+    ],
+  },
+  {
+    year: "2017 - 2019",
     work: [
       {
         name: "Front-End Software Engineer",
