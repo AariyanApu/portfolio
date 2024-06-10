@@ -215,8 +215,8 @@ export const projects = [
     name: "Sumz",
     title: "Article Summarizer",
     imgUrl: sumz,
-    projectLink: "https://sum-tau.vercel.app/",
-    codeLink: "https://sum-tau.vercel.app/",
+    projectLink: "https://mysum.vercel.app/",
+    codeLink: "https://mysum.vercel.app/",
     description: "Sumz is Article summarizer made with Api",
     tags: ["React.js", "API", "Redux"],
   },
@@ -286,32 +286,5 @@ export const reviews = [
     body: "Aariyan was all round excellent to work with. From the work he did for my company,",
     author: "Stanislav D. ",
     imgSrc: fiverr,
-  },
-];
-
-export const blogPosts = [
-  {
-    id: "1",
-    title: "How to use React Context API",
-    imgUrl: "/asset/react.jpg",
-    createdAt: "2023-11-12",
-    slug: "how-to-use-react-context-api",
-    desc: 'React Context API is a way to essentially create global variables that can be passed around in a React app. This is the alternative to "prop drilling", or passing props from grandparent to parent to child, and so on.',
-  },
-  {
-    id: "2",
-    title: "How to use React Context API",
-    imgUrl: "/asset/react.jpg",
-    createdAt: "2023-11-12",
-    slug: "how-to-use-react-context-api",
-    desc: 'React Context API is a way to essentially create global variables that can be passed around in a React app. This is the alternative to "prop drilling", or passing props from grandparent to parent to child, and so on.',
-  },
-  {
-    id: "3",
-    title: "How to use React Context API",
-    imgUrl: "/asset/react.jpg",
-    createdAt: "2023-11-12",
-    slug: "how-to-use-react-context-api",
-    desc: 'React Context API is a way to essentially create global variables that can be passed around in a React app. This is the alternative to "prop drilling", or passing props from grandparent to parent to child, and so on.',
   },
 ];
