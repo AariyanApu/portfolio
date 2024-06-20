@@ -8,7 +8,7 @@ export default async function SingleBlog({ params }: any) {
   const htmlContent = data.desc;
   const sanitizedHtml = DOMPurify.sanitize(htmlContent);
   return (
-    <div className={`mx-auto my-4 max-w-6xl px-4 lg:px-0 `}>
+    <div className={`mx-auto my-4 max-w-3xl px-4 lg:px-0 `}>
       <CloudImage
         src={data.imgUrl}
         alt={data.title}
@@ -24,7 +24,7 @@ export default async function SingleBlog({ params }: any) {
         </div>
         <h1 className="text-2xl font-semibold sm:text-4xl">{data.title}</h1>
         <div
-          className="prose-base prose-slate prose-invert    prose-a:text-sky-400 hover:prose-a:text-sky-500 prose-img:my-8 prose-img:h-96 prose-img:w-[800px] prose-img:overflow-hidden prose-img:rounded-md prose-img:object-cover prose-img:object-center  prose-img:shadow-md md:text-sm lg:text-lg"
+          className="prose-base prose-slate prose-invert    prose-a:text-sky-400 hover:prose-a:text-sky-500 prose-img:my-8 prose-img:h-96 prose-img:w-auto prose-img:overflow-hidden prose-img:rounded-md prose-img:object-cover prose-img:object-center  prose-img:shadow-md md:text-sm lg:text-lg"
           dangerouslySetInnerHTML={{
             __html: sanitizedHtml,
           }}
