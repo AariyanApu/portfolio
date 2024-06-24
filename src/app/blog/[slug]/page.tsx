@@ -6,7 +6,7 @@ import { getCldImageUrl } from "next-cloudinary";
 import { Metadata } from "next";
 import { getCldOgImageUrl } from "next-cloudinary";
 
-export async function generateMetadat() {
+export async function generateMetadata(): Promise<Metadata> {
   const publicId = "qtbmdikvy1gjtc0r46lm";
   const headline = "Hello from Dynamic Open Graph Images!";
   const body =
