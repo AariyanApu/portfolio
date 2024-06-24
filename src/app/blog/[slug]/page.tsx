@@ -6,11 +6,13 @@ import { getCldImageUrl } from "next-cloudinary";
 import { Metadata } from "next";
 import { getCldOgImageUrl } from "next-cloudinary";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const publicId = "qtbmdikvy1gjtc0r46lm";
-  const headline = "Hello from Dynamic Open Graph Images!";
-  const body =
-    "Get the power of Cloudinary in a Next.js project with Next Cloudinary!";
+export async function generateMetadata({ params }: any): Promise<Metadata> {
+  const { slug } = params;
+  const data = await getDataNoStore(`posts/${slug}`);
+
+  const publicId = data.imgUrl;
+  const headline = data.title;
+  const body = data.desc.substring(0, 100) + "...";
 
   return {
     openGraph: {
