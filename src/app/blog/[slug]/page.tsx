@@ -2,6 +2,76 @@ import CloudImage from "@/components/utility/CloudImage";
 import { getDataNoStore } from "@/utils/getData";
 import DOMPurify from "isomorphic-dompurify";
 
+import { getCldImageUrl } from "next-cloudinary";
+import { Metadata } from "next";
+import { getCldOgImageUrl } from "next-cloudinary";
+
+export async function generateMetadat() {
+  const publicId = "qtbmdikvy1gjtc0r46lm";
+  const headline = "Hello from Dynamic Open Graph Images!";
+  const body =
+    "Get the power of Cloudinary in a Next.js project with Next Cloudinary!";
+
+  return {
+    openGraph: {
+      images: [
+        {
+          // Prefer a different size? Be sure to update the width and height of the
+          // metadata as well as the image configuration of getCldOgImageUrl
+          width: 1200,
+          height: 630,
+          url: getCldOgImageUrl({
+            src: publicId,
+            effects: [{ colorize: "100,co_black" }],
+            overlays: [
+              {
+                publicId,
+                width: 1200,
+                height: 630,
+                crop: "fill",
+                effects: [
+                  {
+                    opacity: 60,
+                  },
+                ],
+              },
+              {
+                width: 700,
+                crop: "fit",
+                text: {
+                  alignment: "center",
+                  color: "white",
+                  fontFamily: "Source Sans Pro",
+                  fontSize: 80,
+                  fontWeight: "bold",
+                  text: headline,
+                },
+                position: {
+                  y: -50,
+                },
+              },
+              {
+                width: 700,
+                crop: "fit",
+                text: {
+                  alignment: "center",
+                  color: "white",
+                  fontFamily: "Source Sans Pro",
+                  fontSize: 37,
+                  text: body,
+                },
+                position: {
+                  y: 50,
+                },
+              },
+            ],
+          }),
+        },
+      ],
+    },
+  };
+}
+
 export default async function SingleBlog({ params }: any) {
   const { slug } = params;
   const data = await getDataNoStore(`posts/${slug}`);
