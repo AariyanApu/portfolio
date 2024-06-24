@@ -1,4 +1,6 @@
 const FooterCredit = () => {
+  // Add dynamic year
+  const year = new Date().getFullYear();
   return (
     <div
       className={
@@ -6,7 +8,7 @@ const FooterCredit = () => {
       }
     >
       <p className="text-center leading-normal ">
-        @2024 Design & Built by Aariyan
+        @{year} Design & Built by Aariyan
       </p>
       <a
         href="https://github.com/AariyanApu/aariyanapu.com"
