@@ -24,7 +24,7 @@ export default async function SingleBlog({ params }: any) {
         </div>
         <h1 className="text-2xl font-semibold sm:text-4xl">{data.title}</h1>
         <div
-          className="prose-base prose-slate prose-invert    prose-a:text-sky-400 hover:prose-a:text-sky-500 prose-img:my-8 prose-img:h-96 prose-img:w-auto prose-img:overflow-hidden prose-img:rounded-md prose-img:object-cover prose-img:object-center  prose-img:shadow-md md:text-sm lg:text-lg"
+          className="prose-base prose-slate prose-invert    prose-a:text-sky-400 hover:prose-a:text-sky-500 prose-img:my-8 prose-img:w-auto prose-img:overflow-hidden prose-img:rounded-md prose-img:object-cover prose-img:object-center prose-img:shadow-md  md:text-sm lg:text-lg prose-img:lg:h-96"
           dangerouslySetInnerHTML={{
             __html: sanitizedHtml,
           }}
@@ -33,3 +33,7 @@ export default async function SingleBlog({ params }: any) {
     </div>
   );
 }
+
+//TODO: Add separete slug for each blog post
+//TODO: Add SEO friendly meta tags and dynamic image  for each blog post
+//
