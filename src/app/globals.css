@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --background-color: #0c182e;
   --primary-color: #64ffda;
@@ -8,9 +12,6 @@
   --slate-color-lighter: #ccd6f6;
   --slate-color-lightest: #e6ebff;
 }
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 @layer components {
   /* put all custom group utilities here.*/
@@ -21,7 +22,7 @@
     @apply my-1.5 w-full rounded-lg bg-secondary-color   p-4 text-left text-sm leading-normal text-slate-color-lighter placeholder-slate-color focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-color;
   }
   .dashboard_button {
-    @apply px-4 py-2 rounded-md border border-primary-color text-primary-color hover:text-white transition-colors  duration-300 ease-in-out mb-5 ml-8;
+    @apply mb-5 ml-8 rounded-md border border-primary-color px-4 py-2 text-primary-color  transition-colors duration-300 ease-in-out hover:text-white;
   }
 }
 
@@ -38,10 +39,4 @@ body {
 }
 .all_animation {
   @apply transition-all duration-500 ease-in-out;
-}
-.ql-container {
-  font-size: 28px !important;
-}
-.quill > .ql-container > .ql-editor.ql-blank::before {
-  color: #b3b3b1;
 }
