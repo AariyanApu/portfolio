@@ -9,32 +9,31 @@ export default function AddSiglePost() {
   const [title, setTitle] = useState("");
   const [imgUrl, setImgUrl] = useState("");
   const [desc, setDesc] = useState("");
-
-  const slugify = (str: string) =>
-    str
-      .toLowerCase()
-      .trim()
-      .replace(/[^\w\s-]/g, "")
-      .replace(/[\s_-]+/g, "-")
-      .replace(/^-+|-+$/g, "");
+  const [slug, setSlug] = useState("");
   const router = useRouter();
   const handleSubmit = async (e: ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    // send post request to the server
     await fetch("/api/posts", {
       method: "POST",
       body: JSON.stringify({
         title,
-        slug: slugify(title),
+        slug,
         imgUrl,
         desc,
       }),
     });
+
+    // Clear the form
     setTitle("");
     setImgUrl("");
+
+    // redirect to blog page
     router.push("/blog");
   };
 
+  // Handeler for next-cloudinary image upload, it will send back image url
   const handleUpload = (result: any) => {
     setImgUrl(result.info.public_id);
   };
@@ -56,11 +55,14 @@ export default function AddSiglePost() {
         onChange={(e) => setTitle(e.target.value)}
         type="text"
       />
-      <TextEditor desc={desc} setDesc={setDesc} />
+      <input
+        placeholder="Enter Blog Slug...."
+        className="mt-4 w-full rounded-md border border-sky-400 bg-background-color px-4  py-2"
+        onChange={(e) => setSlug(e.target.value)}
+        type="text"
+      />
 
-      {/* <button type='submit' className='rounded-md bg-sky-400 px-4 py-2'>
-        Submit Blog
-      </button> */}
+      <TextEditor desc={desc} setDesc={setDesc} />
     </form>
   );
 }
