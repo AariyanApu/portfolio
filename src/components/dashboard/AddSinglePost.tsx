@@ -1,9 +1,9 @@
 "use client";
 
 import { CldUploadButton } from "next-cloudinary";
-import { useRouter } from "next/navigation";
 import { ChangeEvent, useState } from "react";
 import TextEditor from "../Editor";
+import { toast } from "react-toastify";
 
 export default function AddSiglePost() {
   const [input, setInput] = useState({
@@ -12,7 +12,6 @@ export default function AddSiglePost() {
     desc: "",
     slug: "",
   });
-  const router = useRouter();
 
   const slugify = (str: string) =>
     str
@@ -44,8 +43,17 @@ export default function AddSiglePost() {
       slug: "",
     });
 
-    // redirect to blog page
-    router.push("/blog");
+    // Send Susscess alert
+    toast.success("Your Blog is posted Susscessfully", {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
   };
 
   // Handeler for next-cloudinary image upload, it will send back image url
@@ -70,15 +78,19 @@ export default function AddSiglePost() {
         className="mt-4 w-full rounded-md border border-sky-400 bg-background-color px-4  py-2"
         onChange={(e) => setInput({ ...input, title: e.target.value })}
         type="text"
+        value={input.title}
       />
       <input
         placeholder="Enter Blog Slug...."
         className="mt-4 w-full rounded-md border border-sky-400 bg-background-color px-4  py-2"
         onChange={(e) => setInput({ ...input, slug: e.target.value })}
         type="text"
+        value={input.slug}
       />
 
       <TextEditor input={input} setInput={setInput} />
     </form>
   );
 }
+
+//TODO:: Add Form Validation
