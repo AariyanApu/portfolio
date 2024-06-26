@@ -41,22 +41,31 @@ export default function AboutMe() {
               alt="github stats"
             />
           </div>
-          <div className="mt-8 flex flex-col items-center justify-between gap-5 sm:mx-36 sm:mt-14 sm:gap-0 lg:flex-row">
+          <div className="mt-8 flex flex-col items-center justify-between gap-5 sm:mx-36 sm:mt-14 sm:gap-0">
             {/* Lines of code */}
-            <img
-              className="mb-5 h-9 w-full sm:mb-0 sm:w-[500px] "
-              src="https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-1.3%20million%20lines%20of%20code-blue"
-              alt="Lines of code image"
-            />
-            {/* Coding time */}
-
-            <a href="https://wakatime.com/@06e2a330-5ed7-4bd7-a10d-a94296f5fc61">
+            <div className="my-4 flex flex-row items-center justify-between gap-x-5">
               <img
-                className="h-9 w-full sm:w-80 "
-                src="https://wakatime.com/badge/user/06e2a330-5ed7-4bd7-a10d-a94296f5fc61.svg"
-                alt="Total time coded since Aug 28 2022"
+                className="mb-5 h-9 w-full sm:mb-0 sm:w-[500px] "
+                src="https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-1.3%20million%20lines%20of%20code-blue"
+                alt="Lines of code image"
               />
-            </a>
+              {/* Coding time */}
+
+              <a href="https://wakatime.com/@06e2a330-5ed7-4bd7-a10d-a94296f5fc61">
+                <img
+                  className="h-9 w-full sm:w-80 "
+                  src="https://wakatime.com/badge/user/06e2a330-5ed7-4bd7-a10d-a94296f5fc61.svg"
+                  alt="Total time coded since Aug 28 2022"
+                />
+              </a>
+            </div>
+
+            {/* WakaTime */}
+            <img
+              className="w-full sm:w-[500px]"
+              src="https://github-readme-stats.vercel.app/api/wakatime?username=aariyanapu&show_icons=true&theme=material-palenight&hide_border=false"
+              alt="WakaTime Stats"
+            />
           </div>
           {/* Github Contribution Calender */}
           <GithubCalendarComponent />

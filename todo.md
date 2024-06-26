@@ -1,1 +1,5 @@
--[ ] Add pwd support -[ ] Add Form Validation to AddSinglePost.tsx -[ ] Add a new feature -[ ] Add animation to mobile menu
+- [ ] Add pwd support
+- [ ] Add Form Validation to AddSinglePost.tsx
+- [ ] Add a new feature
+- [ ] Add animation to mobile menu
+- [ ] Add navigation to the blog
