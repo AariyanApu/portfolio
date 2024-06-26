@@ -1,13 +1,4 @@
-import {
-  CalendarIcon,
-  ChartPieIcon,
-  DocumentDuplicateIcon,
-  FolderIcon,
-  HomeIcon,
-  UsersIcon,
-} from "@heroicons/react/24/outline";
 import postgreSql from "/public/asset/icons/postgreSql.png";
-import bootstrap from "/public/asset/icons/bootstrap.png";
 import docker from "/public/asset/icons/docker.png";
 import express from "/public/asset/icons/express.png";
 import mongoDB from "/public/asset/icons/mongoDB.png";
@@ -16,15 +7,11 @@ import next from "/public/asset/icons/next.png";
 import node from "/public/asset/icons/node.png";
 import react from "/public/asset/icons/react.png";
 import redux from "/public/asset/icons/redux.png";
-import sass from "/public/asset/icons/sass.png";
 import tailwind from "/public/asset/icons/tailwind.png";
 import typescript from "/public/asset/icons/typescript.png";
-import vite from "/public/asset/icons/vite.png";
 import prisma from "/public/asset/icons/prisma.png";
 import fawflix from "/public/asset/projects/fawflix.webp";
 import gbdc from "/public/asset/projects/gbdc.webp";
-import LovelyMusic from "/public/asset/projects/lovelyMusic.webp";
-import lovelytube from "/public/asset/projects/lovelytube.webp";
 import lranslate from "/public/asset/projects/lranslate.webp";
 import bangladeshtime from "/public/asset/projects/bangladeshtime.webp";
 import birthday from "/public/asset/projects/birthday.webp";
@@ -32,28 +19,6 @@ import sumz from "/public/asset/projects/sumz.webp";
 import fiverr from "/public/asset/fiverr.png";
 import freelancer from "/public/asset/freelancer.jpeg";
 import upwork from "/public/asset/upwork.png";
-
-export {
-  LovelyMusic,
-  bootstrap,
-  docker,
-  express,
-  fawflix,
-  gbdc,
-  lovelytube,
-  lranslate,
-  mongoDB,
-  next,
-  postgreSql,
-  node,
-  react,
-  redux,
-  sass,
-  sumz,
-  tailwind,
-  typescript,
-  vite,
-};
 
 export const mySkills = [
   {
@@ -139,36 +104,6 @@ export const myExperiences = [
   },
 ];
 
-export const sliderNavigation = [
-  {
-    name: "Dashboard",
-
-    icon: HomeIcon,
-    current: true,
-  },
-  {
-    name: "Review",
-
-    icon: UsersIcon,
-    current: false,
-  },
-  {
-    name: "Projects",
-
-    icon: FolderIcon,
-
-    current: false,
-  },
-  {
-    name: "Skills",
-    icon: CalendarIcon,
-
-    current: false,
-  },
-  { name: "Documents", href: "#", icon: DocumentDuplicateIcon, current: false },
-  { name: "Reports", href: "#", icon: ChartPieIcon, current: false },
-];
-
 export const projects = [
   {
     title: "GBDC",
@@ -227,8 +162,6 @@ export const navigation = [
   { name: "BLOG", href: "/blog" },
   { name: "RESUME", href: "/resume.pdf" },
 ];
-
-export { fiverr, freelancer, upwork };
 
 export const reviews = [
   {
