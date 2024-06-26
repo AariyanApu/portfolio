@@ -6,11 +6,22 @@ import { ChangeEvent, useState } from "react";
 import TextEditor from "../Editor";
 
 export default function AddSiglePost() {
-  const [title, setTitle] = useState("");
-  const [imgUrl, setImgUrl] = useState("");
-  const [desc, setDesc] = useState("");
-  const [slug, setSlug] = useState("");
+  const [input, setInput] = useState({
+    title: "",
+    imgUrl: "",
+    desc: "",
+    slug: "",
+  });
   const router = useRouter();
+
+  const slugify = (str: string) =>
+    str
+      .toLowerCase()
+      .trim()
+      .replace(/[^\w\s-]/g, "")
+      .replace(/[\s_-]+/g, "-")
+      .replace(/^-+|-+$/g, "");
+
   const handleSubmit = async (e: ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -18,16 +29,20 @@ export default function AddSiglePost() {
     await fetch("/api/posts", {
       method: "POST",
       body: JSON.stringify({
-        title,
-        slug,
-        imgUrl,
-        desc,
+        title: input.title,
+        slug: slugify(input.slug),
+        imgUrl: input.imgUrl,
+        desc: input.desc,
       }),
     });
 
-    // Clear the form
-    setTitle("");
-    setImgUrl("");
+    //clear form
+    setInput({
+      title: "",
+      imgUrl: "",
+      desc: "",
+      slug: "",
+    });
 
     // redirect to blog page
     router.push("/blog");
@@ -35,7 +50,8 @@ export default function AddSiglePost() {
 
   // Handeler for next-cloudinary image upload, it will send back image url
   const handleUpload = (result: any) => {
-    setImgUrl(result.info.public_id);
+    // setImgUrl(result.info.public_id);
+    setInput({ ...input, imgUrl: result.info.public_id });
   };
   return (
     <form
@@ -52,17 +68,17 @@ export default function AddSiglePost() {
       <input
         placeholder="Enter Blog Title...."
         className="mt-4 w-full rounded-md border border-sky-400 bg-background-color px-4  py-2"
-        onChange={(e) => setTitle(e.target.value)}
+        onChange={(e) => setInput({ ...input, title: e.target.value })}
         type="text"
       />
       <input
         placeholder="Enter Blog Slug...."
         className="mt-4 w-full rounded-md border border-sky-400 bg-background-color px-4  py-2"
-        onChange={(e) => setSlug(e.target.value)}
+        onChange={(e) => setInput({ ...input, slug: e.target.value })}
         type="text"
       />
 
-      <TextEditor desc={desc} setDesc={setDesc} />
+      <TextEditor input={input} setInput={setInput} />
     </form>
   );
 }

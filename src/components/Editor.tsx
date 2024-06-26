@@ -3,17 +3,18 @@ import { Editor } from "@tinymce/tinymce-react";
 import { useRef } from "react";
 
 export default function TextEditor({
-  desc,
-  setDesc,
+  input,
+  setInput,
 }: {
-  desc: string;
-  setDesc: any;
+  input: any;
+  setInput: any;
 }) {
   const editorRef = useRef(null);
   const log = () => {
     if (editorRef.current) {
       //   console.log((editorRef.current as any).getContent());
-      setDesc((editorRef.current as any).getContent());
+      // setInput((editorRef.current as any).getContent());
+      setInput({ ...input, desc: (editorRef.current as any).getContent() });
     }
   };
 
@@ -23,7 +24,7 @@ export default function TextEditor({
       <Editor
         apiKey={apikey}
         onInit={(evt, editor) => (editorRef.current = editor as any)}
-        initialValue={desc}
+        initialValue={input.desc}
         init={{
           height: 1000,
           width: "100%",
