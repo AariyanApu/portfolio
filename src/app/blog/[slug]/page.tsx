@@ -11,7 +11,7 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
 
   const publicId = data.imgUrl;
   const headline = data.title;
-  const body = data.desc.substring(0, 100) + "...";
+  // const body = data.desc.substring(0, 100) + "...";
 
   return {
     openGraph: {
@@ -32,18 +32,18 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
                 crop: "fill",
                 effects: [
                   {
-                    opacity: 60,
+                    opacity: 30,
                   },
                 ],
               },
               {
-                width: 700,
+                width: 1800,
                 crop: "fit",
                 text: {
                   alignment: "center",
                   color: "white",
                   fontFamily: "Source Sans Pro",
-                  fontSize: 80,
+                  fontSize: 120,
                   fontWeight: "bold",
                   text: headline,
                 },
@@ -51,20 +51,20 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
                   y: -50,
                 },
               },
-              {
-                width: 700,
-                crop: "fit",
-                text: {
-                  alignment: "center",
-                  color: "white",
-                  fontFamily: "Source Sans Pro",
-                  fontSize: 37,
-                  text: body,
-                },
-                position: {
-                  y: 50,
-                },
-              },
+              // {
+              //   width: 700,
+              //   crop: "fit",
+              //   text: {
+              //     alignment: "center",
+              //     color: "white",
+              //     fontFamily: "Source Sans Pro",
+              //     fontSize: 37,
+              //     text: body,
+              //   },
+              //   position: {
+              //     y: 50,
+              //   },
+              // },
             ],
           }),
         },
