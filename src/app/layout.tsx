@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Quicksand } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
@@ -8,10 +8,47 @@ import { Analytics } from "@vercel/analytics/react";
 
 const quickSand = Quicksand({ subsets: ["latin"], weight: ["400", "700"] });
 
-export const metadata: Metadata = {
-  title: "Aaru's World!",
+const APP_NAME = "Aaru's World!";
+const APP_DEFAULT_TITLE = "Aariyan Apu";
+const APP_TITLE_TEMPLATE = "%s - Aaru's World!";
+const APP_DESCRIPTION =
+  "Aariyan Apu is a full-stack Web Developer From Bangladesh.";
 
-  description: "Aariyan Apu is a full-stack Web Developer From Bangladesh.",
+export const metadata: Metadata = {
+  applicationName: APP_NAME,
+  title: {
+    default: APP_DEFAULT_TITLE,
+    template: APP_TITLE_TEMPLATE,
+  },
+  description: APP_DESCRIPTION,
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: APP_DEFAULT_TITLE,
+    // startUpImage: [],
+  },
+  formatDetection: {
+    telephone: false,
+  },
+  openGraph: {
+    type: "website",
+    siteName: APP_NAME,
+    title: {
+      default: APP_DEFAULT_TITLE,
+      template: APP_TITLE_TEMPLATE,
+    },
+    description: APP_DESCRIPTION,
+  },
+  twitter: {
+    card: "summary",
+    title: {
+      default: APP_DEFAULT_TITLE,
+      template: APP_TITLE_TEMPLATE,
+    },
+    description: APP_DESCRIPTION,
+  },
+  metadataBase: new URL("https://aariyanapu.com"),
   keywords: [
     "aariyan",
     "aaru",
@@ -23,23 +60,12 @@ export const metadata: Metadata = {
     "aaruni",
     "aariyan apu",
     "aariyan",
-    "aariyan apu web developer",
-    "aariyan apu web developer from bangladesh",
-    "aariyan apu js developer",
-    "aariyan apu next.js developer",
-    "aariyan apu react developer",
-    "aariyan apu react",
-    "aariyan apu bangladeshwebdeveloper",
-    "aariyan apu aariyan",
-    "aariyan apu web dev from bd",
-    "aariyan apu aaru",
-    "web developer",
     "web developer from bangladesh",
-    "js developer",
-    "next.js developer",
-    "react developer",
   ],
-  metadataBase: new URL("https://aariyanapu.com"),
+};
+
+export const viewport: Viewport = {
+  themeColor: "#FFFFFF",
 };
 
 export default function RootLayout({
