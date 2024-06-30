@@ -1,8 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Quicksand } from "next/font/google";
 import "./globals.css";
-import NavBar from "@/components/NavBar";
-import FooterCredit from "@/components/FooterCredit";
+import NavBar from "@/components/navbar/NavBar";
+import FooterCredit from "@/components/footer/FooterCredit";
 import AuthProvider from "@/utils/AuthProvider";
 import { Analytics } from "@vercel/analytics/react";
 

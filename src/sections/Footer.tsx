@@ -1,6 +1,6 @@
 import Container from "@/components/utility/Container";
 import { TypingTitle } from "@/components/utility/CustomTexts";
-import SocialIcon from "@/components/SocialIcon";
+import SocialIcon from "@/components/footer/SocialIcon";
 import {
   FacebookIcon,
   GithubIcon,

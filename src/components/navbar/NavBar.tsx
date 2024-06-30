@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import Container from "./utility/Container";
+import Container from "../utility/Container";
 import NavTextContainer from "./NavTextContainer";
 import MobileNavbar from "./MobileNavbar";
 

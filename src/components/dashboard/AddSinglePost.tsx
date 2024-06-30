@@ -2,7 +2,7 @@
 
 import { CldUploadButton } from "next-cloudinary";
 import { ChangeEvent, useState } from "react";
-import TextEditor from "../Editor";
+import TextEditor from "./Editor";
 import { toast } from "react-toastify";
 
 export default function AddSiglePost() {
