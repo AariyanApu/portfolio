@@ -1,3 +1,6 @@
+// import images to use multiple times
+
+//icons for skills
 import postgreSql from "/public/asset/icons/postgreSql.png";
 import docker from "/public/asset/icons/docker.png";
 import express from "/public/asset/icons/express.png";
@@ -10,16 +13,21 @@ import redux from "/public/asset/icons/redux.png";
 import tailwind from "/public/asset/icons/tailwind.png";
 import typescript from "/public/asset/icons/typescript.png";
 import prisma from "/public/asset/icons/prisma.png";
+
+// images for projects
+import bangladeshtime from "/public/asset/projects/bangladeshtime.webp";
 import fawflix from "/public/asset/projects/fawflix.webp";
 import gbdc from "/public/asset/projects/gbdc.webp";
 import lranslate from "/public/asset/projects/lranslate.webp";
-import bangladeshtime from "/public/asset/projects/bangladeshtime.webp";
 import birthday from "/public/asset/projects/birthday.webp";
 import sumz from "/public/asset/projects/sumz.webp";
+
+// logo for reviews
 import fiverr from "/public/asset/fiverr.png";
 import freelancer from "/public/asset/freelancer.jpeg";
 import upwork from "/public/asset/upwork.png";
 
+// Add your skills here. do not add more than 12 skills
 export const mySkills = [
   {
     name: "Next.js",
@@ -71,6 +79,7 @@ export const mySkills = [
   },
 ];
 
+// Add your skills here
 export const myExperiences = [
   {
     year: "2019 - 2023",
@@ -103,6 +112,10 @@ export const myExperiences = [
     ],
   },
 ];
+
+// Only add your best projects. Do not add more than 6 projects. You can add more on dedicated projects pages
+// Here codelink is your project link and projectLink is your live project link
+// First tag will be used as a project type
 
 export const projects = [
   {
@@ -156,12 +169,19 @@ export const projects = [
     tags: ["React.js", "API", "Redux"],
   },
 ];
+
+// Add your navigation links here
+
 export const navigation = [
   { name: " ALL ABOUT ME", href: "/about-me" },
   { name: " ALL PROJECTS", href: "/archive" },
   { name: "BLOG", href: "/blog" },
   { name: "RESUME", href: "/resume.pdf" },
 ];
+
+// Add your reviews here and use the images from the top
+// It will be shown in the all about me page
+// It won't work if custom animaton disable in tailwind.config.ts
 
 export const reviews = [
   {

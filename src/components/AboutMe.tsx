@@ -17,7 +17,7 @@ export default function AboutMe() {
           className=" mx-auto w-64 rounded-md drop-shadow-sm sm:hidden"
           width={600}
           height={400}
-          alt="Aariyan Apu"
+          alt="Image of Aariyan Apu"
         />
       </TextContainer>
       <div className="flex   flex-row justify-evenly p-5 ">
