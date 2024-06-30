@@ -22,3 +22,7 @@ export interface blogPostType {
   slug: string;
   desc: string;
 }
+
+export interface SearchParamsProps {
+  searchParams: { [key: string]: string | string[] | undefined };
+}
