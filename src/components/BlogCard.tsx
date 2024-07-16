@@ -19,7 +19,7 @@ export default function BlogCard({ item }: { item: blogPostType }) {
         alt={item.title}
         height={500}
         width={500}
-        customStyles="h-auto w-full rounded-t-md object-cover opacity-95 transition-opacity duration-300 ease-in-out hover:opacity-100 sm:rounded-s-md sm:rounded-tr-none md:h-80 lg:w-[500px] lg:h-auto"
+        customStyles="h-auto w-full rounded-t-md object-cover opacity-95 transition-opacity duration-300 ease-in-out hover:opacity-100 sm:rounded-s-md sm:rounded-tr-none md:h-80 lg:w-[500px] lg:h-[300px]"
       />
       {/* Textbox of blog card */}
       <div className="my-auto flex flex-col  gap-y-2  px-4 pb-2 lg:px-0 lg:pb-0 lg:pr-4">
