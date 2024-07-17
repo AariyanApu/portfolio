@@ -9,6 +9,7 @@ import { UploadResult } from "@/types/dataTypes";
 import { slugify } from "@/hooks/AddSlugify";
 import { validationSchemaForPost } from "@/hooks/validationSchema";
 import DeleteBlogPost from "./DeleteBlogPost";
+import { mutate } from "swr";
 
 export default function AddSiglePost() {
   // Make this state sepate for cloudinary
@@ -17,30 +18,36 @@ export default function AddSiglePost() {
   // Handeler for form submit
   const handleSubmit = async (values: any, { resetForm }: any) => {
     // send post request to the server
-    await fetch("/api/posts", {
-      method: "POST",
-      body: JSON.stringify({
-        title: values.title,
-        slug: slugify(values.slug),
-        imgUrl: values.imgUrl,
-        desc: values.desc,
-      }),
-    });
+    try {
+      await fetch("/api/posts", {
+        method: "POST",
+        body: JSON.stringify({
+          title: values.title,
+          slug: slugify(values.slug),
+          imgUrl: values.imgUrl,
+          desc: values.desc,
+        }),
+      });
 
-    //clear form
-    resetForm();
+      //clear form
+      resetForm();
 
-    // Send Susscess alert
-    toast.success("Your Blog is posted Susscessfully", {
-      position: "bottom-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "dark",
-    });
+      // Send Susscess alert
+      toast.success("Your Blog is posted Susscessfully", {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+    } catch (error) {
+      console.error("Error Posting Blog", error);
+    } finally {
+      mutate("/api/posts");
+    }
   };
 
   // Handeler for next-cloudinary image upload, it will send back imgUrl

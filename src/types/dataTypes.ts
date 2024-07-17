@@ -32,3 +32,14 @@ export interface UploadResult {
     public_id: string;
   };
 }
+
+export interface ProjectProps {
+  title: string;
+  imgUrl: string;
+  description: string;
+  projectLink: string;
+  codeLink: string;
+  tags: string[];
+  slug: string;
+  id: string;
+}

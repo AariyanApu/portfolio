@@ -18,6 +18,7 @@ export default function TextEditor({
     }
   };
 
+  // Your tinymce api key goes here
   const apikey = process.env.NEXT_PUBLIC_EDITOR_API_KEY;
   return (
     <>
@@ -26,9 +27,9 @@ export default function TextEditor({
         onInit={(evt, editor) => (editorRef.current = editor as any)}
         initialValue={input.desc}
         init={{
-          height: 1000,
+          height: 600,
           width: "100%",
-          menubar: false,
+          menubar: true,
           plugins: [
             "advlist",
             "autolink",
@@ -45,7 +46,7 @@ export default function TextEditor({
             "insertdatetime",
             "media",
             "table",
-            "code",
+            "codesample",
             "help",
             "wordcount",
           ],
