@@ -6,6 +6,7 @@ import { useState } from "react";
 import useSWR, { SWRResponse } from "swr";
 import * as Yup from "yup";
 import Loading from "../utility/Loading";
+import { toast } from "react-toastify";
 
 export default function DashboardProjects() {
   const [loading, setLoading] = useState(false);
@@ -19,6 +20,8 @@ export default function DashboardProjects() {
     tags: [] as string[],
     slug: "",
   });
+
+  // ValidationSchema For Projects
   const validationSchema = Yup.object().shape({
     title: Yup.string().required("Title is required"),
     // imageUrl: Yup.string().required('Image is required'),
@@ -36,7 +39,6 @@ export default function DashboardProjects() {
   };
 
   const slugify = (str: string) => {
-    console.log(str); // Add this line to check the value of str
     return str
       .toLowerCase()
       .trim()
@@ -46,10 +48,8 @@ export default function DashboardProjects() {
   };
   const handleSubmit = async (e: React.ChangeEvent<HTMLFormElement>) => {
     setLoading(true);
-    console.log("handleSubmit called");
-    console.log(slugify(post.title)); // Add this line
-
     e.preventDefault();
+
     try {
       await validationSchema.validate(post);
       await fetch("/api/projects", {
@@ -82,8 +82,6 @@ export default function DashboardProjects() {
     }
   };
 
-  const tags: string[] = [];
-
   const { data, error, isLoading, mutate }: SWRResponse<fetchData, any> =
     useSWR("/api/projects", fetcher);
   if (isLoading) return <Loading />;
@@ -97,6 +95,17 @@ export default function DashboardProjects() {
 
       if (response.ok) {
         const result = await response.json();
+        // Send Success alert
+        toast.success("Your Project Deleted Susscessfully", {
+          position: "bottom-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        });
       } else {
         const errorResult = await response.json();
         console.error("Error deleting post:", errorResult);
@@ -157,8 +166,10 @@ export default function DashboardProjects() {
               }
               className="input_style"
             />
+
+            {/* You need to add your upload preset from Cloudinary */}
             <CldUploadButton
-              uploadPreset="projects"
+              uploadPreset="projects" // Add your upload preset from Cloudinary
               className="button_style mt-2"
               onUpload={handleUpload}
             />
