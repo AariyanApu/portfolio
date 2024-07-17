@@ -8,7 +8,7 @@ import * as Yup from "yup";
 import Loading from "../utility/Loading";
 import { toast } from "react-toastify";
 
-export default function DashboardProjects() {
+export default function AddArchiveProjects() {
   const [loading, setLoading] = useState(false);
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [post, setPost] = useState({
