@@ -11,6 +11,7 @@ import { fetcher } from "@/utils/getData";
 import { slugify } from "@/hooks/AddSlugify";
 import { UploadResult, fetchData } from "@/types/dataTypes";
 import { validationSchemaForProject } from "@/hooks/validationSchema";
+import { deletePost } from "@/hooks/deletePost";
 
 export default function DashboardProjects() {
   const [loading, setLoading] = useState(false);
@@ -54,33 +55,6 @@ export default function DashboardProjects() {
     } finally {
       mutate();
       setLoading(false);
-    }
-  };
-
-  const handleDelete = async (slug: string) => {
-    try {
-      const response = await fetch(`/api/projects/${slug}`, {
-        method: "DELETE",
-      });
-
-      if (response.ok) {
-        toast.success("Your Project was deleted Successfully", {
-          position: "bottom-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "dark",
-        });
-        mutate();
-      } else {
-        const errorResult = await response.json();
-        console.error("Error deleting project:", errorResult);
-      }
-    } catch (error) {
-      console.error("Error deleting project:", error);
     }
   };
 
@@ -222,12 +196,12 @@ export default function DashboardProjects() {
                   <div className="flex w-full gap-x-5">
                     <button
                       className="button_style mt-2"
-                      onClick={() => handleDelete(project.slug)}
+                      onClick={() =>
+                        deletePost(`projects/${project.slug}`, mutate)
+                      }
                     >
                       Delete
                     </button>
-
-                    <button className="button_style mt-2 px-5">Edit</button>
                   </div>
                 </div>
               ))}

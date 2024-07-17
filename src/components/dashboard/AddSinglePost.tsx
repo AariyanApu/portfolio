@@ -8,12 +8,11 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import { UploadResult } from "@/types/dataTypes";
 import { slugify } from "@/hooks/AddSlugify";
 import { validationSchemaForPost } from "@/hooks/validationSchema";
+import DeleteBlogPost from "./DeleteBlogPost";
 
 export default function AddSiglePost() {
   // Make this state sepate for cloudinary
   const [imgUrl, setImgUrl] = useState("");
-
-  // Form Validation with Yup
 
   // Handeler for form submit
   const handleSubmit = async (values: any, { resetForm }: any) => {
@@ -50,60 +49,75 @@ export default function AddSiglePost() {
   };
 
   return (
-    <Formik
-      initialValues={{
-        title: "",
-        slug: "",
-        imgUrl: "",
-        desc: "",
-      }}
-      validationSchema={validationSchemaForPost}
-      onSubmit={handleSubmit}
-    >
-      {({ setFieldValue }) => (
-        <Form className="mx-auto mb-20 flex w-[900px] flex-col items-start justify-start gap-4 rounded-md border border-sky-400 p-4">
-          <h1 className="text-3xl ">Add Blog</h1>
+    <div className="flex flex-row">
+      <Formik
+        initialValues={{
+          title: "",
+          slug: "",
+          imgUrl: "",
+          desc: "",
+        }}
+        validationSchema={validationSchemaForPost}
+        onSubmit={handleSubmit}
+      >
+        {({ setFieldValue }) => (
+          <Form className="mx-auto mb-20 flex w-[900px] flex-col items-start justify-start gap-4 rounded-md border border-sky-400 p-4">
+            <h1 className="text-3xl ">Add Blog</h1>
 
-          {/* You have to add your upload preset from Cloudinary */}
-          <CldUploadButton
-            uploadPreset="gbdc_blogs" // Add your upload preset here
-            className="rounded-md bg-sky-600 px-4 py-2"
-            onUpload={(result: any) => {
-              const uploadResult = result as UploadResult;
-              setFieldValue("imgUrl", uploadResult.info.public_id);
-              handleUpload(uploadResult);
-            }}
-          />
+            {/* You have to add your upload preset from Cloudinary */}
+            <CldUploadButton
+              uploadPreset="gbdc_blogs" // Add your upload preset here
+              className="rounded-md bg-sky-600 px-4 py-2"
+              onUpload={(result: any) => {
+                const uploadResult = result as UploadResult;
+                setFieldValue("imgUrl", uploadResult.info.public_id);
+                handleUpload(uploadResult);
+              }}
+            />
 
-          <Field type="hidden" name="imgUrl" value={imgUrl} />
-          <ErrorMessage
-            name="imgUrl"
-            component="div"
-            className="text-red-500"
-          />
+            <Field type="hidden" name="imgUrl" value={imgUrl} />
+            <ErrorMessage
+              name="imgUrl"
+              component="div"
+              className="text-red-500"
+            />
 
-          {/* Prebuilt Form Field from Cloudinary */}
-          <Field
-            name="title"
-            placeholder="Enter Blog Title...."
-            className="mt-4 w-full rounded-md border border-sky-400 bg-background-color px-4 py-2"
-          />
-          <ErrorMessage name="title" component="div" className="text-red-500" />
+            {/* Prebuilt Form Field from Cloudinary */}
+            <Field
+              name="title"
+              placeholder="Enter Blog Title...."
+              className="mt-4 w-full rounded-md border border-sky-400 bg-background-color px-4 py-2"
+            />
+            <ErrorMessage
+              name="title"
+              component="div"
+              className="text-red-500"
+            />
 
-          <Field
-            name="slug"
-            placeholder="Enter Blog Slug...."
-            className="mt-4 w-full rounded-md border border-sky-400 bg-background-color px-4 py-2"
-          />
-          <ErrorMessage name="slug" component="div" className="text-red-500" />
-          {/* render from another file */}
-          <TextEditor
-            input={{ desc: "" }}
-            setInput={(input: any) => setFieldValue("desc", input.desc)}
-          />
-          <ErrorMessage name="desc" component="div" className="text-red-500" />
-        </Form>
-      )}
-    </Formik>
+            <Field
+              name="slug"
+              placeholder="Enter Blog Slug...."
+              className="mt-4 w-full rounded-md border border-sky-400 bg-background-color px-4 py-2"
+            />
+            <ErrorMessage
+              name="slug"
+              component="div"
+              className="text-red-500"
+            />
+            {/* render from another file */}
+            <TextEditor
+              input={{ desc: "" }}
+              setInput={(input: any) => setFieldValue("desc", input.desc)}
+            />
+            <ErrorMessage
+              name="desc"
+              component="div"
+              className="text-red-500"
+            />
+          </Form>
+        )}
+      </Formik>
+      <DeleteBlogPost />
+    </div>
   );
 }

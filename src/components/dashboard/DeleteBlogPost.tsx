@@ -2,8 +2,9 @@
 
 import useSWR, { SWRResponse } from "swr";
 import Loading from "../utility/Loading";
+import { deletePost } from "@/hooks/deletePost";
 
-export default function DeletePost() {
+export default function DeleteBlogPost() {
   const fetcher = async (...args: Parameters<typeof fetch>) => {
     const res = await fetch(...args);
     return res.json();
@@ -15,26 +16,6 @@ export default function DeletePost() {
   if (error) return <div>failed to load</div>;
   if (!data) return <Loading />;
 
-  const deletePost = async (slug: string) => {
-    try {
-      const response = await fetch(`/api/posts/${slug}`, {
-        method: "DELETE",
-      });
-
-      if (response.ok) {
-        const result = await response.json();
-        // setDeleteMessage(result.message)
-      } else {
-        const errorResult = await response.json();
-        console.error("Error deleting post:", errorResult);
-        // setDeleteMessage('Error deleting post')
-      }
-      mutate();
-    } catch (error) {
-      console.error("Error deleting post:", error);
-    }
-  };
-
   return (
     <div>
       {Array.isArray(data) &&
@@ -45,7 +26,7 @@ export default function DeletePost() {
           >
             <p>{item.title.substring(0, 60)}</p>
             <button
-              onClick={() => deletePost(item.slug)}
+              onClick={() => deletePost(`posts/${item.slug}`, mutate)}
               className=" rounded-md bg-red-500 px-4 py-2 text-white"
             >
               Delete

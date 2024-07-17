@@ -24,14 +24,7 @@ export default function Dashboard() {
           >
             {isClicked ? "Add Post" : "Add Project"}
           </button>
-          {isClicked ? (
-            <AddArchiveProjects />
-          ) : (
-            <div className="flex flex-row">
-              <AddSiglePost />
-              <DeletePost />
-            </div>
-          )}
+          {isClicked ? <AddArchiveProjects /> : <AddSiglePost />}
         </div>
       ) : (
         <div className="flex flex-col items-center justify-center">
