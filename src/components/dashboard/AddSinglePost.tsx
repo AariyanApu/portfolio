@@ -6,8 +6,12 @@ import TextEditor from "./Editor";
 import { toast } from "react-toastify";
 import * as yup from "yup";
 import { Formik, Form, Field, ErrorMessage } from "formik";
+import { UploadResult } from "@/types/dataTypes";
 
 export default function AddSiglePost() {
+  // Make this state sepate for cloudinary
+  const [imgUrl, setImgUrl] = useState("");
+
   // Form Validation with Yup
   const validationSchema = yup.object().shape({
     title: yup.string().required("Title is required"),
@@ -16,6 +20,7 @@ export default function AddSiglePost() {
     imgUrl: yup.string().required("Image URL is required"),
   });
 
+  // refine slug
   const slugify = (str: string) =>
     str
       .toLowerCase()
@@ -24,8 +29,7 @@ export default function AddSiglePost() {
       .replace(/[\s_-]+/g, "-")
       .replace(/^-+|-+$/g, "");
 
-  const [imgUrl, setImgUrl] = useState("");
-
+  // Handeler for form submit
   const handleSubmit = async (values: any, { resetForm }: any) => {
     // send post request to the server
     await fetch("/api/posts", {
@@ -54,15 +58,8 @@ export default function AddSiglePost() {
     });
   };
 
-  interface UploadResult {
-    info: {
-      public_id: string;
-    };
-  }
-
-  // Handeler for next-cloudinary image upload, it will send back image url
+  // Handeler for next-cloudinary image upload, it will send back imgUrl
   const handleUpload = (result: UploadResult) => {
-    // setImgUrl(result.info.public_id);
     setImgUrl(result.info.public_id);
   };
 
@@ -81,8 +78,9 @@ export default function AddSiglePost() {
         <Form className="mx-auto mb-20 flex w-[900px] flex-col items-start justify-start gap-4 rounded-md border border-sky-400 p-4">
           <h1 className="text-3xl ">Add Blog</h1>
 
+          {/* You have to add your upload preset from Cloudinary */}
           <CldUploadButton
-            uploadPreset="gbdc_blogs"
+            uploadPreset="gbdc_blogs" // Add your upload preset here
             className="rounded-md bg-sky-600 px-4 py-2"
             onUpload={(result: any) => {
               const uploadResult = result as UploadResult;
@@ -90,6 +88,15 @@ export default function AddSiglePost() {
               handleUpload(uploadResult);
             }}
           />
+
+          <Field type="hidden" name="imgUrl" value={imgUrl} />
+          <ErrorMessage
+            name="imgUrl"
+            component="div"
+            className="text-red-500"
+          />
+
+          {/* Prebuilt Form Field from Cloudinary */}
           <Field
             name="title"
             placeholder="Enter Blog Title...."
@@ -109,13 +116,6 @@ export default function AddSiglePost() {
             setInput={(input: any) => setFieldValue("desc", input.desc)}
           />
           <ErrorMessage name="desc" component="div" className="text-red-500" />
-
-          <Field type="hidden" name="imgUrl" value={imgUrl} />
-          <ErrorMessage
-            name="imgUrl"
-            component="div"
-            className="text-red-500"
-          />
         </Form>
       )}
     </Formik>
