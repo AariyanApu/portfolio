@@ -4,30 +4,16 @@ import { CldUploadButton } from "next-cloudinary";
 import { useState } from "react";
 import TextEditor from "./Editor";
 import { toast } from "react-toastify";
-import * as yup from "yup";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { UploadResult } from "@/types/dataTypes";
+import { slugify } from "@/hooks/AddSlugify";
+import { validationSchemaForPost } from "@/hooks/validationSchema";
 
 export default function AddSiglePost() {
   // Make this state sepate for cloudinary
   const [imgUrl, setImgUrl] = useState("");
 
   // Form Validation with Yup
-  const validationSchema = yup.object().shape({
-    title: yup.string().required("Title is required"),
-    slug: yup.string().required("Slug is required"),
-    desc: yup.string().required("Description is required"),
-    imgUrl: yup.string().required("Image URL is required"),
-  });
-
-  // refine slug
-  const slugify = (str: string) =>
-    str
-      .toLowerCase()
-      .trim()
-      .replace(/[^\w\s-]/g, "")
-      .replace(/[\s_-]+/g, "-")
-      .replace(/^-+|-+$/g, "");
 
   // Handeler for form submit
   const handleSubmit = async (values: any, { resetForm }: any) => {
@@ -71,7 +57,7 @@ export default function AddSiglePost() {
         imgUrl: "",
         desc: "",
       }}
-      validationSchema={validationSchema}
+      validationSchema={validationSchemaForPost}
       onSubmit={handleSubmit}
     >
       {({ setFieldValue }) => (
