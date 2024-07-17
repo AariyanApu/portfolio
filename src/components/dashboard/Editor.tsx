@@ -1,6 +1,6 @@
 "use client";
 import { Editor } from "@tinymce/tinymce-react";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 export default function TextEditor({
   input,
@@ -10,11 +10,14 @@ export default function TextEditor({
   setInput: any;
 }) {
   const editorRef = useRef(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const log = () => {
     if (editorRef.current) {
-      //   console.log((editorRef.current as any).getContent());
-      // setInput((editorRef.current as any).getContent());
+      setIsSubmitting(true);
       setInput({ ...input, desc: (editorRef.current as any).getContent() });
+      (editorRef.current as any).setContent(""); // Clear the editor content
+      setIsSubmitting(false);
     }
   };
 
@@ -59,7 +62,11 @@ export default function TextEditor({
             "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
         }}
       />
-      <button onClick={log} className="rounded-md bg-sky-400 px-4 py-2">
+      <button
+        onClick={log}
+        className="rounded-md bg-sky-400 px-4 py-2"
+        disabled={isSubmitting}
+      >
         Submit Blog
       </button>
     </>
