@@ -6,7 +6,6 @@ import "react-toastify/dist/ReactToastify.css";
 
 import AddArchiveProjects from "@/components/dashboard/AddArchiveProjects";
 import AddSiglePost from "@/components/dashboard/AddSinglePost";
-import DeletePost from "@/components/dashboard/DeletePost";
 
 export default function Dashboard() {
   const session = useSession();
