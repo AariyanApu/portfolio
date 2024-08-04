@@ -104,7 +104,3 @@ export default async function SingleBlog({ params }: any) {
     </div>
   );
 }
-
-//TODO: Add separete slug for each blog post
-//TODO: Add SEO friendly meta tags and dynamic image  for each blog post
-//

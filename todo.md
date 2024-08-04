@@ -5,3 +5,4 @@
 - [ ] Add animation to mobile menu
 - [x] Add navigation to the blog
 - [x] Redesign Blog Card component
+- [x] Redesign Database

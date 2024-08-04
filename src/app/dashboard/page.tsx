@@ -15,7 +15,7 @@ export default function Dashboard() {
       <div className=" my-8 mt-5 text-center text-3xl font-semibold text-primary-color">
         Dashboard
       </div>
-      {session?.data?.user?.email === "aariyanapu1@gmail.com" ? (
+      {session?.data?.user.isAdmin ? (
         <div>
           <button
             onClick={() => setIsClicked(!isClicked)}
