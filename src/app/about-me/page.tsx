@@ -15,6 +15,7 @@ export default function AboutMe() {
           {/* My Skills */}
           <TypingTitle title="My Skills" />
           <p className="my-8 flex w-full flex-wrap items-center justify-between sm:my-14 sm:px-36">
+            {/* Just Add skill name, Icon Will be automatically added  */}
             <img
               src="https://skillicons.dev/icons?i=nextjs,vite,react,redux,tailwind,materialui,sass,bootstrap,ts,js,express,nodejs,mongodb,postgres,prisma,redis,html,css,jquery,md,linux,git,docker,github,babel,bash,neovim,vim,ps,postman"
               alt="My skills"
@@ -24,18 +25,22 @@ export default function AboutMe() {
         <div>
           {/* Coding Time and Lines */}
           <TypingTitle title="How Active I am!" />
+          {/* Add your Github Username after = , and remove aariyanapu */}
           <img
             src="https://github-widgetbox.vercel.app/api/profile?username=aariyanapu&data=followers,repositories,stars,commits&theme=nautilus"
             alt="github stats"
             className="mx-0 sm:mx-auto"
           />
           <div className="my-5 flex flex-col items-center justify-between gap-5 sm:mx-36 sm:gap-0 lg:flex-row  ">
+            {/* Add your Github Username after = , and remove aariyanapu */}
             <img
               src="https://github-readme-stats.vercel.app/api?username=aariyanapu&show_icons=true&theme=transparent"
               alt="github stats"
               className="mb-5 sm:mb-0"
             />
             {/* Top Language */}
+
+            {/* Add your Github Username after = , and remove aariyanapu */}
             <img
               src="https://github-readme-stats.vercel.app/api/top-langs/?username=aariyanapu&theme=transparent&layout=compact"
               alt="github stats"
@@ -61,6 +66,8 @@ export default function AboutMe() {
             </div>
 
             {/* WakaTime */}
+
+            {/* Add your Github Username after = , and remove aariyanapu */}
             <img
               className="w-full sm:w-[500px]"
               src="https://github-readme-stats.vercel.app/api/wakatime?username=aariyanapu&show_icons=true&theme=material-palenight&hide_border=false"
@@ -71,7 +78,9 @@ export default function AboutMe() {
           <GithubCalendarComponent />
         </div>
 
+        {/* Testimonial components */}
         <Testimonial />
+
         {/* Spotify Data */}
 
         <div className="mx-auto my-10 w-full items-center justify-center">
