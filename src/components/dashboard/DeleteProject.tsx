@@ -1,10 +1,10 @@
 import { deletePost } from "@/hooks/deletePost";
 import { ProjectProps } from "@/types/dataTypes";
-import { fetcher } from "@/utils/getData";
 import { CldImage } from "next-cloudinary";
 import React from "react";
 import useSWR, { SWRResponse } from "swr";
 import Loading from "../utility/Loading";
+import { fetcher } from "@/hooks/fetchData";
 
 export default function DeleteProject() {
   const { data, error, isLoading, mutate }: SWRResponse<ProjectProps, any> =

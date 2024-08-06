@@ -1,11 +1,11 @@
 import BlogCard from "@/components/BlogCard";
 import PaginationControls from "@/components/PaginationControl";
+import { getData } from "@/hooks/fetchData";
 import { SearchParamsProps, blogPostType } from "@/types/dataTypes";
-import { getDataNoStore } from "@/utils/getData";
 
 export default async function Blog({ searchParams }: SearchParamsProps) {
   // Fetch data from the server
-  const data: blogPostType[] = await getDataNoStore("posts");
+  const data: blogPostType[] = await getData("posts");
 
   // Pagination logic
   const page = searchParams["page"] ?? "1";

@@ -1,5 +1,5 @@
 import CloudImage from "@/components/utility/CloudImage";
-import { getDataNoStore } from "@/utils/getData";
+import { getData } from "@/hooks/fetchData";
 import DOMPurify from "isomorphic-dompurify";
 import { Metadata } from "next";
 import { getCldOgImageUrl } from "next-cloudinary";
@@ -7,7 +7,7 @@ import { getCldOgImageUrl } from "next-cloudinary";
 export async function generateMetadata({ params }: any): Promise<Metadata> {
   // @ts-ignore
   const { slug } = params;
-  const data = await getDataNoStore(`posts/${slug}`);
+  const data = await getData(`posts/${slug}`);
 
   const publicId = data.imgUrl;
   const headline = data.title;
@@ -75,7 +75,7 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
 
 export default async function SingleBlog({ params }: any) {
   const { slug } = params;
-  const data = await getDataNoStore(`posts/${slug}`);
+  const data = await getData(`posts/${slug}`);
   const htmlContent = data.desc;
   const sanitizedHtml = DOMPurify.sanitize(htmlContent);
   return (

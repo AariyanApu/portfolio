@@ -1,20 +1,20 @@
-import { getAuthSession } from '@/utils/auth';
-import prisma from '@/utils/connect';
-import { NextResponse } from 'next/server';
+import { getAuthSession } from "@/auth/auth";
+import prisma from "@/db/connect";
+import { NextResponse } from "next/server";
 
 export const GET = async () => {
   try {
     const project = await prisma.projects.findMany();
     return new NextResponse(JSON.stringify(project), { status: 200 });
   } catch (error) {
-    return new NextResponse('Database Error', { status: 500 });
+    return new NextResponse("Database Error", { status: 500 });
   }
 };
 export const POST = async (req: Request) => {
   const session = await getAuthSession();
 
   if (!session) {
-    return new NextResponse(JSON.stringify({ message: 'Not Authenticated!' }));
+    return new NextResponse(JSON.stringify({ message: "Not Authenticated!" }));
   }
 
   try {
@@ -29,8 +29,8 @@ export const POST = async (req: Request) => {
     console.log(err);
     return new NextResponse(
       JSON.stringify({
-        message: 'Something went wrong with fucking database!',
-      })
+        message: "Something went wrong with fucking database!",
+      }),
     );
   }
 };

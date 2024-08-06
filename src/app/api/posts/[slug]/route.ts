@@ -1,6 +1,6 @@
-import { getAuthSession } from '@/utils/auth';
-import prisma from '@/utils/connect';
-import { NextResponse } from 'next/server';
+import { getAuthSession } from "@/auth/auth";
+import prisma from "@/db/connect";
+import { NextResponse } from "next/server";
 
 interface ExtendedPostUpdateInput {
   views: {
@@ -11,7 +11,7 @@ interface ExtendedPostUpdateInput {
 // Fetch single post
 export const GET = async (
   req: Request,
-  { params }: { params: { slug: string } }
+  { params }: { params: { slug: string } },
 ) => {
   const { slug } = params;
   try {
@@ -26,20 +26,20 @@ export const GET = async (
 
     return new NextResponse(JSON.stringify(post));
   } catch (error) {
-    return new NextResponse('Database Error', { status: 500 });
+    return new NextResponse("Database Error", { status: 500 });
   }
 };
 
 // Delete a post by slug
 export const DELETE = async (
   req: Request,
-  { params }: { params: { slug: string } }
+  { params }: { params: { slug: string } },
 ) => {
   const { slug } = params;
   const session = await getAuthSession();
 
   if (!session) {
-    return new NextResponse(JSON.stringify({ message: 'Not Authenticated!' }));
+    return new NextResponse(JSON.stringify({ message: "Not Authenticated!" }));
   }
 
   try {
@@ -52,22 +52,22 @@ export const DELETE = async (
 
     // Check if the post was successfully deleted
     if (!deleteResult) {
-      return new NextResponse('Post not found', { status: 404 });
+      return new NextResponse("Post not found", { status: 404 });
     }
 
     return new NextResponse(
-      JSON.stringify({ message: 'Post deleted successfully' })
+      JSON.stringify({ message: "Post deleted successfully" }),
     );
   } catch (error) {
-    console.error('Error deleting post:', error);
+    console.error("Error deleting post:", error);
 
     // Log the complete error object
-    console.error('Complete error object:', error);
+    console.error("Complete error object:", error);
 
     // Return a more detailed error response
     return new NextResponse(
-      JSON.stringify({ error: 'Database Error', details: error }),
-      { status: 500 }
+      JSON.stringify({ error: "Database Error", details: error }),
+      { status: 500 },
     );
   }
 };

@@ -3,7 +3,7 @@
 // Add your own api url here to fetch data from your own api
 
 export const getData = async (id: string) => {
-  const res = await fetch(`https://aaru.vercel.app/api/${id}`);
+  const res = await fetch(`https://aariyan.info/api/${id}`);
   if (!res.ok) {
     throw new Error("Failed to fetch data");
   }
@@ -15,7 +15,7 @@ export const getData = async (id: string) => {
 // This method is slower
 
 export const getDataNoStore = async (id: string) => {
-  const res = await fetch(`https://aaru.vercel.app/api/${id}`, {
+  const res = await fetch(`https://aariyan.info/api/${id}`, {
     cache: "no-store",
   });
   if (!res.ok) {
