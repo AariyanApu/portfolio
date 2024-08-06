@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     },
     description: APP_DESCRIPTION,
   },
-  metadataBase: new URL("https://aariyanapu.com"),
+  metadataBase: new URL("https://aariyan.info"),
   keywords: [
     "aariyan",
     "aaru",
