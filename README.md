@@ -23,20 +23,25 @@ This is a portfolio website that showcases my projects, skills, and experiences.
 To get started with the project, follow these steps:
 
 1. **Clone the repository**:
+
    ```bash
    git clone https://github.com/AariyanApu/portfolio.git
    ```
+
 2. **Install dependencies**:
+
    ```bash
    cd portfolio
    npm install
    ```
-3. **Set up the environment variables**:
-   Create a `.env` file in the root directory and add your MongoDB connection string and other necessary variables. I have given an example in the `.env.example` file.
-4. **Run the development server**:
+
+3. **Run the development server**:
+
    ```bash
    npm run dev
    ```
+
+4. For Customization step by step guide click [here](Customize.md)
 
 ## 🤝 Contributing
 
@@ -50,7 +55,7 @@ If you find this project useful, please give it a star on GitHub. It will help m
 
 I would be happy to know if you use this code in your project. If you face any difficulties or have any questions, don't hesitate to contact me. You can reach me at:
 
-- **Email**: aariyan.apu@gmail.com
+- **Email**: <aariyan.apu@gmail.com>
 - **LinkedIn**: [Aariyan Apu](https://www.linkedin.com/in/aariyanapu/)
 - **Facebook**: [Aariyan Apu](https://web.facebook.com/aariyanapu)
 
