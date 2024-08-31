@@ -18,6 +18,8 @@ This is a portfolio website that showcases my projects, skills, and experiences.
 - **Responsive Design**: Optimized for all devices.
 - **Open Source**: Free to use, modify, and distribute.
 
+![Page Speed Test Result](/public/asset/pageSpeedTest.png)
+
 ## 📂 Installation
 
 To get started with the project, follow these steps:
