@@ -60,14 +60,12 @@ export default function Skills() {
         >
           {myExperiences.map((experience) => (
             <TextContainer
-              customStyles=" mx-3 my-4 flex w-full flex-row items-start justify-start sm:mx-0"
+              customStyles=" mx-3  my-4 flex w-full flex-row items-start justify-start sm:mx-0"
               key={experience.year}
             >
-              <div className=" mr-12 ">
-                <p className=" text-left text-base font-extrabold text-primary-color ">
-                  {experience.year}
-                </p>
-              </div>
+              <p className="mr-4 text-left text-base  font-extrabold text-primary-color lg:mr-8 ">
+                {experience.year}
+              </p>
               <TextContainer customStyles="flex-1">
                 {experience.work.map((work) => (
                   <TextContainer

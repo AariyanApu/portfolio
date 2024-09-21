@@ -82,6 +82,16 @@ export const mySkills = [
 // Add your skills here
 export const myExperiences = [
   {
+    year: "2024 - Present",
+    work: [
+      {
+        name: "Senior Front-End Software Engineer",
+        company: "Aahar Tech (Parent Company of Kitch Now)",
+        desc: "I work as a Senior Front-End Software Engineer,Developed and maintained frontend of all web applications using Next.js,MERN and fixing bugs.",
+      },
+    ],
+  },
+  {
     year: "2019 - 2023",
     work: [
       {
