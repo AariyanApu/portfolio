@@ -23,11 +23,11 @@ export default function AboutMe() {
       <div className="flex   flex-row justify-evenly p-5 ">
         <TextContainer variants={fadeIn("up", "tween", 0.4, 0.7)}>
           <div className="mb-10  mt-2 w-full text-left text-base text-slate-color sm:w-[380px] sm:text-justify lg:mt-5  lg:w-[580px]  lg:text-lg">
-            Experienced in Next.js and the MERN Stack, I specialize in crafting
-            exceptional user experiences. With years of dedicated practice,
-            I&apos;m a results-driven problem solver committed to continuous
-            learning. Strong communication skills ensure seamless collaboration
-            for top-notch projects.
+            Experienced Senior Front-End Software Engineer with expertise in
+            crafting scalable and user-friendly web applications using Next.js
+            and the MERN stack. Demonstrates a strong ability to debug and
+            optimize software, delivering seamless digital experiences. Proven
+            leadership in improving system functionality and user engagement.
           </div>
           <div className="sm: flex flex-row gap-16">
             <div>

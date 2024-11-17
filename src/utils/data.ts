@@ -86,8 +86,8 @@ export const myExperiences = [
     work: [
       {
         name: "Senior Front-End Software Engineer",
-        company: "Aahar Tech (Parent Company of Kitch Now)",
-        desc: "I work as a Senior Front-End Software Engineer,Developed and maintained frontend of all web applications using Next.js,MERN and fixing bugs.",
+        company: "Aahar Tech (Parent Company of Kitchen Now)",
+        desc: "I work as a Senior Front-End Software Engineer,Developed and maintained frontend of all web applications using Next.js and fixing bugs.",
       },
     ],
   },

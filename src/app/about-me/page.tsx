@@ -83,16 +83,16 @@ export default function AboutMe() {
 
         {/* Spotify Data */}
 
-        <div className="mx-auto my-10 w-full items-center justify-center">
-          <TypingTitle title="What I'm Listening to" />
-          <a href="https://data-card-for-spotify.herokuapp.com/card?user_id=31tn6riohy27abhahkklkxmaigbu">
-            <img
-              src="https://data-card-for-spotify.herokuapp.com/api/card?user_id=31tn6riohy27abhahkklkxmaigbu"
-              alt="Data Card for Spotify"
-              className="mx-auto mt-10"
-            />
-          </a>
-        </div>
+        {/* <div className="mx-auto my-10 w-full items-center justify-center"> */}
+        {/*   <TypingTitle title="What I'm Listening to" /> */}
+        {/*   <a href="https://data-card-for-spotify.herokuapp.com/card?user_id=31tn6riohy27abhahkklkxmaigbu"> */}
+        {/*     <img */}
+        {/*       src="https://data-card-for-spotify.herokuapp.com/api/card?user_id=31tn6riohy27abhahkklkxmaigbu" */}
+        {/*       alt="Data Card for Spotify" */}
+        {/*       className="mx-auto mt-10" */}
+        {/*     /> */}
+        {/*   </a> */}
+        {/* </div> */}
       </Container>
     </>
   );
