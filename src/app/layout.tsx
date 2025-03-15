@@ -1,16 +1,6 @@
 import type { Metadata } from "next";
-import { Quicksand, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
-const quickSand = Quicksand({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { quickSand, title } from "@/fonts/fonts";
 
 export const metadata: Metadata = {
   title: "Aaru's World!",
@@ -24,9 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${quickSand.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${quickSand.variable} ${title.variable}  antialiased`}>
         {children}
       </body>
     </html>
