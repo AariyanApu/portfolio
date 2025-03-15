@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { quickSand, title } from "@/fonts/fonts";
+import NavBar from "@/components/navbar/NavBar";
 
 export const metadata: Metadata = {
   title: "Aaru's World!",
@@ -15,6 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${quickSand.variable} ${title.variable}  antialiased`}>
+        <NavBar />
         {children}
       </body>
     </html>

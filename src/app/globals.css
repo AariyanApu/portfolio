@@ -35,26 +35,25 @@ body {
 /* Custom Tailwind CSS Classes */
 /********************************/
 
-/* Base  */
-
+/* Base */
 @layer base {
   h1 {
-    font-size: var(--text-2xl);
   }
-  h2 {
-    font-size: var(--text-xl);
+  p {
+  }
+  button {
   }
 }
 
 /* Components */
-
 @layer components {
   .card {
   }
 }
 
 /* Utilities */
+/* you have to repeat the utilities here */
 
-@utility content-auto {
-  content-visibility: auto;
+@utility flex-center {
+  @apply flex justify-center items-center;
 }
