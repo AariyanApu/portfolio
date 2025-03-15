@@ -15,7 +15,7 @@ export default function NavTextContainer() {
             variants={textVariant2}
             key={item.name}
             href={item.href}
-            className="color_animation rounded-md px-3 py-2 text-sm font-semibold text-slate-color-light hover:bg-secondary-color hover:text-primary-color"
+            className="animate_color rounded-md px-3 py-2 text-sm font-semibold  hover:bg-secondary hover:text-primary"
           >
             {item.name}
           </motion.a>

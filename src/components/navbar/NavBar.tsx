@@ -7,10 +7,8 @@ import NavTextContainer from "./NavTextContainer";
 
 const NavBar = () => (
   <Container customStyles="mx-auto mt-3 max-w-7xl px-2  sm:px-6 lg:px-8 ">
-    <div className="relative flex h-16 items-center justify-between">
-      {/* Laptop Navbar Start Here  */}
-
-      <div className="relative flex w-full items-center justify-center sm:flex-1 sm:items-stretch sm:justify-between">
+    <div className="relative flex_between h-16">
+      <div className="relative flex_center w-full  sm:flex-1 sm:items-stretch sm:justify-between">
         {/* Mobile Navbar Start Here  */}
         <MobileNavbar />
         {/* Logo is here  */}
@@ -24,7 +22,7 @@ const NavBar = () => (
           />
         </Link>
 
-        {/* Nav link for all  */}
+        {/* Nav link for Desktop */}
         <NavTextContainer />
       </div>
     </div>

@@ -54,6 +54,12 @@ body {
 /* Utilities */
 /* you have to repeat the utilities here */
 
-@utility flex-center {
+@utility flex_center {
   @apply flex justify-center items-center;
+}
+@utility flex_between {
+  @apply flex justify-center items-center;
+}
+@utility animate_color {
+  @apply transition-colors duration-300 ease-in;
 }
