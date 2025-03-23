@@ -1,3 +1,3 @@
 <!-- TODO:  -->
 
-- [ ]
+- [ ] Add hero section
