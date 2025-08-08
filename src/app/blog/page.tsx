@@ -4,12 +4,15 @@ import { getData } from "@/hooks/fetchData";
 import { SearchParamsProps, blogPostType } from "@/types/dataTypes";
 
 export default async function Blog({ searchParams }: SearchParamsProps) {
+  // Await searchParams in Next.js 15
+  const resolvedSearchParams = await searchParams;
+  
   // Fetch data from the server
   const data: blogPostType[] = await getData("posts");
 
   // Pagination logic
-  const page = searchParams["page"] ?? "1";
-  const per_page = searchParams["per_page"] ?? "8";
+  const page = resolvedSearchParams["page"] ?? "1";
+  const per_page = resolvedSearchParams["per_page"] ?? "8";
   const start = (Number(page) - 1) * Number(per_page);
   const end = start + Number(per_page);
 

@@ -4,9 +4,8 @@ import DOMPurify from "isomorphic-dompurify";
 import { Metadata } from "next";
 import { getCldOgImageUrl } from "next-cloudinary";
 
-export async function generateMetadata({ params }: any): Promise<Metadata> {
-  // @ts-ignore
-  const { slug } = params;
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
   const data = await getData(`posts/${slug}`);
 
   const publicId = data.imgUrl;
@@ -73,8 +72,8 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
   };
 }
 
-export default async function SingleBlog({ params }: any) {
-  const { slug } = params;
+export default async function SingleBlog({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   const data = await getData(`posts/${slug}`);
   const htmlContent = data.desc;
   const sanitizedHtml = DOMPurify.sanitize(htmlContent);

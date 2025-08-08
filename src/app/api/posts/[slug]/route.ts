@@ -11,9 +11,9 @@ interface ExtendedPostUpdateInput {
 // Fetch single post
 export const GET = async (
   req: Request,
-  { params }: { params: { slug: string } },
+  { params }: { params: Promise<{ slug: string }> },
 ) => {
-  const { slug } = params;
+  const { slug } = await params;
   try {
     const post = await prisma.post.update({
       where: { slug },
@@ -33,9 +33,9 @@ export const GET = async (
 // Delete a post by slug
 export const DELETE = async (
   req: Request,
-  { params }: { params: { slug: string } },
+  { params }: { params: Promise<{ slug: string }> },
 ) => {
-  const { slug } = params;
+  const { slug } = await params;
   const session = await getAuthSession();
 
   if (!session) {

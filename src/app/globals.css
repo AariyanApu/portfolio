@@ -1,6 +1,40 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-background-color: #0c182e;
+  --color-primary-color: #64ffda;
+  --color-secondary-color: #101f3b;
+  --color-navy-color: #233554;
+  --color-slate-color: #8892b0;
+  --color-slate-color-light: #a8b2d1;
+  --color-slate-color-lighter: #ccd6f6;
+  --color-slate-color-lightest: #e6ebff;
+  
+  --radius-4xl: 2rem;
+  --radius-5xl: 2.5rem;
+  
+  --animate-fade-in: fade-in 0.5s linear forwards;
+  --animate-marquee: marquee var(--marquee-duration) linear infinite;
+  --animate-spin-slow: spin 4s linear infinite;
+  --animate-spin-slower: spin 6s linear infinite;
+  --animate-spin-reverse: spin-reverse 1s linear infinite;
+  --animate-spin-reverse-slow: spin-reverse 4s linear infinite;
+  --animate-spin-reverse-slower: spin-reverse 6s linear infinite;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes marquee {
+  100% { transform: translateY(-50%); }
+}
+
+@keyframes spin-reverse {
+  to { transform: rotate(-360deg); }
+}
 
 :root {
   --background-color: #0c182e;
@@ -16,13 +50,13 @@
 @layer components {
   /* put all custom group utilities here.*/
   .button_style {
-    @apply items-center justify-center rounded-lg border  border-primary-color  bg-background-color px-4 py-2  text-sm  font-extrabold text-primary-color transition-all duration-300 ease-in hover:bg-secondary-color focus:outline-none focus:ring-2 focus:ring-primary-color focus:ring-offset-2;
+    @apply border-primary-color bg-background-color text-primary-color hover:bg-secondary-color focus:ring-primary-color items-center justify-center rounded-lg border px-4 py-2 text-sm font-extrabold transition-all duration-300 ease-in focus:ring-2 focus:ring-offset-2 focus:outline-none;
   }
   .input_style {
-    @apply my-1.5 w-full rounded-lg bg-secondary-color   p-4 text-left text-sm leading-normal text-slate-color-lighter placeholder-slate-color focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-color;
+    @apply bg-secondary-color text-slate-color-lighter placeholder-slate-color focus:ring-primary-color my-1.5 w-full rounded-lg p-4 text-left text-sm leading-normal focus:border-transparent focus:ring-2 focus:outline-none;
   }
   .dashboard_button {
-    @apply mb-5 ml-8 rounded-md border border-primary-color px-4 py-2 text-primary-color  transition-colors duration-300 ease-in-out hover:text-white;
+    @apply border-primary-color text-primary-color mb-5 ml-8 rounded-md border px-4 py-2 transition-colors duration-300 ease-in-out hover:text-white;
   }
 }
 
