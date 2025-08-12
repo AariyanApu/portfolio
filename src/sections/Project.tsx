@@ -23,8 +23,6 @@ export default function Project() {
   const [activeFilter, setActiveFilter] = useState("All");
   const [animateCard, setAnimateCard] = useState([{ y: 0, opacity: 1 }]);
 
-  console.log(filterWork);
-
   const handleWorkFilter = (item: string) => {
     setActiveFilter(item);
     setAnimateCard([{ y: 100, opacity: 0 }]);
