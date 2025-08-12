@@ -129,7 +129,7 @@ export const projects = [
   {
     title: "GBDC",
     imgUrl: gbdc,
-    projectLink: "https://gbdcbangladesh.com",
+    projectLink: "https://gbdc.vercel.app",
     codeLink: "https://github.com/AariyanApu/gbdc",
     description: "GBDC is a blood donation web App with admin panel.",
     tags: ["Next.js", "Node JS", "React.js", "Tailwind CSS", "Landing Page"],
@@ -137,7 +137,7 @@ export const projects = [
   {
     title: "Bangladesh Time",
     imgUrl: bangladeshtime,
-    projectLink: "http://dailybangladeshtime.com",
+    projectLink: "http://en.dailybangladeshtime.com",
     codeLink: "http://dailybangladeshtime.com",
     description: "Daily Bangladesh time is a Online news portal",
     tags: ["React.js", "Tailwind CSS"],
