@@ -1,9 +1,9 @@
 "use client";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { projects } from "@/utils/data";
 import { EyeIcon, GithubIconRounded } from "@/utils/icons";
 import { fadeIn } from "@/utils/motion";
-import Image from "next/image";
 import Container from "@/components/utility/Container";
 import TextContainer from "@/components/utility/TextContainer";
 import { TypingTitle } from "@/components/utility/CustomTexts";
@@ -50,7 +50,7 @@ export default function Project() {
                 <div
                   key={index}
                   onClick={() => handleWorkFilter(item)}
-                  className={` m-1 flex cursor-pointer  items-center justify-center rounded-lg  bg-background-color p-2 text-left text-sm font-extrabold text-slate-color-lighter transition-all duration-300 ease-in hover:bg-secondary-color hover:text-primary-color sm:m-2  ${
+                  className={`bg-background-color text-slate-color-lighter hover:bg-secondary-color hover:text-primary-color m-1 flex cursor-pointer items-center justify-center rounded-lg p-2 text-left text-sm font-extrabold transition-all duration-300 ease-in sm:m-2 ${
                     activeFilter === item
                       ? "bg-secondary-color text-emerald-300"
                       : ""
@@ -72,19 +72,19 @@ export default function Project() {
         >
           {filterWork?.map((work, index) => (
             <div
-              className=" m-4 flex  w-full cursor-pointer flex-col items-center justify-center rounded-lg bg-secondary-color p-4 text-slate-color-lighter shadow-xl transition-all duration-300 ease-in sm:m-8 sm:w-[270px]  "
+              className="bg-secondary-color text-slate-color-lighter m-4 flex w-full cursor-pointer flex-col items-center justify-center rounded-lg p-4 shadow-xl transition-all duration-300 ease-in sm:m-8 sm:w-[270px]"
               key={index}
             >
-              <div className=" group relative flex h-[230px] w-full items-center  justify-center brightness-75 ">
+              <div className="group relative flex h-[230px] w-full items-center justify-center brightness-75">
                 <Image
                   height={400}
                   width={400}
                   src={work.imgUrl}
                   alt={work.title}
-                  className="all_animation h-[230px] w-full rounded-lg object-cover opacity-80 grayscale filter group-hover:opacity-100 group-hover:grayscale-0 "
+                  className="all_animation h-[230px] w-full rounded-lg object-cover opacity-80 grayscale filter group-hover:opacity-100 group-hover:grayscale-0"
                 />
 
-                <div className=" all_animation absolute inset-0 flex h-[230px] w-full items-center justify-center gap-x-3 rounded-lg bg-black  bg-opacity-50 opacity-0 group-hover:opacity-100">
+                <div className="all_animation bg-opacity-50 absolute inset-0 flex h-[230px] w-full items-center justify-center gap-x-3 rounded-lg bg-black opacity-0 group-hover:opacity-100">
                   <ProjectIconCard link={work.projectLink} Icon={EyeIcon} />
                   <ProjectIconCard
                     link={work.codeLink}
@@ -93,16 +93,16 @@ export default function Project() {
                 </div>
               </div>
 
-              <div className=" relative flex w-full flex-col items-center justify-center p-2  ">
-                <h4 className="bold-text mt-4 text-left text-base font-extrabold leading-normal text-primary-color ">
+              <div className="relative flex w-full flex-col items-center justify-center p-2">
+                <h4 className="bold-text text-primary-color mt-4 text-left text-base leading-normal font-extrabold">
                   {work.title}
                 </h4>
-                <p className="p-text mt-2 text-left text-sm text-slate-color">
+                <p className="p-text text-slate-color mt-2 text-left text-sm">
                   {work.description}
                 </p>
 
-                <div className=" absolute top-[-20px] flex items-center justify-center rounded-lg bg-secondary-color  px-2 py-1 ">
-                  <p className="p-text  text-left text-sm text-slate-color">
+                <div className="bg-secondary-color absolute top-[-20px] flex items-center justify-center rounded-lg px-2 py-1">
+                  <p className="p-text text-slate-color text-left text-sm">
                     {work.tags[0]}
                   </p>
                 </div>

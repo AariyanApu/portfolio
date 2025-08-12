@@ -1,31 +1,29 @@
-// import images to use multiple times
-
 //icons for skills
-import postgreSql from "/public/asset/icons/postgreSql.png";
-import docker from "/public/asset/icons/docker.png";
-import express from "/public/asset/icons/express.png";
-import mongoDB from "/public/asset/icons/mongoDB.png";
-import neoVim from "/public/asset/icons/neoVim.png";
-import next from "/public/asset/icons/next.png";
-import node from "/public/asset/icons/node.png";
-import react from "/public/asset/icons/react.png";
-import redux from "/public/asset/icons/redux.png";
-import tailwind from "/public/asset/icons/tailwind.png";
-import typescript from "/public/asset/icons/typescript.png";
-import prisma from "/public/asset/icons/prisma.png";
+import postgreSql from "../../public/asset/icons/postgreSql.png";
+import docker from "../../public/asset/icons/docker.png";
+import express from "../../public/asset/icons/express.png";
+import mongoDB from "../../public/asset/icons/mongoDB.png";
+import neoVim from "../../public/asset/icons/neoVim.png";
+import next from "../../public/asset/icons/next.png";
+import node from "../../public/asset/icons/node.png";
+import react from "../../public/asset/icons/react.png";
+import redux from "../../public/asset/icons/redux.png";
+import tailwind from "../../public/asset/icons/tailwind.png";
+import typescript from "../../public/asset/icons/typescript.png";
+import prisma from "../../public/asset/icons/prisma.png";
 
 // images for projects
-import bangladeshtime from "/public/asset/projects/bangladeshtime.webp";
-import fawflix from "/public/asset/projects/fawflix.webp";
-import gbdc from "/public/asset/projects/gbdc.webp";
-import lranslate from "/public/asset/projects/lranslate.webp";
-import birthday from "/public/asset/projects/birthday.webp";
-import sumz from "/public/asset/projects/sumz.webp";
+import bangladeshtime from "../../public/asset/projects/bangladeshtime.webp";
+import fawflix from "../../public/asset/projects/fawflix.webp";
+import gbdc from "../../public/asset/projects/gbdc.webp";
+import lranslate from "../../public/asset/projects/lranslate.webp";
+import birthday from "../../public/asset/projects/birthday.webp";
+import sumz from "../../public/asset/projects/sumz.webp";
 
 // logo for reviews
-import fiverr from "/public/asset/fiverr.png";
-import freelancer from "/public/asset/freelancer.jpeg";
-import upwork from "/public/asset/upwork.png";
+import fiverr from "../../public/asset/fiverr.png";
+import freelancer from "../../public/asset/freelancer.jpeg";
+import upwork from "../../public/asset/upwork.png";
 
 // Add your skills here. do not add more than 12 skills
 export const mySkills = [
