@@ -1,14 +1,16 @@
 "use client";
+
 import Image from "next/image";
 import { useEffect, useState } from "react";
+
 import { projects } from "@/utils/data";
-import { EyeIcon, GithubIconRounded } from "@/utils/icons";
 import { fadeIn } from "@/utils/motion";
 import Container from "@/components/utility/Container";
 import TextContainer from "@/components/utility/TextContainer";
 import { TypingTitle } from "@/components/utility/CustomTexts";
 import ProjectButton from "@/components/ProjectButton";
 import ProjectIconCard from "@/components/ProjectIconCard";
+import { EyeIcon, GithubIconRounded } from "@/utils/icons";
 
 export default function Project() {
   useEffect(() => {
@@ -20,6 +22,8 @@ export default function Project() {
   const [filterWork, setFilterWork] = useState(projects);
   const [activeFilter, setActiveFilter] = useState("All");
   const [animateCard, setAnimateCard] = useState([{ y: 0, opacity: 1 }]);
+
+  console.log(filterWork);
 
   const handleWorkFilter = (item: string) => {
     setActiveFilter(item);
