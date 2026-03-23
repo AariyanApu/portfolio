@@ -7,13 +7,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, X } from "lucide-react";
-
-const navLinks = [
-  { label: "All About Me", href: "/about" },
-  { label: "All Projects", href: "/projects" },
-  { label: "Blog", href: "/blog" },
-  { label: "Resume", href: "/resume.pdf" },
-];
+import { navLinks } from "@/utils/constants";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
