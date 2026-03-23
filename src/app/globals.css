@@ -143,7 +143,7 @@ body {
 
 .dark {
   --teal: oklch(0.78 0.15 172);
-  --background: oklch(0.1743 0.0227 283.7998);
+  --background: oklch(0.15 0.055 255);
   --foreground: oklch(0.9185 0.0257 285.8834);
   --card: oklch(0.2284 0.0384 282.9324);
   --card-foreground: oklch(0.9185 0.0257 285.8834);

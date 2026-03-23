@@ -37,11 +37,11 @@ export default function ShimmerButton({
     }
   `;
 
-  const inner = (
-    <button
-      type="button"
-      className="relative inline-flex items-center justify-center p-[1.5px] bg-gray-300 dark:bg-black rounded-full overflow-hidden group"
-    >
+  const sharedClassName =
+    "cursor-pointer relative inline-flex items-center justify-center p-[1.5px] bg-gray-300 dark:bg-black rounded-full overflow-hidden group";
+
+  const sharedInner = (
+    <>
       <div
         className="absolute inset-0"
         style={{
@@ -52,7 +52,7 @@ export default function ShimmerButton({
       <span className="relative z-10 inline-flex items-center justify-center w-full h-full px-8 py-3 text-gray-900 dark:text-white bg-white dark:bg-gray-900 rounded-full group-hover:bg-gray-100 dark:group-hover:bg-gray-800 transition-colors duration-300">
         {text}
       </span>
-    </button>
+    </>
   );
 
   return (
@@ -62,11 +62,17 @@ export default function ShimmerButton({
     >
       <style>{customCss}</style>
       {href ? (
-        <a href={href} download={href.endsWith(".pdf") ? true : undefined}>
-          {inner}
+        <a
+          href={href}
+          download={href.endsWith(".pdf") ? true : undefined}
+          className={sharedClassName}
+        >
+          {sharedInner}
         </a>
       ) : (
-        inner
+        <button type="button" className={sharedClassName}>
+          {sharedInner}
+        </button>
       )}
     </div>
   );

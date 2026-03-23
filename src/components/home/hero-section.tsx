@@ -6,7 +6,9 @@ export function HeroSection() {
     <section className="min-h-screen bg-background flex items-center px-6 sm:px-10 md:px-20 lg:px-32">
       <div className="w-full max-w-5xl">
         <AnimatedSlice delay={0}>
-          <p className="text-teal font-sans text-base sm:text-lg mb-4 sm:mb-5">Hi, I'm</p>
+          <p className="text-teal font-sans text-base sm:text-lg mb-4 sm:mb-5">
+            Hi, I'm
+          </p>
         </AnimatedSlice>
 
         <AnimatedSlice delay={0.12}>

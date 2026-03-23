@@ -21,10 +21,10 @@ Hi, I'm
 Aariyan Apu
 
 **Tagline:**
-I build products that ship and scale.
+I turn ideas into products people actually use
 
 **Sub-text:**
-Full-stack engineer crafting web and mobile applications with React, Next.js, Node.js, and React Native. Available for freelance and contract work.
+Designing, building, and shipping web and mobile apps that people actually want to use.
 
 **CTA Button:** See My Work
 
@@ -55,22 +55,26 @@ TypeScript, JavaScript, Python, React, Next.js, React Native, Node.js, NestJS, E
 **Heading:** Where I've Worked
 
 ### Frontend Lead — NonstopGG
-*Jan 2025 — May 2025*
+
+_Jan 2025 — May 2025_
 
 Led the frontend development of a B2B digital gift card marketplace built with Next.js. Implemented product catalog UI, secure checkout flows, and a real-time inventory dashboard. Worked closely with backend and design teams to deliver the platform from concept to production launch.
 
 ### Frontend Lead — First Aid Surgical
-*Jun 2025 — Dec 2025*
+
+_Jun 2025 — Dec 2025_
 
 Directed the frontend build of a multi-language e-commerce platform for medical equipment and hospital furniture. Delivered a responsive product browsing experience with i18n support, quote request system, and SEO optimization for B2B buyers across English and other language markets.
 
 ### Senior Front-End Software Engineer — Ahar Tech
-*Jul 2024 — Feb 2025*
+
+_Jul 2024 — Feb 2025_
 
 Spearheaded development and maintenance of front-end features for Bangladesh's first meal subscription platform using Next.js. Resolved 90% of critical bugs within 48 hours, maintained 99.9% uptime during peak usage, and mentored junior developers, improving team delivery speed by 20%.
 
 ### Assistant Software Engineer — TPDO
-*Jun 2019 — Mar 2023*
+
+_Jun 2019 — Mar 2023_
 
 Overhauled the organization's IT infrastructure, reducing system downtime by 50%. Built a custom CRM tool using React that increased donation conversions by 25%. Managed IT policies, procedures, and social media platforms.
 
@@ -79,6 +83,7 @@ Overhauled the organization's IT infrastructure, reducing system downtime by 50%
 ## Featured Projects — Case Studies
 
 ### NonstopGG — B2B Digital Gift Card Marketplace
+
 **nonstopgg.com**
 
 **Problem:**
@@ -95,6 +100,7 @@ Platform launched on schedule with a catalog of 500+ digital products. Automated
 ---
 
 ### First Aid Surgical — Medical Equipment E-Commerce
+
 **firstaidsurgical.com/en**
 
 **Problem:**
@@ -111,6 +117,7 @@ Delivered a production-ready multi-language platform that expanded the client's 
 ---
 
 ### Daily Bangladesh Time — English News Portal
+
 **en.dailybangladeshtime.com**
 
 **Problem:**
@@ -127,6 +134,7 @@ Launched a fast, SEO-friendly English news portal with role-based editorial work
 ---
 
 ### Mellow Bangla — React Native Radio App
+
 **mellowbangla.com**
 
 **Problem:**
@@ -145,6 +153,7 @@ Shipped a production-ready Android app with smooth background streaming, low lat
 ## Other Projects
 
 ### GBDC — Blood Donation App
+
 **gbdcbangladesh.com**
 
 A MERN Stack web application connecting 3,000+ users with blood donors through real-time notifications and a live chat system. Features include donor photo uploads, multi-user support, blog posts, and role-based admin panel.
@@ -154,6 +163,7 @@ A MERN Stack web application connecting 3,000+ users with blood donors through r
 ---
 
 ### Bangladesh Time — Bangla News Portal
+
 **bangladeshtime.com**
 
 The original Bangla-language news portal with role-based access control for editors and admins, serving 5,000+ daily users. Reduced server costs by 20% through caching and efficient data handling.
@@ -187,7 +197,7 @@ The original Bangla-language news portal with role-based access control for edit
 **Body:**
 I'm currently available for freelance and contract projects. Whether you need a full-stack web app, a mobile application, or frontend leadership for your team — let's talk.
 
-**Email:** hello@aariyan.info
+**Email:** <hello@aariyan.info>
 **Phone:** +880 1712-686075
 
 ---
