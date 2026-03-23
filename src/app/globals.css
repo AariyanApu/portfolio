@@ -5,7 +5,9 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: Quicksand, sans-serif;
+  --color-teal: var(--teal);
+  --font-title: var(--font-kenfolg), sans-serif;
+  --font-sans: var(--font-quicksand), Quicksand, sans-serif;
   --font-mono: JetBrains Mono, monospace;
   --font-serif: Georgia, serif;
   --color-sidebar-ring: var(--sidebar-ring);
@@ -71,11 +73,12 @@
 }
 
 body {
-  font-family: Quicksand, Arial, Helvetica, sans-serif;
+  font-family: var(--font-quicksand), Quicksand, Arial, Helvetica, sans-serif;
 }
 
 :root {
   --radius: 0.5rem;
+  --teal: oklch(0.58 0.14 172);
   --background: oklch(0.973 0.0133 286.1503);
   --foreground: oklch(0.3015 0.0572 282.4176);
   --card: oklch(1 0 0);
@@ -108,7 +111,7 @@ body {
   --sidebar-border: oklch(0.9115 0.0216 285.9625);
   --sidebar-ring: oklch(0.5417 0.179 288.0332);
   --destructive-foreground: oklch(1 0 0);
-  --font-sans: Inter, sans-serif;
+  --font-sans: var(--font-quicksand), Quicksand, sans-serif;
   --font-serif: Georgia, serif;
   --font-mono: JetBrains Mono, monospace;
   --shadow-color: hsl(240 30% 25%);
@@ -118,13 +121,10 @@ body {
   --letter-spacing: 0em;
 
   --tracking-normal: 0em;
-  --radius: 1.4rem;
   --shadow-x: 0px;
   --shadow-y: 2px;
   --shadow-blur: 3px;
   --shadow-spread: 0px;
-  --shadow-opacity: 0.16;
-  --shadow-color: hsl(0 0% 0%);
   --shadow-2xs: 0px 2px 3px 0px hsl(0 0% 0% / 0.08);
   --shadow-xs: 0px 2px 3px 0px hsl(0 0% 0% / 0.08);
   --shadow-sm:
@@ -138,11 +138,11 @@ body {
   --shadow-xl:
     0px 2px 3px 0px hsl(0 0% 0% / 0.16), 0px 8px 10px -1px hsl(0 0% 0% / 0.16);
   --shadow-2xl: 0px 2px 3px 0px hsl(0 0% 0% / 0.4);
-  --tracking-normal: -0.025em;
   --spacing: 0.27rem;
 }
 
 .dark {
+  --teal: oklch(0.78 0.15 172);
   --background: oklch(0.1743 0.0227 283.7998);
   --foreground: oklch(0.9185 0.0257 285.8834);
   --card: oklch(0.2284 0.0384 282.9324);
@@ -175,7 +175,7 @@ body {
   --sidebar-border: oklch(0.3261 0.0597 282.5832);
   --sidebar-ring: oklch(0.7162 0.1597 290.3962);
   --destructive-foreground: oklch(1 0 0);
-  --font-sans: Quicksand, sans-serif;
+  --font-sans: var(--font-quicksand), Quicksand, sans-serif;
   --font-serif: Georgia, serif;
   --font-mono: JetBrains Mono, monospace;
   --shadow-color: hsl(240 30% 25%);
@@ -211,4 +211,3 @@ body {
     letter-spacing: var(--tracking-normal);
   }
 }
-

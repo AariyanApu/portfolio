@@ -1,15 +1,11 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Quicksand } from "next/font/google";
+import { Quicksand } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const kenfolg = localFont({
+  src: "../utils/Kenfolg.otf",
+  variable: "--font-kenfolg",
 });
 
 const quickSand = Quicksand({
@@ -29,10 +25,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} ${quickSand.variable} antialiased `}
-      >
+    <html lang="en" className="dark">
+      <body className={`${quickSand.variable} ${kenfolg.variable} antialiased`}>
         {children}
       </body>
     </html>
