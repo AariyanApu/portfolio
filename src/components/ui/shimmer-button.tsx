@@ -38,7 +38,10 @@ export default function ShimmerButton({
   `;
 
   const inner = (
-    <button type="button" className="relative inline-flex items-center justify-center p-[1.5px] bg-gray-300 dark:bg-black rounded-full overflow-hidden group">
+    <button
+      type="button"
+      className="relative inline-flex items-center justify-center p-[1.5px] bg-gray-300 dark:bg-black rounded-full overflow-hidden group"
+    >
       <div
         className="absolute inset-0"
         style={{
@@ -54,9 +57,17 @@ export default function ShimmerButton({
 
   return (
     // Main container to center the button on the page
-    <div className={`flex items-center justify-center font-sans ${className ?? ""}`}>
+    <div
+      className={`flex items-center justify-center font-sans ${className ?? ""}`}
+    >
       <style>{customCss}</style>
-      {href ? <a href={href}>{inner}</a> : inner}
+      {href ? (
+        <a href={href} download={href.endsWith(".pdf") ? true : undefined}>
+          {inner}
+        </a>
+      ) : (
+        inner
+      )}
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Quicksand } from "next/font/google";
 import localFont from "next/font/local";
+import { Navbar } from "@/components/layout/navbar";
 import "./globals.css";
 
 const kenfolg = localFont({
@@ -27,6 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={`${quickSand.variable} ${kenfolg.variable} antialiased`}>
+        <Navbar />
         {children}
       </body>
     </html>

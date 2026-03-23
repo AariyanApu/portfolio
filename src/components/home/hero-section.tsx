@@ -30,7 +30,8 @@ export function HeroSection() {
 
         <AnimatedSlice delay={0.42}>
           <ShimmerButton
-            text="See My Work"
+            text="Download Resume"
+            href="/resume.pdf"
             shimmerColor="oklch(0.78 0.15 172)"
             className="justify-start"
           />
