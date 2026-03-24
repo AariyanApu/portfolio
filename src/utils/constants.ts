@@ -5,48 +5,36 @@ export const navLinks = [
   { label: "Resume", href: "/resume.pdf" },
 ];
 
+export const SKILL_ICONS_URL =
+  "https://skillicons.dev/icons?i=ts,js,py,react,nextjs,tailwind,redux,css,vite,babel,nodejs,nestjs,express,prisma,bun,postgres,mongodb,firebase,redis,docker,git,github,linux,bash,nginx,cloudflare,githubactions,figma,postman,neovim,vercel,netlify,md&theme=dark&perline=5";
+
+export const SKILL_ICONS_WIDE_URL =
+  "https://skillicons.dev/icons?i=ts,js,py,react,nextjs,tailwind,redux,css,vite,babel,nodejs,nestjs,express,prisma,bun,postgres,mongodb,firebase,redis,docker,git,github,linux,bash,nginx,cloudflare,githubactions,figma,postman,neovim,vercel,netlify,md&theme=dark&perline=10";
+
 export const skillGroups = [
   {
     category: "Languages",
-    skills: ["TypeScript", "JavaScript", "Python"],
+    iconIds: "ts,js,py",
   },
   {
     category: "Frontend",
-    skills: ["React", "Next.js", "React Native", "TailwindCSS", "ShadCN"],
+    iconIds: "react,nextjs,tailwind,redux,css,vite,babel",
   },
   {
     category: "Backend",
-    skills: ["Node.js", "NestJS", "Express.js"],
+    iconIds: "nodejs,nestjs,express,prisma,bun",
   },
   {
     category: "Databases",
-    skills: ["PostgreSQL", "MongoDB", "Firebase", "Prisma", "Drizzle "],
+    iconIds: "postgres,mongodb,firebase,redis",
   },
   {
     category: "DevOps & Infra",
-    skills: [
-      "Docker",
-      "Git",
-      "GitHub",
-      "Linux",
-      "CI/CD",
-      "Cloudflare",
-      "NeoVim",
-      "Nginx",
-      "Ubuntu",
-      "SSH",
-    ],
+    iconIds: "docker,git,github,linux,bash,nginx,cloudflare,githubactions",
   },
   {
     category: "Other",
-    skills: [
-      "Better Auth",
-      "Cloudflare",
-      "Framer Motion",
-      "PWA",
-      "Google API",
-      "NeoVim",
-    ],
+    iconIds: "figma,postman,neovim,vercel,netlify,md",
   },
 ];
 
