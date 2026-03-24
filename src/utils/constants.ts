@@ -11,32 +11,32 @@ export const SKILL_ICONS_URL =
 export const SKILL_ICONS_WIDE_URL =
   "https://skillicons.dev/icons?i=ts,js,py,react,nextjs,tailwind,redux,css,vite,babel,nodejs,nestjs,express,prisma,bun,postgres,mongodb,firebase,redis,docker,git,github,linux,bash,nginx,cloudflare,githubactions,figma,postman,neovim,vercel,netlify,md&theme=dark&perline=10";
 
-export const skillGroups = [
-  {
-    category: "Languages",
-    iconIds: "ts,js,py",
-  },
-  {
-    category: "Frontend",
-    iconIds: "react,nextjs,tailwind,redux,css,vite,babel",
-  },
-  {
-    category: "Backend",
-    iconIds: "nodejs,nestjs,express,prisma,bun",
-  },
-  {
-    category: "Databases",
-    iconIds: "postgres,mongodb,firebase,redis",
-  },
-  {
-    category: "DevOps & Infra",
-    iconIds: "docker,git,github,linux,bash,nginx,cloudflare,githubactions",
-  },
-  {
-    category: "Other",
-    iconIds: "figma,postman,neovim,vercel,netlify,md",
-  },
-];
+// export const skillGroups = [
+//   {
+//     category: "Languages",
+//     iconIds: "ts,js,py",
+//   },
+//   {
+//     category: "Frontend",
+//     iconIds: "react,nextjs,tailwind,redux,css,vite,babel",
+//   },
+//   {
+//     category: "Backend",
+//     iconIds: "nodejs,nestjs,express,prisma,bun",
+//   },
+//   {
+//     category: "Databases",
+//     iconIds: "postgres,mongodb,firebase,redis",
+//   },
+//   {
+//     category: "DevOps & Infra",
+//     iconIds: "docker,git,github,linux,bash,nginx,cloudflare,githubactions",
+//   },
+//   {
+//     category: "Other",
+//     iconIds: "figma,postman,neovim,vercel,netlify,md",
+//   },
+// ];
 
 export const projects = [
   {
@@ -54,7 +54,7 @@ export const projects = [
       "Multi-role Auth",
     ],
     tags: ["Next.js", "Drizzle", "PostgreSQL", "Better Auth", "PWA"],
-    image: "/projects/first-aid.png",
+    image: "/projects/first-aid.webp",
     featured: true,
   },
   {
@@ -65,7 +65,7 @@ export const projects = [
       "B2B digital gift card marketplace where retailers browse, purchase, and instantly receive game currencies and entertainment subscriptions. Automated delivery cut fulfillment from hours to seconds.",
     highlights: ["500+ Products", "Automated Delivery", "Real-time Dashboard"],
     tags: ["Next.js", "TypeScript", "TailwindCSS"],
-    image: "/projects/nonstopgg.png",
+    image: "/projects/nonstopgg.webp",
     featured: false,
   },
   {
@@ -76,7 +76,7 @@ export const projects = [
       "English-language news portal serving thousands of daily readers. Built with SSR for SEO performance, real-time push notifications, PWA support, and a role-based editorial workflow.",
     highlights: ["SSR/SEO", "PWA", "Push Notifications", "Multi-role"],
     tags: ["Next.js", "Drizzle", "PostgreSQL"],
-    image: "/projects/daily-bd.png",
+    image: "/projects/daily-bd.webp",
     featured: false,
   },
   {
@@ -87,18 +87,34 @@ export const projects = [
       "Digital home for a Bangladeshi NGO — multilingual, donation-enabled, and PWA-ready. Features automated payment processing, a photo gallery, and a clean CMS for managing content.",
     highlights: ["Multilingual", "Donation Automation", "PWA", "Photo Gallery"],
     tags: ["Next.js"],
-    image: "/projects/tpdo.png",
+    image: "/projects/tpdo.webp",
     featured: false,
   },
   {
     title: "GBDC",
-    url: "https://gbdcbangladesh.com",
+    url: "https://gbdcbd.org",
     period: "",
     description:
       "Community platform connecting blood donors with recipients across Bangladesh. Real-time notifications, live chat, donor profiles, and a blog keep 3,000+ users engaged.",
     highlights: ["3,000+ Users", "Real-time Chat", "Role-based Admin"],
     tags: ["Next.js", "PostgreSQL"],
-    image: "/projects/gbdc.png",
+    image: "/projects/gbdc.webp",
+    featured: false,
+  },
+
+  {
+    title: "Ahar",
+    url: "https://ahar.com.bd",
+    period: "",
+    description:
+      "Location-based food ordering platform for Bangladesh. Users browse restaurants and meals by area, place orders in seconds, and receive real-time push notifications at every step of delivery.",
+    highlights: [
+      "Location-based Orders",
+      "Push Notifications",
+      "Real-time Tracking",
+    ],
+    tags: ["Next.js"],
+    image: "/projects/ahar.webp",
     featured: false,
   },
   {
@@ -114,23 +130,35 @@ export const projects = [
       "Play Store",
     ],
     tags: ["React Native", "NestJS", "Next.js"],
-    image: "/projects/mellow-bangla.png",
-    featured: false,
-  },
-  {
-    title: "Ahar",
-    url: "https://ahar.com.bd",
-    period: "",
-    description:
-      "Location-based food ordering platform for Bangladesh. Users browse restaurants and meals by area, place orders in seconds, and receive real-time push notifications at every step of delivery.",
-    highlights: ["Location-based Orders", "Push Notifications", "Real-time Tracking"],
-    tags: ["Next.js"],
-    image: "/projects/ahar.png",
+    image: "/projects/mellow-bangla.webp",
     featured: false,
   },
 ];
 
+export const contactLinks = [
+  { label: "Phone", value: "+88 01712 686 075", href: "tel:+8801712686075" },
+  { label: "Email", value: "hello@aariyan.info", href: "mailto:hello@aariyan.info" },
+  { label: "WhatsApp", value: "+88 01712 686 075", href: "https://wa.me/8801712686075" },
+  { label: "Telegram", value: "+88 01712 686 075", href: "https://t.me/+8801712686075" },
+  { label: "GitHub", value: "@AariyanApu", href: "https://github.com/AariyanApu" },
+  { label: "LinkedIn", value: "aariyanapu", href: "https://bd.linkedin.com/in/aariyanapu" },
+  { label: "X / Twitter", value: "@aariyanapu", href: "https://x.com/aariyanapu" },
+  { label: "Facebook", value: "aariyanapu", href: "https://www.facebook.com/aariyanapu" },
+];
+
 export const experiences = [
+  {
+    role: "Fullstack Engineer",
+    company: "First Aid Surgical",
+    period: "Aug 2025 — Jan 2026",
+    description:
+      "Directed the frontend build of a multi-language e-commerce platform for medical equipment and hospital furniture with i18n support, quote request system, and SEO optimization.",
+    highlights: [
+      "Multi-language i18n",
+      "B2B quote system",
+      "Core Web Vitals optimized",
+    ],
+  },
   {
     role: "Frontend Lead",
     company: "NonstopGG",
@@ -143,18 +171,7 @@ export const experiences = [
       "Zero manual intervention",
     ],
   },
-  {
-    role: "Frontend Lead",
-    company: "First Aid Surgical",
-    period: "Jun 2025 — Dec 2025",
-    description:
-      "Directed the frontend build of a multi-language e-commerce platform for medical equipment and hospital furniture with i18n support, quote request system, and SEO optimization.",
-    highlights: [
-      "Multi-language i18n",
-      "B2B quote system",
-      "Core Web Vitals optimized",
-    ],
-  },
+
   {
     role: "Senior Front-End Engineer",
     company: "Ahar Tech",

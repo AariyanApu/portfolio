@@ -21,7 +21,7 @@ export function MouseSpotlight() {
     <div
       className="pointer-events-none fixed inset-0 z-[999] transition-opacity duration-300"
       style={{
-        background: `radial-gradient(700px at ${position.x}px ${position.y}px, oklch(0.78 0.15 172 / 0.08), transparent 80%)`,
+        background: `radial-gradient(700px at ${position.x}px ${position.y}px, oklch(0.78 0.15 172 / 0.08), transparent 70%)`,
       }}
     />
   );
