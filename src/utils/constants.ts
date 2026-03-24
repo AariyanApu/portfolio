@@ -38,6 +38,98 @@ export const skillGroups = [
   },
 ];
 
+export const projects = [
+  {
+    title: "First Aid Surgical",
+    url: "https://firstaidsurgical.com",
+    period: "Aug 2025 — Jan 2026",
+    description:
+      "A full-stack e-commerce platform for Bangladesh's leading medical equipment supplier. Supports multilingual storefronts (English/Bengali), automated payments, real-time inventory, and Steadfast courier integration — all managed through a role-based admin dashboard.",
+    highlights: [
+      "Multilingual",
+      "Automated Payments",
+      "Steadfast Integration",
+      "PWA",
+      "Real-time Inventory",
+      "Multi-role Auth",
+    ],
+    tags: ["Next.js", "Drizzle", "PostgreSQL", "Better Auth", "PWA"],
+    image: "/projects/first-aid.png",
+    featured: true,
+  },
+  {
+    title: "NonstopGG",
+    url: "https://nonstopgg.com",
+    period: "Jan 2025 — May 2025",
+    description:
+      "B2B digital gift card marketplace where retailers browse, purchase, and instantly receive game currencies and entertainment subscriptions. Automated delivery cut fulfillment from hours to seconds.",
+    highlights: ["500+ Products", "Automated Delivery", "Real-time Dashboard"],
+    tags: ["Next.js", "TypeScript", "TailwindCSS"],
+    image: "/projects/nonstopgg.png",
+    featured: false,
+  },
+  {
+    title: "Daily Bangladesh Time",
+    url: "https://en.dailybangladeshtime.com",
+    period: "",
+    description:
+      "English-language news portal serving thousands of daily readers. Built with SSR for SEO performance, real-time push notifications, PWA support, and a role-based editorial workflow.",
+    highlights: ["SSR/SEO", "PWA", "Push Notifications", "Multi-role"],
+    tags: ["Next.js", "Drizzle", "PostgreSQL"],
+    image: "/projects/daily-bd.png",
+    featured: false,
+  },
+  {
+    title: "TPDO",
+    url: "https://tpdobd.org",
+    period: "",
+    description:
+      "Digital home for a Bangladeshi NGO — multilingual, donation-enabled, and PWA-ready. Features automated payment processing, a photo gallery, and a clean CMS for managing content.",
+    highlights: ["Multilingual", "Donation Automation", "PWA", "Photo Gallery"],
+    tags: ["Next.js"],
+    image: "/projects/tpdo.png",
+    featured: false,
+  },
+  {
+    title: "GBDC",
+    url: "https://gbdcbangladesh.com",
+    period: "",
+    description:
+      "Community platform connecting blood donors with recipients across Bangladesh. Real-time notifications, live chat, donor profiles, and a blog keep 3,000+ users engaged.",
+    highlights: ["3,000+ Users", "Real-time Chat", "Role-based Admin"],
+    tags: ["Next.js", "PostgreSQL"],
+    image: "/projects/gbdc.png",
+    featured: false,
+  },
+  {
+    title: "Mellow Bangla",
+    url: "https://mellowbangla.com",
+    period: "",
+    description:
+      "A native Android radio app for Bangla music and talk stations. Background playback, song requests, real-time feedback, and Google login — paired with a Next.js marketing site.",
+    highlights: [
+      "Background Playback",
+      "Song Requests",
+      "Google Login",
+      "Play Store",
+    ],
+    tags: ["React Native", "NestJS", "Next.js"],
+    image: "/projects/mellow-bangla.png",
+    featured: false,
+  },
+  {
+    title: "Ahar",
+    url: "https://ahar.com.bd",
+    period: "",
+    description:
+      "Location-based food ordering platform for Bangladesh. Users browse restaurants and meals by area, place orders in seconds, and receive real-time push notifications at every step of delivery.",
+    highlights: ["Location-based Orders", "Push Notifications", "Real-time Tracking"],
+    tags: ["Next.js"],
+    image: "/projects/ahar.png",
+    featured: false,
+  },
+];
+
 export const experiences = [
   {
     role: "Frontend Lead",
