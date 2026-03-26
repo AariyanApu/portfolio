@@ -1,5 +1,5 @@
 ---
-title: "My Developer Toolbox in 2026"
+title: "My Daily Use Developer Toolbox in 2026"
 excerpt: "A look at the editors, terminals, and tools that power my daily workflow as a full-stack developer."
 date: "2026-03-25"
 tags: ["tools", "productivity"]

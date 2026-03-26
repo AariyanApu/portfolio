@@ -20,10 +20,10 @@ export function BlogCard({ post }: { post: BlogPostMeta }) {
     <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.2 }}>
       <Link
         href={`/blog/${post.slug}`}
-        className="group flex flex-col rounded-lg border border-border bg-muted/20 hover:border-teal/30 hover:bg-muted/30 transition-all duration-300 overflow-hidden h-full"
+        className="group flex flex-col rounded-lg border border-border bg-muted/20 hover:border-teal/30 hover:bg-muted/30 transition-all duration-300 overflow-hidden h-80"
       >
         {/* Cover image */}
-        <div className="relative h-40 bg-muted/40 overflow-hidden shrink-0">
+        <div className="relative h-36 bg-muted/40 overflow-hidden shrink-0">
           <Image
             src={post.image}
             alt={post.title}
@@ -34,11 +34,11 @@ export function BlogCard({ post }: { post: BlogPostMeta }) {
         </div>
 
         {/* Content */}
-        <div className="flex flex-col gap-2 p-4 flex-1">
-          <h3 className="font-title text-lg font-black text-foreground group-hover:text-teal transition-colors duration-300 line-clamp-2">
+        <div className="flex flex-col gap-2 p-4 flex-1 overflow-hidden">
+          <h3 className="font-title text-lg font-black text-foreground group-hover:text-teal transition-colors duration-300 line-clamp-1">
             {post.title}
           </h3>
-          <p className="font-sans text-sm text-muted-foreground leading-relaxed flex-1 line-clamp-2">
+          <p className="font-sans text-sm text-muted-foreground leading-relaxed line-clamp-2">
             {post.excerpt}
           </p>
 

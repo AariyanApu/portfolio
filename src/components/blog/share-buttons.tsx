@@ -1,24 +1,27 @@
 "use client";
 
 import { Check, Facebook, Link2, Linkedin, Twitter } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export function ShareButtons({ slug, title }: { slug: string; title: string }) {
   const [copied, setCopied] = useState(false);
+  const [shareUrl, setShareUrl] = useState("");
 
-  const origin = typeof window !== "undefined" ? window.location.origin : "";
-  const url = `${origin}/blog/${slug}`;
-  const encodedUrl = encodeURIComponent(url);
+  useEffect(() => {
+    setShareUrl(`${window.location.origin}/blog/${slug}`);
+  }, [slug]);
+
+  const encodedUrl = encodeURIComponent(shareUrl);
   const encodedTitle = encodeURIComponent(title);
 
   function copyLink() {
-    navigator.clipboard.writeText(url);
+    navigator.clipboard.writeText(shareUrl);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   }
 
   return (
-    <div className="flex items-center gap-2 pt-8 border-t border-border mt-12">
+    <div className="flex items-center gap-2  pt-8 border-t border-border mt-12">
       <span className="font-sans text-sm text-muted-foreground mr-2">
         Share
       </span>
@@ -31,7 +34,11 @@ export function ShareButtons({ slug, title }: { slug: string; title: string }) {
         {copied ? <Check className="size-4" /> : <Link2 className="size-4" />}
       </button>
       <a
-        href={`https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`}
+        href={
+          shareUrl
+            ? `https://x.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`
+            : undefined
+        }
         target="_blank"
         rel="noopener noreferrer"
         className="inline-flex items-center justify-center size-9 rounded-lg border border-border text-muted-foreground hover:border-teal/30 hover:text-teal transition-colors duration-200"
@@ -40,7 +47,11 @@ export function ShareButtons({ slug, title }: { slug: string; title: string }) {
         <Twitter className="size-4" />
       </a>
       <a
-        href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`}
+        href={
+          shareUrl
+            ? `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`
+            : undefined
+        }
         target="_blank"
         rel="noopener noreferrer"
         className="inline-flex items-center justify-center size-9 rounded-lg border border-border text-muted-foreground hover:border-teal/30 hover:text-teal transition-colors duration-200"
@@ -49,7 +60,11 @@ export function ShareButtons({ slug, title }: { slug: string; title: string }) {
         <Linkedin className="size-4" />
       </a>
       <a
-        href={`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`}
+        href={
+          shareUrl
+            ? `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`
+            : undefined
+        }
         target="_blank"
         rel="noopener noreferrer"
         className="inline-flex items-center justify-center size-9 rounded-lg border border-border text-muted-foreground hover:border-teal/30 hover:text-teal transition-colors duration-200"

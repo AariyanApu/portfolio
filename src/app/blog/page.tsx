@@ -14,7 +14,7 @@ export default async function BlogPage() {
 
   return (
     <main className="px-6 sm:px-10 md:px-20 lg:px-32 py-16">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-5xl mx-auto py-16">
         <AnimatedSlice inView delay={0}>
           <p className="text-teal font-sans text-sm font-semibold tracking-widest uppercase mb-2">
             Blog

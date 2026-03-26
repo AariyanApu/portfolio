@@ -48,8 +48,8 @@ export default async function BlogPostPage({
   return (
     <>
       <ScrollProgress />
-      <main className="px-6 sm:px-10 md:px-20 lg:px-32 py-16">
-        <div className="max-w-5xl mx-auto">
+      <main className="px-6 sm:px-10 md:px-20 lg:px-32 ">
+        <div className=" pb-8 max-w-5xl mx-auto mt-32">
           <article>
             <AnimatedSlice delay={0}>
               <PostHeader post={post} />
@@ -64,7 +64,7 @@ export default async function BlogPostPage({
               </div>
             </AnimatedSlice>
 
-            <AnimatedSlice delay={0.2}>
+            <AnimatedSlice delay={0.2} className=" ">
               <ShareButtons slug={post.slug} title={post.title} />
             </AnimatedSlice>
           </article>
