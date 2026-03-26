@@ -8,7 +8,7 @@ import { TechStackSection } from "@/components/about/tech-stack-section";
 import { Footer } from "@/components/layout/footer";
 
 export const metadata: Metadata = {
-  title: "About — Aariyan Apu",
+  title: "About",
   description:
     "Learn more about Aariyan Apu — Full Stack Developer from Bangladesh. Education, services, tech stack, and more.",
 };

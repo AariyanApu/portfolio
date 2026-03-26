@@ -22,9 +22,22 @@ export async function generateMetadata({
   try {
     const post = await getPostBySlug(slug);
     return {
-      title: `${post.title} — Aariyan Apu`,
+      title: post.title,
       description: post.excerpt,
-      openGraph: { images: [post.image] },
+      keywords: post.tags,
+      openGraph: {
+        type: "article",
+        title: post.title,
+        description: post.excerpt,
+        url: `https://aariyan.info/blog/${slug}`,
+        images: [{ url: post.image, width: 1200, height: 630 }],
+        publishedTime: post.date,
+        authors: ["Aariyan Apu"],
+        tags: post.tags,
+      },
+      alternates: {
+        canonical: `https://aariyan.info/blog/${slug}`,
+      },
     };
   } catch {
     return { title: "Post not found" };
@@ -45,9 +58,32 @@ export default async function BlogPostPage({
     notFound();
   }
 
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.excerpt,
+    image: post.image,
+    datePublished: post.date,
+    author: {
+      "@type": "Person",
+      name: "Aariyan Apu",
+      url: "https://aariyan.info",
+    },
+    publisher: { "@type": "Person", name: "Aariyan Apu" },
+    url: `https://aariyan.info/blog/${slug}`,
+    keywords: post.tags.join(", "),
+    wordCount: post.content.split(/\s+/).length,
+  };
+
   return (
     <>
       <ScrollProgress />
+      <script
+        type="application/ld+json"
+        // biome-ignore lint/security/noDangerouslySetInnerHtml: static JSON-LD structured data
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       <main className="px-6 sm:px-10 md:px-20 lg:px-32 ">
         <div className=" pb-8 max-w-5xl mx-auto mt-32">
           <article>

@@ -5,7 +5,7 @@ import { ProjectsGrid } from "@/components/projects/projects-grid";
 import { projects } from "@/utils/constants";
 
 export const metadata: Metadata = {
-  title: "Projects — Aariyan Apu",
+  title: "Projects",
   description:
     "A collection of full-stack web and mobile projects built with Next.js, React, TypeScript, and more.",
 };

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#141b33"/>
+  <rect x="0" y="0" width="1200" height="630" fill="url(#grad)" opacity="0.6"/>
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d9488;stop-opacity:0.35"/>
+      <stop offset="100%" style="stop-color:#141b33;stop-opacity:0"/>
+    </linearGradient>
+  </defs>
+  <line x1="60" y1="540" x2="400" y2="540" stroke="#0d9488" stroke-width="3" opacity="0.8"/>
+  <text x="60" y="260" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="900" fill="#e2e8f0">Aariyan Apu</text>
+  <text x="60" y="320" font-family="system-ui, -apple-system, sans-serif" font-size="28" fill="#0d9488" font-weight="600">Full Stack Web Developer</text>
+  <text x="60" y="370" font-family="system-ui, -apple-system, sans-serif" font-size="22" fill="#94a3b8">Next.js  ·  React  ·  TypeScript  ·  Node.js</text>
+  <text x="60" y="510" font-family="system-ui, -apple-system, sans-serif" font-size="18" fill="#64748b">aariyan.info</text>
+</svg>

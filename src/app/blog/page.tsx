@@ -5,7 +5,7 @@ import { Footer } from "@/components/layout/footer";
 import { getAllPosts } from "@/lib/blog";
 
 export const metadata: Metadata = {
-  title: "Blog — Aariyan Apu",
+  title: "Blog",
   description: "Thoughts on web development, tech, and building things.",
 };
 
