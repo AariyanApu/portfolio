@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -218,4 +219,61 @@ body {
     @apply bg-background text-foreground;
     letter-spacing: var(--tracking-normal);
   }
+}
+
+/* Blog prose overrides */
+.prose {
+  --tw-prose-body: var(--foreground);
+  --tw-prose-headings: var(--foreground);
+  --tw-prose-links: var(--teal);
+  --tw-prose-bold: var(--foreground);
+  --tw-prose-quotes: var(--foreground);
+  --tw-prose-quote-borders: var(--teal);
+  --tw-prose-code: var(--foreground);
+  --tw-prose-pre-bg: var(--muted);
+  --tw-prose-counters: var(--teal);
+  --tw-prose-bullets: var(--teal);
+  --tw-prose-hr: var(--border);
+  --tw-prose-th-borders: var(--border);
+  --tw-prose-td-borders: var(--border);
+  font-family: var(--font-sans);
+}
+
+.prose :where(h1, h2, h3, h4):not(:where([class~="not-prose"] *)) {
+  font-family: var(--font-title);
+  font-weight: 900;
+}
+
+.prose :where(a):not(:where([class~="not-prose"] *)) {
+  text-decoration: none;
+}
+
+.prose :where(a):not(:where([class~="not-prose"] *)):hover {
+  text-decoration: underline;
+}
+
+.prose :where(code):not(:where(pre *, [class~="not-prose"] *)) {
+  background: var(--muted);
+  padding: 0.15em 0.4em;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+}
+
+.prose :where(code):not(:where(pre *, [class~="not-prose"] *))::before,
+.prose :where(code):not(:where(pre *, [class~="not-prose"] *))::after {
+  content: "";
+}
+
+.prose :where(pre):not(:where([class~="not-prose"] *)) {
+  border-radius: 0.5rem;
+  border: 1px solid var(--border);
+}
+
+.prose :where(blockquote):not(:where([class~="not-prose"] *)) {
+  font-style: italic;
+  border-left-width: 3px;
+}
+
+.prose :where(img):not(:where([class~="not-prose"] *)) {
+  border-radius: 0.5rem;
 }

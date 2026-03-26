@@ -6,7 +6,6 @@ export function SkillsSection() {
   return (
     <section className="px-6 sm:px-10 md:px-20 lg:px-32 py-24">
       <div className="max-w-3xl mx-auto text-center">
-
         {/* Heading */}
         <AnimatedSlice inView delay={0}>
           <p className="text-teal font-sans text-sm font-semibold tracking-widest uppercase mb-3">
@@ -30,7 +29,6 @@ export function SkillsSection() {
             unoptimized
           />
         </AnimatedSlice>
-
       </div>
     </section>
   );

@@ -5,7 +5,6 @@ export function ExperienceSection() {
   return (
     <section className="px-6 sm:px-10 md:px-20 lg:px-32 py-24">
       <div className="max-w-3xl mx-auto">
-
         {/* Heading */}
         <AnimatedSlice inView delay={0}>
           <p className="text-teal font-sans text-sm font-semibold tracking-widest uppercase mb-3">
@@ -34,7 +33,9 @@ export function ExperienceSection() {
                         <h3 className="font-title text-base font-black text-foreground">
                           {exp.role}
                         </h3>
-                        <span className="text-muted-foreground font-sans text-xs">at</span>
+                        <span className="text-muted-foreground font-sans text-xs">
+                          at
+                        </span>
                         <span className="text-teal font-sans text-sm font-semibold">
                           {exp.company}
                         </span>
@@ -65,7 +66,6 @@ export function ExperienceSection() {
             ))}
           </div>
         </div>
-
       </div>
     </section>
   );

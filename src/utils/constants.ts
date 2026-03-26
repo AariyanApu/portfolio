@@ -137,13 +137,136 @@ export const projects = [
 
 export const contactLinks = [
   { label: "Phone", value: "+88 01712 686 075", href: "tel:+8801712686075" },
-  { label: "Email", value: "hello@aariyan.info", href: "mailto:hello@aariyan.info" },
-  { label: "WhatsApp", value: "+88 01712 686 075", href: "https://wa.me/8801712686075" },
-  { label: "Telegram", value: "+88 01712 686 075", href: "https://t.me/+8801712686075" },
-  { label: "GitHub", value: "@AariyanApu", href: "https://github.com/AariyanApu" },
-  { label: "LinkedIn", value: "aariyanapu", href: "https://bd.linkedin.com/in/aariyanapu" },
-  { label: "X / Twitter", value: "@aariyanapu", href: "https://x.com/aariyanapu" },
-  { label: "Facebook", value: "aariyanapu", href: "https://www.facebook.com/aariyanapu" },
+  {
+    label: "Email",
+    value: "hello@aariyan.info",
+    href: "mailto:hello@aariyan.info",
+  },
+  {
+    label: "WhatsApp",
+    value: "+88 01712 686 075",
+    href: "https://wa.me/8801712686075",
+  },
+  {
+    label: "Telegram",
+    value: "+88 01712 686 075",
+    href: "https://t.me/+8801712686075",
+  },
+  {
+    label: "GitHub",
+    value: "@AariyanApu",
+    href: "https://github.com/AariyanApu",
+  },
+  {
+    label: "LinkedIn",
+    value: "aariyanapu",
+    href: "https://bd.linkedin.com/in/aariyanapu",
+  },
+  {
+    label: "X / Twitter",
+    value: "@aariyanapu",
+    href: "https://x.com/aariyanapu",
+  },
+  {
+    label: "Facebook",
+    value: "aariyanapu",
+    href: "https://www.facebook.com/aariyanapu",
+  },
+];
+
+export const techStack = [
+  { category: "Languages", items: ["TypeScript", "JavaScript", "Python"] },
+  {
+    category: "Frontend",
+    items: ["React", "Next.js", "Tailwind CSS", "Redux", "Vite"],
+  },
+  { category: "Backend", items: ["Node.js", "NestJS", "Express", "Bun"] },
+  {
+    category: "Databases",
+    items: ["PostgreSQL", "MongoDB", "Firebase", "Redis"],
+  },
+  {
+    category: "DevOps & Infra",
+    items: [
+      "Docker",
+      "Linux",
+      "Nginx",
+      "Cloudflare",
+      "GitHub Actions",
+      "Vercel",
+    ],
+  },
+  {
+    category: "Tools",
+    items: ["Git", "Figma", "Postman", "Neovim", "Drizzle", "Prisma"],
+  },
+];
+
+export const services = [
+  {
+    icon: "Globe",
+    title: "Full Stack Web Development",
+    description:
+      "End-to-end web applications with Next.js, React, and Node.js — from database design to pixel-perfect UI.",
+  },
+  {
+    icon: "ShoppingCart",
+    title: "E-commerce Solutions",
+    description:
+      "Custom online stores with payment integration, inventory management, multilingual storefronts, and courier APIs.",
+  },
+  {
+    icon: "Smartphone",
+    title: "Mobile App Development",
+    description:
+      "Cross-platform mobile apps with React Native — background services, push notifications, and Play Store deployment.",
+  },
+  {
+    icon: "Server",
+    title: "API & Backend Development",
+    description:
+      "RESTful APIs, database architecture, authentication systems, and real-time features with WebSockets.",
+  },
+];
+
+export const education = [
+  {
+    icon: "Laptop",
+    title: "Diploma in ICT",
+    subtitle: "Information & Communication Technology",
+  },
+  {
+    icon: "GraduationCap",
+    title: "MBA",
+    subtitle: "National University, Bangladesh",
+  },
+];
+
+export const funFacts = [
+  {
+    emoji: "☕",
+    text: "10–15 cups of coffee a day. Starts with espresso, ends with regret.",
+  },
+  {
+    emoji: "😴",
+    text: " Just pure, weaponized laziness. Leaving the house is a last resort.",
+  },
+  {
+    emoji: "🐧",
+    text: "10+ years on Linux. Arch btw — because pain is a feature, not a bug.",
+  },
+  {
+    emoji: "🎬",
+    text: "Watches movies and series while coding. Yes, during work. Productivity hack or coping mechanism — still figuring that out.",
+  },
+  {
+    emoji: "🎧",
+    text: "Music plays 24/7 — shower, walk, sleep. Built an entire radio app just so strangers could suffer through my playlists too.",
+  },
+  {
+    emoji: "🌏",
+    text: "Based in Bangladesh, mass-deployed caffeine-powered web apps worldwide. Fluent in Bengali, English, and sarcasm.",
+  },
 ];
 
 export const experiences = [
