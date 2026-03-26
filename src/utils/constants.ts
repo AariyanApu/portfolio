@@ -38,6 +38,22 @@ export const SKILL_ICONS_WIDE_URL =
 //   },
 // ];
 
+// ─── How to add a new project ───────────────────────────────────────────────
+// Copy the template below, fill in your values, and paste it into the array.
+// image: add your image to /public/projects/<filename>.webp and reference it.
+// featured: set true on at most ONE project (shown as hero card on homepage).
+//
+// {
+//   title: "Project Name",
+//   url: "https://your-project.com",
+//   period: "Jan 2026 — Present",   // or "" to hide
+//   description: "One or two sentences describing the project.",
+//   highlights: ["Key feature 1", "Key feature 2"],
+//   tags: ["Next.js", "TypeScript"],
+//   image: "/projects/your-image.webp",
+//   featured: false,
+// },
+// ────────────────────────────────────────────────────────────────────────────
 export const projects = [
   {
     title: "First Aid Surgical",
