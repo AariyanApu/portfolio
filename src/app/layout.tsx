@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     "Ariyan Opu",
     "Arian Opu",
     "Aariyanapu",
-    "আরিয়ান অপু",
+    "আরযন অপ",
     "web developer Bangladesh",
     "web developer Barishal",
     "web developer Barisal",
@@ -87,6 +87,11 @@ export default function RootLayout({
         <MouseSpotlight />
         <Navbar />
         {children}
+        <script
+          defer
+          src="https://umami.aariyan.info/script.js"
+          data-website-id="b0c50aeb-d4d5-45dc-903c-f37d5e0822cc"
+        ></script>
       </body>
     </html>
   );
