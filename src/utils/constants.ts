@@ -70,7 +70,7 @@ export const projects = [
       "Multi-role Auth",
     ],
     tags: ["Next.js", "Drizzle", "PostgreSQL", "Better Auth", "PWA"],
-    image: "/projects/first-aid.webp",
+    image: "/projects/first-aid.png",
     featured: true,
   },
   {
@@ -282,6 +282,193 @@ export const funFacts = [
   {
     emoji: "🌏",
     text: "Based in Bangladesh, mass-deployed caffeine-powered web apps worldwide. Fluent in Bengali, English, and sarcasm.",
+  },
+];
+
+export const movies = [
+  {
+    title: "Jason Bourne Series",
+    year: "2002–2016",
+    genre: "Action / Thriller",
+    imdb: "https://www.imdb.com/list/ls057255115/",
+    rating: "7.9",
+    description:
+      "An amnesiac CIA assassin races across Europe to uncover who he is — while the agency that made him tries to silence him for good.",
+    director: "Doug Liman · Paul Greengrass",
+    cast: ["Matt Damon", "Franka Potente", "Julia Stiles"],
+  },
+  {
+    title: "Borbaad",
+    year: "2025",
+    genre: "Bangladeshi Drama",
+    imdb: "https://www.imdb.com/title/tt33305312/",
+    rating: null,
+    description:
+      "A gripping 2025 Bangladeshi drama starring the iconic Shakib Khan, exploring themes of loss, identity, and redemption.",
+    director: "Rahmat Ali",
+    cast: ["Shakib Khan"],
+  },
+  {
+    title: "Vikram",
+    year: "2022",
+    genre: "Tamil Action Thriller",
+    imdb: "https://www.imdb.com/title/tt9179430/",
+    rating: "7.9",
+    description:
+      "A retired special agent is pulled back into action to investigate a string of brutal masked murders threatening national security.",
+    director: "Lokesh Kanagaraj",
+    cast: ["Kamal Haasan", "Fahadh Faasil", "Vijay Sethupathi"],
+  },
+  {
+    title: "Premam",
+    year: "2015",
+    genre: "Malayalam Romantic Drama",
+    imdb: "https://www.imdb.com/title/tt4679210",
+    rating: "8.2",
+    description:
+      "A young man's romantic journey across three distinct life phases — school, college, and adulthood — each defined by a different love.",
+    director: "Alphonse Puthren",
+    cast: ["Nivin Pauly", "Sai Pallavi", "Madonna Sebastian"],
+  },
+];
+
+export const tvSeries = [
+  {
+    title: "Game of Thrones",
+    year: "2011–2019",
+    genre: "Fantasy / Drama",
+    imdb: "https://www.imdb.com/title/tt0944947",
+    rating: "9.2",
+    description:
+      "Nine noble families wage war for control of Westeros, while an ancient, long-forgotten enemy awakens beyond the northern wall.",
+    creator: "David Benioff · D.B. Weiss",
+    cast: ["Emilia Clarke", "Kit Harington", "Peter Dinklage"],
+    network: "HBO",
+    seasons: 8,
+  },
+  {
+    title: "Mouse",
+    year: "2021",
+    genre: "Korean Thriller",
+    imdb: "https://www.imdb.com/title/tt13634792",
+    rating: "8.2",
+    description:
+      "What if a psychopath could be identified before birth? A deeply twisted Korean thriller that questions the very nature of good and evil.",
+    creator: "Choi Ran",
+    cast: ["Lee Seung-gi", "Lee Hee-jun", "Park Ju-hyun"],
+    network: "tvN",
+    seasons: 1,
+  },
+  {
+    title: "Dark",
+    year: "2017–2020",
+    genre: "German Sci-Fi Thriller",
+    imdb: "https://www.imdb.com/title/tt5753856",
+    rating: "8.8",
+    description:
+      "Four interconnected families unravel a time travel conspiracy spanning four centuries in a small German town. Beautifully mind-bending.",
+    creator: "Baran bo Odar · Jantje Friese",
+    cast: ["Louis Hofmann", "Oliver Masucci", "Lisa Vicari"],
+    network: "Netflix",
+    seasons: 3,
+  },
+];
+
+export const books = [
+  {
+    title: "Moyurakkhi",
+    author: "Humayun Ahmed",
+    year: "1990",
+    genre: "Bengali Fiction",
+    goodreads: "https://www.goodreads.com/en/book/show/12359912",
+    rating: "4.4",
+    description:
+      "A poignant Bengali novel by Bangladesh's most beloved author — blending melancholy, wit, and love in his signature effortless style.",
+    pages: 160,
+  },
+  {
+    title: "Amazonia",
+    author: "James Rollins",
+    year: "2002",
+    genre: "Adventure Thriller",
+    goodreads: "https://www.goodreads.com/book/show/294047.Amazonia",
+    rating: "3.8",
+    description:
+      "A deadly expedition deep into the Amazon to find a miraculous cure unearths an ancient secret guarded at all costs by a hidden tribe.",
+    pages: 480,
+  },
+  {
+    title: "Sapiens",
+    author: "Yuval Noah Harari",
+    year: "2011",
+    genre: "Non-fiction / History",
+    goodreads: "https://www.goodreads.com/book/show/23692271-sapiens",
+    rating: "4.4",
+    description:
+      "A sweeping account of how Homo sapiens dominated Earth — tracing the cognitive, agricultural, and scientific revolutions that shaped us.",
+    pages: 443,
+  },
+  {
+    title: "A Brief History of Time",
+    author: "Stephen Hawking",
+    year: "1988",
+    genre: "Science / Physics",
+    goodreads:
+      "https://www.goodreads.com/book/show/3869.A_Brief_History_of_Time",
+    rating: "4.3",
+    description:
+      "Hawking's landmark work on cosmology — covering the Big Bang, black holes, and the quest for a unified theory of everything.",
+    pages: 212,
+  },
+];
+
+export const favSongs: Array<{
+  title: string;
+  artist: string;
+  vibe: string;
+  from?: string;
+  spotifyId: string;
+}> = [
+  {
+    title: "Closer",
+    artist: "The Chainsmokers",
+    vibe: "Indie Pop",
+    spotifyId: "7BKLCZ1jbUBVqRi2FVlTVw",
+  },
+  {
+    title: "Didha",
+    artist: "Pritom Hasan",
+    vibe: "Bangla Folk",
+    spotifyId: "31MNFbWzsIZvf3ED5kHYsr",
+  },
+  {
+    title: "Tomake",
+    artist: "Arindom",
+    vibe: "Bengali Romantic",
+    from: "Fidaa (Film)",
+    spotifyId: "6HY2bYlI7vKKhodn2d5ha9",
+  },
+];
+
+export const personalInterests = [
+  { emoji: "🎬", label: "Watching thriller movies & series" },
+  { emoji: "📚", label: "Reading thriller novels" },
+  { emoji: "🤫", label: "Spending time alone in a quiet place" },
+  { emoji: "🎧", label: "Listening to music" },
+];
+
+export const currentlyLearning = [
+  {
+    title: "Python",
+    description: "Expanding into scripting, automation, and data workflows",
+    progress: 60,
+    emoji: "🐍",
+  },
+  {
+    title: "German (Deutsch)",
+    description: "Learning Deutsch day by day — currently navigating A2",
+    progress: 25,
+    emoji: "flag-de",
   },
 ];
 
