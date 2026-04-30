@@ -20,7 +20,7 @@ export function BlogCard({ post }: { post: BlogPostMeta }) {
     <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.2 }}>
       <Link
         href={`/blog/${post.slug}`}
-        className="group flex flex-col rounded-lg border border-border bg-muted/20 hover:border-teal/30 hover:bg-muted/30 transition-all duration-300 overflow-hidden h-80"
+        className="group flex flex-col rounded-lg border border-border bg-muted/20 hover:border-teal/30 hover:bg-muted/30 transition-all duration-300 overflow-hidden h-full"
       >
         {/* Cover image */}
         <div className="relative h-36 bg-muted/40 overflow-hidden shrink-0">
@@ -34,29 +34,17 @@ export function BlogCard({ post }: { post: BlogPostMeta }) {
         </div>
 
         {/* Content */}
-        <div className="flex flex-col gap-2 p-4 flex-1 overflow-hidden">
-          <h3 className="font-title text-lg font-black text-foreground group-hover:text-teal transition-colors duration-300 line-clamp-1">
+        <div className="flex flex-col gap-2 p-4 flex-1">
+          <h3 className="font-title text-lg font-black text-foreground group-hover:text-teal transition-colors duration-300 line-clamp-1 h-7 shrink-0">
             {post.title}
           </h3>
-          <p className="font-sans text-sm text-muted-foreground leading-relaxed line-clamp-2">
+          <p className="font-sans text-sm text-muted-foreground leading-relaxed line-clamp-2 h-[2.875rem] shrink-0">
             {post.excerpt}
           </p>
 
-          {/* Meta */}
-          <div className="flex items-center gap-3 text-xs text-muted-foreground font-sans mt-auto pt-2">
-            <span className="inline-flex items-center gap-1">
-              <Calendar className="size-3" />
-              {formatDate(post.date)}
-            </span>
-            <span className="inline-flex items-center gap-1">
-              <Clock className="size-3" />
-              {post.readingTime} min read
-            </span>
-          </div>
-
           {/* Tags */}
           {post.tags.length > 0 && (
-            <div className="flex flex-wrap gap-1 pt-1">
+            <div className="flex flex-wrap gap-1 shrink-0">
               {post.tags.map((tag) => (
                 <Badge
                   key={tag}
@@ -68,6 +56,18 @@ export function BlogCard({ post }: { post: BlogPostMeta }) {
               ))}
             </div>
           )}
+
+          {/* Meta — always pinned to bottom */}
+          <div className="flex items-center gap-3 text-xs text-muted-foreground font-sans mt-auto pt-2 shrink-0">
+            <span className="inline-flex items-center gap-1">
+              <Calendar className="size-3" />
+              {formatDate(post.date)}
+            </span>
+            <span className="inline-flex items-center gap-1">
+              <Clock className="size-3" />
+              {post.readingTime} min read
+            </span>
+          </div>
         </div>
       </Link>
     </motion.div>
