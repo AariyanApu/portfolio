@@ -276,48 +276,24 @@ export function BeyondCodeTabs({
   interests,
 }: BeyondCodeTabsProps) {
   return (
-    <Tabs defaultValue="movies">
-      <TabsList className="flex flex-wrap h-auto gap-1 mb-6 bg-muted/30 border border-border rounded-xl p-1.5 w-full sm:w-auto">
-        <TabsTrigger value="movies" className="font-sans text-xs sm:text-sm rounded-lg">
-          🎬 Movies
-        </TabsTrigger>
-        <TabsTrigger value="series" className="font-sans text-xs sm:text-sm rounded-lg">
-          📺 Series
-        </TabsTrigger>
-        <TabsTrigger value="books" className="font-sans text-xs sm:text-sm rounded-lg">
-          📚 Books
-        </TabsTrigger>
-        <TabsTrigger value="songs" className="font-sans text-xs sm:text-sm rounded-lg">
+    <Tabs defaultValue="songs">
+      <TabsList className="flex h-auto gap-1 mb-6 bg-muted/30 border border-border rounded-xl p-1.5 w-full overflow-x-auto [&::-webkit-scrollbar]:hidden [scrollbar-width:none]">
+        <TabsTrigger value="songs" className="font-sans text-xs sm:text-sm rounded-lg shrink-0">
           🎵 Songs
         </TabsTrigger>
-        <TabsTrigger value="interests" className="font-sans text-xs sm:text-sm rounded-lg">
+        <TabsTrigger value="books" className="font-sans text-xs sm:text-sm rounded-lg shrink-0">
+          📚 Books
+        </TabsTrigger>
+        <TabsTrigger value="movies" className="font-sans text-xs sm:text-sm rounded-lg shrink-0">
+          🎬 Movies
+        </TabsTrigger>
+        <TabsTrigger value="series" className="font-sans text-xs sm:text-sm rounded-lg shrink-0">
+          📺 Series
+        </TabsTrigger>
+        <TabsTrigger value="interests" className="hidden sm:inline-flex font-sans text-xs sm:text-sm rounded-lg shrink-0">
           ✨ Interests
         </TabsTrigger>
       </TabsList>
-
-      <TabsContent value="movies">
-        <AnimatedGrid className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {movies.map((m) => (
-            <MovieCard key={m.title} movie={m} />
-          ))}
-        </AnimatedGrid>
-      </TabsContent>
-
-      <TabsContent value="series">
-        <AnimatedGrid className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          {series.map((s) => (
-            <SeriesCard key={s.title} series={s} />
-          ))}
-        </AnimatedGrid>
-      </TabsContent>
-
-      <TabsContent value="books">
-        <AnimatedGrid className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {books.map((b) => (
-            <BookCard key={b.title} book={b} />
-          ))}
-        </AnimatedGrid>
-      </TabsContent>
 
       <TabsContent value="songs">
         <AnimatedGrid className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -355,6 +331,30 @@ export function BeyondCodeTabs({
                 </Badge>
               </div>
             </motion.div>
+          ))}
+        </AnimatedGrid>
+      </TabsContent>
+
+      <TabsContent value="books">
+        <AnimatedGrid className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {books.map((b) => (
+            <BookCard key={b.title} book={b} />
+          ))}
+        </AnimatedGrid>
+      </TabsContent>
+
+      <TabsContent value="movies">
+        <AnimatedGrid className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {movies.map((m) => (
+            <MovieCard key={m.title} movie={m} />
+          ))}
+        </AnimatedGrid>
+      </TabsContent>
+
+      <TabsContent value="series">
+        <AnimatedGrid className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          {series.map((s) => (
+            <SeriesCard key={s.title} series={s} />
           ))}
         </AnimatedGrid>
       </TabsContent>
