@@ -8,8 +8,8 @@
   --color-foreground: var(--foreground);
   --color-teal: var(--teal);
   --font-title: var(--font-kenfolg), sans-serif;
-  --font-sans: var(--font-quicksand), Quicksand, sans-serif;
-  --font-mono: JetBrains Mono, monospace;
+  --font-sans: var(--font-geist), Geist, sans-serif;
+  --font-mono: var(--font-jetbrains), JetBrains Mono, monospace;
   --font-serif: Georgia, serif;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -74,7 +74,7 @@
 }
 
 body {
-  font-family: var(--font-quicksand), Quicksand, Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist), Geist, Arial, Helvetica, sans-serif;
 }
 
 :root {
@@ -112,9 +112,9 @@ body {
   --sidebar-border: oklch(0.9115 0.0216 285.9625);
   --sidebar-ring: oklch(0.5417 0.179 288.0332);
   --destructive-foreground: oklch(1 0 0);
-  --font-sans: var(--font-quicksand), Quicksand, sans-serif;
+  --font-sans: var(--font-geist), Geist, sans-serif;
   --font-serif: Georgia, serif;
-  --font-mono: JetBrains Mono, monospace;
+  --font-mono: var(--font-jetbrains), JetBrains Mono, monospace;
   --shadow-color: hsl(240 30% 25%);
   --shadow-opacity: 0.12;
   --shadow-offset-x: 0px;
@@ -176,9 +176,9 @@ body {
   --sidebar-border: oklch(0.3261 0.0597 282.5832);
   --sidebar-ring: oklch(0.7162 0.1597 290.3962);
   --destructive-foreground: oklch(1 0 0);
-  --font-sans: var(--font-quicksand), Quicksand, sans-serif;
+  --font-sans: var(--font-geist), Geist, sans-serif;
   --font-serif: Georgia, serif;
-  --font-mono: JetBrains Mono, monospace;
+  --font-mono: var(--font-jetbrains), JetBrains Mono, monospace;
   --shadow-color: hsl(240 30% 25%);
   --shadow-offset-x: 0px;
   --shadow-offset-y: 4px;

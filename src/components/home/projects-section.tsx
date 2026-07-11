@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { ExternalLink } from "lucide-react";
+import Image from "next/image";
 import { AnimatedSlice } from "@/components/animated-slice";
 import { Badge } from "@/components/ui/badge";
 import { projects } from "@/utils/constants";
@@ -13,7 +13,7 @@ export function ProjectsSection() {
       <div className="max-w-5xl mx-auto">
         {/* Heading */}
         <AnimatedSlice inView delay={0}>
-          <p className="text-teal font-sans text-sm font-semibold tracking-widest uppercase mb-2">
+          <p className="text-teal font-mono text-xs font-medium tracking-widest uppercase mb-2">
             My work
           </p>
         </AnimatedSlice>
@@ -30,18 +30,16 @@ export function ProjectsSection() {
               href={featured.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group block rounded-lg border border-border bg-muted/20 hover:border-teal/30 hover:bg-muted/30 transition-all duration-300 overflow-hidden mb-4"
+              className="group block rounded-lg border border-border bg-muted/20 hover:border-teal/30 hover:bg-muted/30 hover:shadow-[0_0_32px_-8px] hover:shadow-teal/25 transition-all duration-300 overflow-hidden mb-4"
             >
               <div className="flex flex-col md:flex-row">
                 {/* Text */}
                 <div className="flex flex-col justify-center gap-2.5 p-5 md:w-1/2">
-                  <div className="flex items-center gap-1.5 flex-wrap">
-                    {featured.period && (
-                      <span className="inline-flex w-fit font-sans text-xs font-medium text-teal bg-teal/10 border border-teal/20 rounded-full px-2.5 py-0.5">
-                        {featured.period}
-                      </span>
-                    )}
-                  </div>
+                  {featured.period && (
+                    <span className="font-mono text-xs text-muted-foreground">
+                      {featured.period}
+                    </span>
+                  )}
                   <div>
                     <div className="flex items-center gap-2 mb-1">
                       <h3 className="font-title text-xl font-black text-foreground group-hover:text-teal transition-colors duration-300">
@@ -82,9 +80,9 @@ export function ProjectsSection() {
                     src={featured.image}
                     alt={featured.title}
                     fill
-                    className="object-cover  grayscale-100 opacity-50 bg-black group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 group-hover:grayscale-0"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent md:bg-gradient-to-r" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/50 via-transparent to-transparent md:bg-gradient-to-r" />
                 </div>
               </div>
             </a>
@@ -99,7 +97,7 @@ export function ProjectsSection() {
                 href={project.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex flex-col rounded-lg border border-border bg-muted/20 hover:border-teal/30 hover:bg-muted/30 transition-all duration-300 overflow-hidden h-full"
+                className="group flex flex-col rounded-lg border border-border bg-muted/20 hover:border-teal/30 hover:bg-muted/30 hover:shadow-[0_0_24px_-8px] hover:shadow-teal/25 transition-all duration-300 overflow-hidden h-full"
               >
                 {/* Image */}
                 <div className="relative h-28 bg-muted/40 overflow-hidden shrink-0">
@@ -107,9 +105,9 @@ export function ProjectsSection() {
                     src={project.image}
                     alt={project.title}
                     fill
-                    className="object-cover opacity-50 bg-black group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 grayscale-100 group-hover:grayscale-0"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/30 via-transparent to-transparent" />
                 </div>
                 {/* Content */}
                 <div className="flex flex-col gap-1.5 p-3 flex-1">
@@ -119,7 +117,7 @@ export function ProjectsSection() {
                     </h3>
                     <ExternalLink className="size-3 text-muted-foreground group-hover:text-teal transition-colors duration-300 shrink-0" />
                     {project.period && (
-                      <span className="ml-auto font-sans text-xs text-muted-foreground whitespace-nowrap">
+                      <span className="ml-auto font-mono text-xs text-muted-foreground whitespace-nowrap">
                         {project.period}
                       </span>
                     )}

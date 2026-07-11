@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Quicksand } from "next/font/google";
+import { Geist, JetBrains_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import { Navbar } from "@/components/layout/navbar";
 import { MouseSpotlight } from "@/components/mouse-spotlight";
@@ -11,8 +11,13 @@ const kenfolg = localFont({
   variable: "--font-kenfolg",
 });
 
-const quickSand = Quicksand({
-  variable: "--font-quicksand",
+const geist = Geist({
+  variable: "--font-geist",
+  subsets: ["latin"],
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains",
   subsets: ["latin"],
 });
 
@@ -82,7 +87,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={`${quickSand.variable} ${kenfolg.variable} antialiased`}>
+      <body
+        className={`${geist.variable} ${jetbrainsMono.variable} ${kenfolg.variable} antialiased`}
+      >
         <SwRegister />
         <MouseSpotlight />
         <Navbar />

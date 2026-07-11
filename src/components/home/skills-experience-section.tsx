@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { AnimatedSlice } from "@/components/animated-slice";
-import { SKILL_ICONS_URL, experiences } from "@/utils/constants";
+import { experiences, skillGroups } from "@/utils/constants";
 
 export function SkillsExperienceSection() {
   return (
@@ -10,7 +10,7 @@ export function SkillsExperienceSection() {
           {/* Left — My Toolkit */}
           <div className="lg:w-2/5">
             <AnimatedSlice inView delay={0}>
-              <p className="text-teal font-sans text-sm font-semibold tracking-widest uppercase mb-3">
+              <p className="text-teal font-mono text-xs font-medium tracking-widest uppercase mb-3">
                 My toolkit
               </p>
             </AnimatedSlice>
@@ -19,22 +19,39 @@ export function SkillsExperienceSection() {
                 I Work With
               </h2>
             </AnimatedSlice>
-            <AnimatedSlice inView delay={0.16}>
-              <Image
-                src={SKILL_ICONS_URL}
-                alt="Tech stack icons"
-                width={270}
-                height={400}
-                className="w-full max-w-xs opacity-80 grayscale-50"
-                unoptimized
-              />
-            </AnimatedSlice>
+
+            <div className="space-y-5">
+              {skillGroups.map((group, i) => {
+                const count = group.iconIds.split(",").length;
+                return (
+                  <AnimatedSlice
+                    key={group.category}
+                    inView
+                    delay={0.12 + i * 0.06}
+                  >
+                    <div>
+                      <p className="font-mono text-xs text-teal/80 uppercase tracking-wider mb-2">
+                        {group.category}
+                      </p>
+                      <Image
+                        src={`https://skillicons.dev/icons?i=${group.iconIds}&theme=dark&perline=8`}
+                        alt={`${group.category} icons`}
+                        width={count > 8 ? 8 * 48 : count * 48}
+                        height={Math.ceil(count / 8) * 48}
+                        className="h-9 sm:h-10 w-auto hover:scale-[1.03] transition-transform duration-300"
+                        unoptimized
+                      />
+                    </div>
+                  </AnimatedSlice>
+                );
+              })}
+            </div>
           </div>
 
           {/* Right — My Journey */}
           <div className="lg:w-3/5">
             <AnimatedSlice inView delay={0}>
-              <p className="text-teal font-sans text-sm font-semibold tracking-widest uppercase mb-3">
+              <p className="text-teal font-mono text-xs font-medium tracking-widest uppercase mb-3">
                 My journey
               </p>
             </AnimatedSlice>
@@ -57,25 +74,22 @@ export function SkillsExperienceSection() {
                     <div className="relative pl-7 group">
                       <div className="absolute left-0 top-2 -translate-x-1/2 w-2.5 h-2.5 rounded-full border-2 border-teal bg-background group-hover:bg-teal transition-colors duration-300" />
 
-                      <div className="rounded-xl border border-border bg-muted/20 px-5 py-4 hover:border-teal/30 hover:bg-muted/30 transition-all duration-300">
+                      <div className="rounded-xl border border-border bg-muted/20 px-5 py-4 hover:border-teal/30 hover:bg-muted/30 hover:shadow-[0_0_24px_-8px] hover:shadow-teal/25 transition-all duration-300">
                         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-0.5 mb-1">
-                          <div className="flex items-center gap-2 flex-wrap">
+                          <div className="flex items-baseline gap-2 flex-wrap">
                             <h3 className="font-title text-base font-black text-foreground">
                               {exp.role}
                             </h3>
-                            <span className="text-muted-foreground font-sans text-xs">
-                              at
-                            </span>
                             <span className="text-teal font-sans text-sm font-semibold">
-                              {exp.company}
+                              @ {exp.company}
                             </span>
                           </div>
-                          <span className="font-sans text-xs text-muted-foreground whitespace-nowrap">
+                          <span className="font-mono text-xs text-muted-foreground whitespace-nowrap">
                             {exp.period}
                           </span>
                         </div>
 
-                        <p className="font-sans text-xs text-muted-foreground leading-relaxed mt-1.5 mb-2">
+                        <p className="font-sans text-xs text-muted-foreground leading-relaxed mt-1.5 mb-2.5">
                           {exp.description}
                         </p>
 

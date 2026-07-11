@@ -8,7 +8,7 @@ export function AboutSection() {
       <div className="max-w-5xl mx-auto">
         {/* Heading */}
         <AnimatedSlice inView delay={0}>
-          <p className="text-teal font-sans text-sm font-semibold tracking-widest uppercase mb-3">
+          <p className="text-teal font-mono text-xs font-medium tracking-widest uppercase mb-3">
             Get to know me
           </p>
         </AnimatedSlice>
@@ -75,10 +75,9 @@ export function AboutSection() {
                   alt="Aariyan Apu"
                   width={400}
                   height={500}
-                  className="object-cover w-full grayscale hover:grayscale-0 transition-all duration-500"
+                  className="object-cover w-full hover:scale-[1.02] transition-transform duration-500"
                   priority
                 />
-                <div className="absolute inset-0 bg-teal/5 hover:bg-transparent transition-colors duration-500" />
               </div>
             </div>
           </AnimatedSlice>

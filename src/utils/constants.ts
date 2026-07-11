@@ -11,32 +11,32 @@ export const SKILL_ICONS_URL =
 export const SKILL_ICONS_WIDE_URL =
   "https://skillicons.dev/icons?i=ts,js,py,react,nextjs,tailwind,redux,css,vite,babel,nodejs,nestjs,express,prisma,bun,postgres,mongodb,firebase,redis,docker,git,github,linux,bash,nginx,cloudflare,githubactions,figma,postman,neovim,vercel,netlify,md&theme=dark&perline=10";
 
-// export const skillGroups = [
-//   {
-//     category: "Languages",
-//     iconIds: "ts,js,py",
-//   },
-//   {
-//     category: "Frontend",
-//     iconIds: "react,nextjs,tailwind,redux,css,vite,babel",
-//   },
-//   {
-//     category: "Backend",
-//     iconIds: "nodejs,nestjs,express,prisma,bun",
-//   },
-//   {
-//     category: "Databases",
-//     iconIds: "postgres,mongodb,firebase,redis",
-//   },
-//   {
-//     category: "DevOps & Infra",
-//     iconIds: "docker,git,github,linux,bash,nginx,cloudflare,githubactions",
-//   },
-//   {
-//     category: "Other",
-//     iconIds: "figma,postman,neovim,vercel,netlify,md",
-//   },
-// ];
+export const skillGroups = [
+  {
+    category: "Languages",
+    iconIds: "ts,js,py",
+  },
+  {
+    category: "Frontend",
+    iconIds: "react,nextjs,tailwind,redux,css,vite,babel",
+  },
+  {
+    category: "Backend",
+    iconIds: "nodejs,nestjs,express,prisma,bun",
+  },
+  {
+    category: "Databases",
+    iconIds: "postgres,mongodb,firebase,redis",
+  },
+  {
+    category: "DevOps & Infra",
+    iconIds: "docker,git,github,linux,bash,nginx,cloudflare,githubactions",
+  },
+  {
+    category: "Other",
+    iconIds: "figma,postman,neovim,vercel,netlify,md",
+  },
+];
 
 // ─── How to add a new project ───────────────────────────────────────────────
 // Copy the template below, fill in your values, and paste it into the array.
