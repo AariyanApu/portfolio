@@ -2,18 +2,39 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 import { motion } from "framer-motion";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, X } from "lucide-react";
+import { cn } from "@/lib/utils";
 import { navLinks } from "@/utils/constants";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    const onScroll = () =>
+      setScrolled(window.scrollY > window.innerHeight * 0.6);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Transparent over the home hero so its ambient glow stays vivid;
+  // glass everywhere else and once scrolled past the hero.
+  const transparent = pathname === "/" && !scrolled;
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 sm:px-10 md:px-20 lg:px-32 py-5 bg-background/80 backdrop-blur-sm">
+    <header
+      className={cn(
+        "fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 sm:px-10 md:px-20 lg:px-32 py-5 transition-[background-color,backdrop-filter] duration-500",
+        transparent ? "bg-transparent" : "bg-background/80 backdrop-blur-sm",
+      )}
+    >
       {/* Logo */}
       <Link href="/" className="flex items-center">
         <Image

@@ -54,7 +54,7 @@ export function ContactSection() {
           {/* Left — CTA */}
           <div className="lg:w-3/5 flex flex-col justify-center">
             <AnimatedSlice inView delay={0}>
-              <p className="text-teal font-mono text-xs font-medium tracking-widest uppercase mb-3">
+              <p className="text-teal font-sans text-sm font-semibold tracking-widest uppercase mb-3">
                 Let's connect
               </p>
             </AnimatedSlice>
@@ -84,7 +84,7 @@ export function ContactSection() {
                   <a
                     key={link.label}
                     href={link.href}
-                    className="group flex items-center gap-4 px-6 py-4 rounded-xl border border-border bg-muted/20 hover:border-teal/30 hover:bg-muted/30 hover:shadow-[0_0_20px_-8px] hover:shadow-teal/25 transition-all duration-200"
+                    className="group flex items-center gap-4 px-6 py-4 rounded-xl border border-border bg-muted/20 hover:border-teal/30 hover:bg-muted/30 transition-all duration-200"
                   >
                     <Icon className="size-5 text-muted-foreground group-hover:text-teal transition-colors duration-200 shrink-0" />
                     <span className="font-sans text-base font-medium text-foreground">
@@ -95,7 +95,7 @@ export function ContactSection() {
               })}
 
               {/* Social icon grid */}
-              <div className="grid grid-cols-3 sm:grid-cols-6 gap-3">
+              <div className="grid grid-cols-6 gap-3">
                 {socialLinks.map((link) => {
                   const Icon = link.icon;
                   return (
@@ -105,7 +105,7 @@ export function ContactSection() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={link.label}
-                      className="group flex items-center justify-center aspect-square rounded-xl border border-border bg-muted/20 hover:border-teal/30 hover:bg-muted/30 hover:shadow-[0_0_20px_-8px] hover:shadow-teal/25 transition-all duration-200"
+                      className="group flex items-center justify-center aspect-square rounded-xl border border-border bg-muted/20 hover:border-teal/30 hover:bg-muted/30 transition-all duration-200"
                     >
                       <Icon className="size-5 text-muted-foreground group-hover:text-teal transition-colors duration-200" />
                     </a>

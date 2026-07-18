@@ -205,7 +205,10 @@ function SeriesCard({ series }: { series: SeriesItem }) {
             {series.network} · {series.seasons}S
           </span>
         </div>
-        <ExternalIconLink href={series.imdb} label={`${series.title} on IMDb`} />
+        <ExternalIconLink
+          href={series.imdb}
+          label={`${series.title} on IMDb`}
+        />
       </div>
 
       <div>
@@ -278,19 +281,34 @@ export function BeyondCodeTabs({
   return (
     <Tabs defaultValue="songs">
       <TabsList className="flex h-auto gap-1 mb-6 bg-muted/30 border border-border rounded-xl p-1.5 w-full overflow-x-auto [&::-webkit-scrollbar]:hidden [scrollbar-width:none]">
-        <TabsTrigger value="songs" className="font-sans text-xs sm:text-sm rounded-lg shrink-0">
+        <TabsTrigger
+          value="songs"
+          className="font-sans text-xs sm:text-sm rounded-lg shrink-0"
+        >
           🎵 Songs
         </TabsTrigger>
-        <TabsTrigger value="books" className="font-sans text-xs sm:text-sm rounded-lg shrink-0">
+        <TabsTrigger
+          value="books"
+          className="font-sans text-xs sm:text-sm rounded-lg shrink-0"
+        >
           📚 Books
         </TabsTrigger>
-        <TabsTrigger value="movies" className="font-sans text-xs sm:text-sm rounded-lg shrink-0">
+        <TabsTrigger
+          value="movies"
+          className="font-sans text-xs sm:text-sm rounded-lg shrink-0"
+        >
           🎬 Movies
         </TabsTrigger>
-        <TabsTrigger value="series" className="font-sans text-xs sm:text-sm rounded-lg shrink-0">
+        <TabsTrigger
+          value="series"
+          className="font-sans text-xs sm:text-sm rounded-lg shrink-0"
+        >
           📺 Series
         </TabsTrigger>
-        <TabsTrigger value="interests" className="hidden sm:inline-flex font-sans text-xs sm:text-sm rounded-lg shrink-0">
+        <TabsTrigger
+          value="interests"
+          className="hidden sm:inline-flex font-sans text-xs sm:text-sm rounded-lg shrink-0"
+        >
           ✨ Interests
         </TabsTrigger>
       </TabsList>
@@ -321,12 +339,16 @@ export function BeyondCodeTabs({
                     {song.artist}
                     {song.from && (
                       <span className="text-muted-foreground/60">
-                        {" "}· {song.from}
+                        {" "}
+                        · {song.from}
                       </span>
                     )}
                   </p>
                 </div>
-                <Badge variant="secondary" className="font-sans text-xs shrink-0">
+                <Badge
+                  variant="secondary"
+                  className="font-sans text-xs shrink-0"
+                >
                   {song.vibe}
                 </Badge>
               </div>
