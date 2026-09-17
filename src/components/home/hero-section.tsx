@@ -1,9 +1,9 @@
 import { AnimatedSlice } from "@/components/animated-slice";
-import ShimmerButton from "@/components/ui/shimmer-button";
+import { ResumeFlameButton } from "@/components/home/resume-flame-button";
 
 export function HeroSection() {
   return (
-    <section className="min-h-screen bg-background flex items-center px-6 sm:px-10 md:px-20 lg:px-32">
+    <section className="min-h-screen bg-background flex items-center overflow-x-clip px-6 sm:px-10 md:px-20 lg:px-32">
       <div className="w-full max-w-5xl">
         <AnimatedSlice delay={0}>
           <p className="text-teal font-sans text-base sm:text-lg mb-4 sm:mb-5">Hi, I'm</p>
@@ -28,12 +28,7 @@ export function HeroSection() {
         </AnimatedSlice>
 
         <AnimatedSlice delay={0.42}>
-          <ShimmerButton
-            text="Download Resume"
-            href="/resume.pdf"
-            shimmerColor="oklch(0.78 0.15 172)"
-            className="justify-start"
-          />
+          <ResumeFlameButton />
         </AnimatedSlice>
       </div>
     </section>
