@@ -22,28 +22,35 @@ export function AboutHeroSection() {
           <div className="flex-1 space-y-5">
             <AnimatedSlice inView delay={0.12}>
               <p className="font-sans text-muted-foreground leading-relaxed">
-                I'm a full-stack engineer with 6+ years of experience building
-                production-grade web and mobile applications. I work across the
-                entire stack — from pixel-perfect frontends in <H>React</H> and{" "}
-                <H>Next.js</H> to backend APIs with <H>Node.js</H> and{" "}
-                <H>NestJS</H>, backed by <H>PostgreSQL</H> and MongoDB.
+                I came to engineering through finance — four and a half years at
+                a garment manufacturer, most recently as <H>Assistant Accountant</H>{" "}
+                handling production, sales, and cost reporting. Alongside that,
+                I've been building web applications since April 2021, and today I
+                work across the entire stack — from pixel-perfect frontends in{" "}
+                <H>React</H> and <H>Next.js</H> to backend APIs with{" "}
+                <H>Node.js</H> and <H>NestJS</H>, backed by <H>PostgreSQL</H>{" "}
+                and MongoDB.
               </p>
             </AnimatedSlice>
 
             <AnimatedSlice inView delay={0.18}>
               <p className="font-sans text-muted-foreground leading-relaxed">
-                I've led frontend teams for e-commerce platforms, built
-                multi-language medical equipment websites, and shipped a{" "}
-                <H>React Native</H> radio app from scratch. I'm comfortable with{" "}
-                <H>CI/CD</H>, <H>Docker</H>, <H>Linux</H> server administration,
-                and <H>Cloudflare</H> infrastructure.
+                I've built multilingual e-commerce platforms for medical
+                equipment suppliers, shipped a <H>React Native</H> radio app
+                from scratch, and run production deployments on <H>AWS</H>, VPS,
+                and <H>Linux</H> servers — comfortable with <H>CI/CD</H>,{" "}
+                <H>Docker</H>, and <H>Cloudflare</H> infrastructure.
               </p>
             </AnimatedSlice>
 
             <AnimatedSlice inView delay={0.24}>
               <p className="font-sans text-muted-foreground leading-relaxed">
-                When I'm not writing code, I'm managing my <H>self-hosted</H>{" "}
-                server at home or contributing to <H>open-source</H> projects.
+                I've been admitted to the <H>M.Sc. European Economic Studies</H>{" "}
+                at Otto-Friedrich-Universität Bamberg for the 2026/27 winter
+                semester — where my finance background meets everything I've
+                learned shipping software. When I'm not writing code, I'm
+                managing my <H>self-hosted</H> server at home or contributing to{" "}
+                <H>open-source</H> projects.
               </p>
             </AnimatedSlice>
 
@@ -76,7 +83,7 @@ export function AboutHeroSection() {
               <div className="relative rounded-2xl overflow-hidden border border-border shadow-xl">
                 <Image
                   src="/asset/about-me.jpg"
-                  alt="Aariyan Apu"
+                  alt="Portrait of Aariyan Apu, full stack web developer from Barishal, Bangladesh"
                   width={400}
                   height={500}
                   className="object-cover w-full grayscale hover:grayscale-0 transition-all duration-500"

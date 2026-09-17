@@ -6,8 +6,11 @@ import { PostHeader } from "@/components/blog/post-header";
 import { ScrollProgress } from "@/components/blog/scroll-progress";
 import { ShareButtons } from "@/components/blog/share-buttons";
 import { TableOfContents } from "@/components/blog/table-of-contents";
+import { JsonLd } from "@/components/json-ld";
 import { Footer } from "@/components/layout/footer";
 import { getPostBySlug, getPostSlugs } from "@/lib/blog";
+import { blogPostingJsonLd, breadcrumbJsonLd } from "@/lib/seo";
+import { SITE_URL } from "@/utils/constants";
 
 export function generateStaticParams() {
   return getPostSlugs().map((slug) => ({ slug }));
@@ -24,23 +27,30 @@ export async function generateMetadata({
     return {
       title: post.title,
       description: post.excerpt,
-      keywords: post.tags,
+      keywords: [...post.tags, "Aariyan Apu"],
+      authors: [{ name: "Aariyan Apu", url: SITE_URL }],
+      alternates: { canonical: `/blog/${slug}` },
       openGraph: {
         type: "article",
         title: post.title,
         description: post.excerpt,
-        url: `https://aariyan.info/blog/${slug}`,
-        images: [{ url: post.image, width: 1200, height: 630 }],
+        url: `/blog/${slug}`,
+        images: [{ url: post.image, alt: post.title }],
         publishedTime: post.date,
-        authors: ["Aariyan Apu"],
+        modifiedTime: post.date,
+        authors: [`${SITE_URL}/about`],
+        section: "Blog",
         tags: post.tags,
       },
-      alternates: {
-        canonical: `https://aariyan.info/blog/${slug}`,
+      twitter: {
+        card: "summary_large_image",
+        title: post.title,
+        description: post.excerpt,
+        images: [post.image],
       },
     };
   } catch {
-    return { title: "Post not found" };
+    return { title: "Post not found", robots: { index: false } };
   }
 }
 
@@ -58,32 +68,22 @@ export default async function BlogPostPage({
     notFound();
   }
 
-  const articleJsonLd = {
+  const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    headline: post.title,
-    description: post.excerpt,
-    image: post.image,
-    datePublished: post.date,
-    author: {
-      "@type": "Person",
-      name: "Aariyan Apu",
-      url: "https://aariyan.info",
-    },
-    publisher: { "@type": "Person", name: "Aariyan Apu" },
-    url: `https://aariyan.info/blog/${slug}`,
-    keywords: post.tags.join(", "),
-    wordCount: post.content.split(/\s+/).length,
+    "@graph": [
+      blogPostingJsonLd(post),
+      breadcrumbJsonLd([
+        { name: "Home", path: "/" },
+        { name: "Blog", path: "/blog" },
+        { name: post.title, path: `/blog/${slug}` },
+      ]),
+    ],
   };
 
   return (
     <>
       <ScrollProgress />
-      <script
-        type="application/ld+json"
-        // biome-ignore lint/security/noDangerouslySetInnerHtml: static JSON-LD structured data
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
-      />
+      <JsonLd data={jsonLd} />
       <main className="px-6 sm:px-10 md:px-20 lg:px-32 ">
         <div className=" pb-8 max-w-5xl mx-auto mt-32">
           <article>

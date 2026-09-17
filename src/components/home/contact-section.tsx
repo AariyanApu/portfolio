@@ -48,7 +48,7 @@ const socialLinks = [
 
 export function ContactSection() {
   return (
-    <section className="px-6 sm:px-10 md:px-20 lg:px-32 py-16">
+    <section id="contact" className="px-6 sm:px-10 md:px-20 lg:px-32 py-16">
       <div className="max-w-5xl mx-auto">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
           {/* Left — CTA */}

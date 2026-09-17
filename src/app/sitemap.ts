@@ -1,41 +1,54 @@
 import type { MetadataRoute } from "next";
-import { getPostSlugs } from "@/lib/blog";
+import { getAllPosts } from "@/lib/blog";
+import { abs } from "@/lib/seo";
+import { profile, projects, SITE_URL } from "@/utils/constants";
 
-const BASE_URL = "https://aariyan.info";
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const now = new Date();
 
-export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: MetadataRoute.Sitemap = [
     {
-      url: BASE_URL,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 1.0,
-    },
-    {
-      url: `${BASE_URL}/about`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${BASE_URL}/projects`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${BASE_URL}/blog`,
-      lastModified: new Date(),
+      url: `${SITE_URL}/`,
+      lastModified: now,
       changeFrequency: "weekly",
+      priority: 1.0,
+      images: [abs(profile.image), abs("/opengraph-image")],
+    },
+    {
+      url: `${SITE_URL}/about`,
+      lastModified: now,
+      changeFrequency: "monthly",
       priority: 0.9,
+      images: [abs(profile.image)],
+    },
+    {
+      url: `${SITE_URL}/projects`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.8,
+      images: projects.map((p) => abs(p.image)),
+    },
+    {
+      url: `${SITE_URL}/blog`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: abs(profile.resume),
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.5,
     },
   ];
 
-  const blogPosts: MetadataRoute.Sitemap = getPostSlugs().map((slug) => ({
-    url: `${BASE_URL}/blog/${slug}`,
-    lastModified: new Date(),
+  const posts = await getAllPosts();
+  const blogPosts: MetadataRoute.Sitemap = posts.map((post) => ({
+    url: `${SITE_URL}/blog/${post.slug}`,
+    lastModified: new Date(post.date),
     changeFrequency: "monthly",
     priority: 0.7,
+    images: [abs(post.image)],
   }));
 
   return [...staticPages, ...blogPosts];

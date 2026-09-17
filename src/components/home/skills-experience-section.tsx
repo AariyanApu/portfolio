@@ -22,7 +22,7 @@ export function SkillsExperienceSection() {
             <AnimatedSlice inView delay={0.16}>
               <Image
                 src={SKILL_ICONS_URL}
-                alt="Tech stack icons"
+                alt="Aariyan Apu tech stack: TypeScript, JavaScript, Python, React, Next.js, Tailwind CSS, Node.js, NestJS, PostgreSQL, MongoDB, Docker and more"
                 width={270}
                 height={400}
                 className="w-full max-w-xs opacity-80 grayscale-50"
@@ -50,7 +50,7 @@ export function SkillsExperienceSection() {
               <div className="space-y-4">
                 {experiences?.map((exp, i) => (
                   <AnimatedSlice
-                    key={exp.company}
+                    key={`${exp.company}-${exp.period}`}
                     inView
                     delay={0.1 + i * 0.08}
                   >
@@ -63,16 +63,25 @@ export function SkillsExperienceSection() {
                             <h3 className="font-title text-base font-black text-foreground">
                               {exp.role}
                             </h3>
-                            <span className="text-muted-foreground font-sans text-xs">
-                              at
+                            {exp.company && (
+                              <>
+                                <span className="text-muted-foreground font-sans text-xs">
+                                  at
+                                </span>
+                                <span className="text-teal font-sans text-sm font-semibold">
+                                  {exp.company}
+                                </span>
+                              </>
+                            )}
+                          </div>
+                          <div className="flex items-center gap-2 sm:flex-col sm:items-end sm:gap-0.5">
+                            <span className="font-sans text-xs text-muted-foreground whitespace-nowrap">
+                              {exp.period}
                             </span>
-                            <span className="text-teal font-sans text-sm font-semibold">
-                              {exp.company}
+                            <span className="font-sans text-xs text-muted-foreground/70">
+                              {exp.location}
                             </span>
                           </div>
-                          <span className="font-sans text-xs text-muted-foreground whitespace-nowrap">
-                            {exp.period}
-                          </span>
                         </div>
 
                         <p className="font-sans text-xs text-muted-foreground leading-relaxed mt-1.5 mb-2">

@@ -124,11 +124,7 @@ export const projects = [
     period: "",
     description:
       "Location-based food ordering platform for Bangladesh. Users browse restaurants and meals by area, place orders in seconds, and receive real-time push notifications at every step of delivery.",
-    highlights: [
-      "Location-based Orders",
-      "Push Notifications",
-      "Real-time Tracking",
-    ],
+    highlights: ["Location-based Orders", "Push Notifications", "Real-time Tracking"],
     tags: ["Next.js"],
     image: "/projects/ahar.webp",
     featured: false,
@@ -139,12 +135,7 @@ export const projects = [
     period: "",
     description:
       "A native Android radio app for Bangla music and talk stations. Background playback, song requests, real-time feedback, and Google login — paired with a Next.js marketing site.",
-    highlights: [
-      "Background Playback",
-      "Song Requests",
-      "Google Login",
-      "Play Store",
-    ],
+    highlights: ["Background Playback", "Song Requests", "Google Login", "Play Store"],
     tags: ["React Native", "NestJS", "Next.js"],
     image: "/projects/mellow-bangla.webp",
     featured: false,
@@ -203,14 +194,7 @@ export const techStack = [
   },
   {
     category: "DevOps & Infra",
-    items: [
-      "Docker",
-      "Linux",
-      "Nginx",
-      "Cloudflare",
-      "GitHub Actions",
-      "Vercel",
-    ],
+    items: ["Docker", "Linux", "Nginx", "Cloudflare", "GitHub Actions", "Vercel"],
   },
   {
     category: "Tools",
@@ -253,8 +237,8 @@ export const education = [
   },
   {
     icon: "GraduationCap",
-    title: "MBA",
-    subtitle: "National University, Bangladesh",
+    title: "EES ",
+    subtitle: "Otto-Friedrich-Universität Bamberg, Germany",
   },
 ];
 
@@ -413,8 +397,7 @@ export const books = [
     author: "Stephen Hawking",
     year: "1988",
     genre: "Science / Physics",
-    goodreads:
-      "https://www.goodreads.com/book/show/3869.A_Brief_History_of_Time",
+    goodreads: "https://www.goodreads.com/book/show/3869.A_Brief_History_of_Time",
     rating: "4.3",
     description:
       "Hawking's landmark work on cosmology — covering the Big Bang, black holes, and the quest for a unified theory of everything.",
@@ -473,49 +456,290 @@ export const currentlyLearning = [
 ];
 
 export const experiences = [
+  // {
+  //   role: "Career Break — Master's Preparation",
+  //   company: "",
+  //   period: "1 Jul 2026 — Present",
+  //   location: "Barishal, Bangladesh",
+  //   description:
+  //     "Left employment to prepare for the M.Sc. in Bamberg, Germany: IELTS Academic (7 Jul 2026), admission, blocked account, health insurance and visa application. Part-time web development continues alongside.",
+  //   highlights: [
+  //     "IELTS Academic",
+  //     "M.Sc. Bamberg admission",
+  //     "Blocked account & visa",
+  //   ],
+  // },
   {
-    role: "Fullstack Engineer",
-    company: "First Aid Surgical",
-    period: "Aug 2025 — Jan 2026",
+    role: "Assistant Accountant (Finance)",
+    company: "New Green Fashion",
+    period: "1 Feb 2022 — 30 Jun 2026",
+    location: "Ashulia, Dhaka, Bangladesh",
     description:
-      "Directed the frontend build of a multi-language e-commerce platform for medical equipment and hospital furniture with i18n support, quote request system, and SEO optimization.",
+      "Full-time finance role at a garment and apparel manufacturer. Prepared the daily production report and the daily and yearly order, production and delivery reports, plus monthly sales and performance reports for management. Analyzed income statements and cost and income figures monthly, quarterly and yearly, prepared comparative statements, and advised management on export and import decisions.",
     highlights: [
-      "Multi-language i18n",
-      "B2B quote system",
-      "Core Web Vitals optimized",
+      "Daily production reporting",
+      "Monthly sales & performance reports",
+      "Export/import decision support",
     ],
   },
   {
-    role: "Frontend Lead",
-    company: "NonstopGG",
-    period: "Jan 2025 — May 2025",
+    role: "Intern, MIS Department",
+    company: "New Green Fashion",
+    period: "1 May 2021 — 31 Jan 2022",
+    location: "Ashulia, Dhaka, Bangladesh",
     description:
-      "Led the frontend development of a B2B digital gift card marketplace built with Next.js. Implemented product catalog UI, secure checkout flows, and a real-time inventory dashboard.",
+      "Collected and compiled production, order and delivery data for daily and monthly management reports at a garment and apparel manufacturer. Moved to the finance department as Assistant Accountant in February 2022.",
+    highlights: ["Production & order data", "Daily/monthly MIS reports", "Promoted to Finance"],
+  },
+  {
+    role: "Web Application Developer (Self-Employed)",
+    company: "Self-employed",
+    period: "1 Apr 2021 — Present",
+    location: "Barishal, Bangladesh",
+    description:
+      "Part-time on days off (Friday and Saturday). Built e-commerce and web projects for businesses and NGOs from requirements to deployment. Designed and maintained relational databases for transactional, inventory and financial records, and built reporting and admin dashboards. Deployed and managed applications on AWS, VPS and Linux servers.",
     highlights: [
-      "500+ digital products",
-      "Automated delivery",
-      "Zero manual intervention",
+      "Requirements to deployment",
+      "Relational DBs & admin dashboards",
+      "AWS, VPS & Linux",
     ],
   },
+  {
+    role: "IT Support & Social Media Officer",
+    company: "Target Peoples for Development Organization (TPDO)",
+    period: "1 Jun 2019 — 28 Feb 2021",
+    location: "Barishal, Bangladesh",
+    description:
+      "Provided technical support for all IT infrastructure across the organization. Implemented IT policies and digital communication workflows for NGO operations, and managed the organization's digital presence and social media outreach.",
+    highlights: ["Org-wide IT support", "IT policy & workflows", "Digital presence & outreach"],
+  },
+  // {
+  //   role: "Career Break — Job Search After Graduation",
+  //   company: "",
+  //   period: "1 Oct 2018 — 31 May 2019",
+  //   location: "Barishal, Bangladesh",
+  //   description:
+  //     "Job search and preparation for employment after completing the BBA.",
+  //   highlights: ["Post-BBA job search"],
+  // },
+];
 
+// ─── SEO / identity (single source of truth for metadata, JSON-LD, llms.txt) ─
+// SITE_URL must match the host Vercel serves as primary (apex 308s to www).
+export const SITE_URL = "https://www.aariyan.info";
+export const SITE_NAME = "Aariyan Apu";
+
+// Every spelling people use for the name — fed to keywords, JSON-LD alternateName,
+// llms.txt and the FAQ so misspelled searches still resolve to this site.
+export const nameVariants = [
+  "Aariyan Apu",
+  "Ariyan Apu",
+  "Aariyan Opu",
+  "Ariyan Opu",
+  "Arian Apu",
+  "Arian Opu",
+  "Aryan Apu",
+  "Aryan Opu",
+  "Aarian Apu",
+  "Aariyan Apoo",
+  "Apu Aariyan",
+  "Aariyanapu",
+  "AariyanApu",
+  "আরিয়ান অপু",
+  "আরিয়ান",
+  "অপু",
+];
+
+export const profile = {
+  name: "Aariyan Apu",
+  givenName: "Aariyan",
+  familyName: "Apu",
+  nativeName: "আরিয়ান অপু ",
+  headline: "Full Stack Web Developer from Barishal, Bangladesh",
+  jobTitles: ["Full Stack Web Developer", "Assistant Accountant (Finance)"],
+  tagline: "I turn ideas into products people actually use",
+  shortBio:
+    "Aariyan Apu is a full stack web developer from Barishal, Bangladesh, building web and mobile apps with Next.js, React, TypeScript, Node.js, NestJS, PostgreSQL and React Native.",
+  bio: "Aariyan Apu is a full stack web developer from Barishal, Bangladesh. Aariyan builds production web and mobile applications with Next.js, React, TypeScript, Tailwind CSS, Node.js, NestJS, Express, PostgreSQL, MongoDB and React Native, and deploys them with Docker, Linux, Nginx, Cloudflare and Vercel. Since April 2021 Aariyan has shipped e-commerce stores, news portals, NGO websites and community platforms for clients in Bangladesh, including First Aid Surgical, NonstopGG, Daily Bangladesh Time, GBDC, TPDO, Ahar and the Mellow Bangla radio app. Aariyan also spent four and a half years in finance at New Green Fashion, a garment and apparel manufacturer in Ashulia, Dhaka, most recently as Assistant Accountant (Finance), holds a Bachelor of Business Administration in Finance and Banking from National University, Bangladesh, and has been admitted to the M.Sc. European Economic Studies at Otto-Friedrich-Universität Bamberg, Germany, for the 2026/27 winter semester. Aariyan is available for freelance and contract web development work.",
+  disambiguation:
+    "Aariyan Apu, the full stack web developer from Barishal, Bangladesh (aariyan.info, GitHub @AariyanApu). Not to be confused with other people or works named Apu.",
+  email: "hello@aariyan.info",
+  phone: "+8801712686075",
+  phoneDisplay: "+88 01712 686 075",
+  whatsapp: "https://wa.me/8801712686075",
+  telegram: "https://t.me/+8801712686075",
+  image: "/asset/about-me.jpg",
+  imageWidth: 400,
+  imageHeight: 445,
+  resume: "/resume.pdf",
+  location: {
+    city: "Barishal",
+    altCity: "Barisal",
+    region: "Barisal Division",
+    country: "Bangladesh",
+    countryCode: "BD",
+    timezone: "Asia/Dhaka",
+  },
+  availability:
+    "Available for freelance and contract web development projects (remote, worldwide).",
+  languages: [
+    { code: "bn", name: "Bengali", level: "Native" },
+    { code: "en", name: "English", level: "Fluent" },
+    { code: "de", name: "German", level: "learning, A2" },
+  ],
+  // Older portfolios still online; both redirect (or will) to SITE_URL.
+  previousSites: ["https://www.aariyanapu.com", "https://aaru.vercel.app"],
+};
+
+export const socialProfiles = [
   {
-    role: "Senior Front-End Engineer",
-    company: "Ahar Tech",
-    period: "Jul 2024 — Feb 2025",
-    description:
-      "Spearheaded development of Bangladesh's first meal subscription platform. Resolved critical bugs, maintained near-perfect uptime, and mentored junior developers.",
-    highlights: [
-      "90% bugs resolved in 48h",
-      "99.9% uptime",
-      "20% faster team delivery",
-    ],
+    name: "GitHub",
+    handle: "@AariyanApu",
+    url: "https://github.com/AariyanApu",
   },
   {
-    role: "Assistant Software Engineer",
-    company: "TPDO",
-    period: "Jun 2019 — Mar 2023",
-    description:
-      "Overhauled IT infrastructure and built a custom CRM in React. Managed IT policies, procedures, and social media platforms across the organization.",
-    highlights: ["50% less downtime", "25% more donations", "Custom React CRM"],
+    name: "LinkedIn",
+    handle: "aariyanapu",
+    url: "https://www.linkedin.com/in/aariyanapu",
+  },
+  {
+    name: "X (Twitter)",
+    handle: "@aariyanapu",
+    url: "https://x.com/aariyanapu",
+  },
+  {
+    name: "Facebook",
+    handle: "aariyanapu",
+    url: "https://www.facebook.com/aariyanapu",
+  },
+  {
+    name: "Instagram",
+    handle: "@aariyan.apu",
+    url: "https://www.instagram.com/aariyan.apu/",
+  },
+  {
+    name: "Hashnode",
+    handle: "@aariyanapu",
+    url: "https://hashnode.com/@aariyanapu",
+  },
+  {
+    name: "Stack Overflow",
+    handle: "aariyan-apu",
+    url: "https://stackoverflow.com/users/12180960/aariyan-apu",
+  },
+  {
+    name: "Quora",
+    handle: "Aariyan-Apu",
+    url: "https://www.quora.com/profile/Aariyan-Apu",
+  },
+  {
+    name: "daily.dev",
+    handle: "aariyanapu",
+    url: "https://app.daily.dev/aariyanapu",
+  },
+];
+
+// Richer than `education` (which drives the UI cards) — used for JSON-LD and llms.txt.
+export const educationDetails = [
+  {
+    degree: "M.Sc. European Economic Studies",
+    institution: "Otto-Friedrich-Universität Bamberg",
+    institutionUrl: "https://www.uni-bamberg.de",
+    location: "Bamberg, Germany",
+    period: "2026 — present",
+    note: "Admitted for the 2026/27 winter semester; specialising in international economics and applied econometrics.",
+  },
+  {
+    degree: "MBA",
+    institution: "National University, Bangladesh",
+    institutionUrl: "https://www.nu.ac.bd",
+    location: "",
+    period: "",
+    note: "",
+  },
+  {
+    degree: "Bachelor of Business Administration (BBA) in Finance and Banking",
+    institution: "National University, Bangladesh",
+    institutionUrl: "https://www.nu.ac.bd",
+    location: "",
+    period: "2017",
+    note: "CGPA 3.22 / 4.00",
+  },
+  {
+    degree: "Diploma in ICT (Information & Communication Technology)",
+    institution: "",
+    institutionUrl: "",
+    location: "Bangladesh",
+    period: "",
+    note: "",
+  },
+];
+
+// Skills not in `techStack` but on the resume — merged into knowsAbout / llms.txt.
+export const extraSkills = [
+  "React Native",
+  "Zustand",
+  "shadcn/ui",
+  "Framer Motion",
+  "Drizzle ORM",
+  "Better Auth",
+  "Auth.js",
+  "Socket.io",
+  "WebSockets",
+  "PWA",
+  "i18n",
+  "SEO",
+  "Core Web Vitals",
+  "REST APIs",
+  "AWS",
+  "VPS & Linux server administration",
+  "CI/CD",
+  "E-commerce development",
+  "Payment gateway integration",
+  "Steadfast courier API",
+  "Push notifications",
+  "Financial reporting",
+  "Cost and income statement analysis",
+  "MIS reporting",
+  "Export/import decision support",
+];
+
+// Visible FAQ on /about (also emitted as FAQPage JSON-LD and in llms.txt).
+export const faqs = [
+  {
+    q: "Who is Aariyan Apu?",
+    a: "Aariyan Apu is a full stack web developer from Barishal, Bangladesh, who builds web and mobile apps with Next.js, React, TypeScript, Node.js, NestJS, PostgreSQL and React Native. Aariyan has shipped e-commerce, news, NGO and community platforms such as First Aid Surgical, NonstopGG, Daily Bangladesh Time, GBDC and the Mellow Bangla radio app.",
+  },
+  {
+    q: "How is the name spelled? Ariyan Apu, Aariyan Opu or Arian Apu?",
+    a: "The correct spelling is Aariyan Apu (Bengali: আরিয়ান অপু ). It is often written as Ariyan Apu, Aariyan Opu, Ariyan Opu, Arian Apu, Aryan Apu, or as one word, aariyanapu — the handle used on GitHub, LinkedIn, X and Instagram. All of these refer to the same person.",
+  },
+  {
+    q: "Where is Aariyan Apu based?",
+    a: "Barishal (also spelled Barisal), Bangladesh, working remotely with clients worldwide. Aariyan previously worked in Ashulia, Dhaka, and has been admitted to Otto-Friedrich-Universität Bamberg in Germany for the M.Sc. European Economic Studies starting in the 2026/27 winter semester.",
+  },
+  {
+    q: "What does Aariyan Apu do?",
+    a: "Full stack web development: Next.js and React frontends, Node.js, NestJS and Express APIs, PostgreSQL and MongoDB databases, React Native mobile apps, e-commerce with payment and courier integrations, PWAs, and deployment on Docker, Linux, Vercel and Cloudflare. Aariyan also has a finance background: four and a half years at New Green Fashion, a garment manufacturer, most recently as Assistant Accountant (Finance) handling production, sales and cost reporting.",
+  },
+  {
+    q: "Which projects has Aariyan Apu built?",
+    a: "First Aid Surgical (firstaidsurgical.com), NonstopGG (nonstopgg.com), Daily Bangladesh Time (en.dailybangladeshtime.com), TPDO (tpdobd.org), the GBDC blood donor platform (gbdcbd.org), Ahar food ordering (ahar.com.bd) and the Mellow Bangla radio app (mellowbangla.com), plus this open-source portfolio on GitHub.",
+  },
+  {
+    q: "What is Aariyan Apu's education?",
+    a: "A Bachelor of Business Administration in Finance and Banking from National University, Bangladesh (2017, CGPA 3.22/4.00), an MBA from National University, a Diploma in ICT, and admission to the M.Sc. European Economic Studies at Otto-Friedrich-Universität Bamberg, Germany, for 2026/27.",
+  },
+  {
+    q: "Which languages does Aariyan Apu speak?",
+    a: "Bengali (native), English (fluent) and German (learning, currently around A2). Code-wise, mostly TypeScript, JavaScript and Python.",
+  },
+  {
+    q: "Is Aariyan Apu available for freelance work?",
+    a: "Yes. Aariyan takes on freelance and contract projects for web apps, e-commerce stores, APIs and mobile apps. Email hello@aariyan.info or message +88 01712 686 075 on WhatsApp or Telegram.",
+  },
+  {
+    q: "Where can I find Aariyan Apu online?",
+    a: "The official website is aariyan.info. Aariyan is @AariyanApu on GitHub, aariyanapu on LinkedIn, X (Twitter) and Facebook, @aariyan.apu on Instagram, and also on Hashnode, Stack Overflow and Quora.",
   },
 ];

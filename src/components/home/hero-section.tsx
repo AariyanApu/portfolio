@@ -6,9 +6,7 @@ export function HeroSection() {
     <section className="min-h-screen bg-background flex items-center px-6 sm:px-10 md:px-20 lg:px-32">
       <div className="w-full max-w-5xl">
         <AnimatedSlice delay={0}>
-          <p className="text-teal font-sans text-base sm:text-lg mb-4 sm:mb-5">
-            Hi, I'm
-          </p>
+          <p className="text-teal font-sans text-base sm:text-lg mb-4 sm:mb-5">Hi, I'm</p>
         </AnimatedSlice>
 
         <AnimatedSlice delay={0.12}>
@@ -18,15 +16,14 @@ export function HeroSection() {
         </AnimatedSlice>
 
         <AnimatedSlice delay={0.22}>
-          <h2 className="font-title text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-muted-foreground leading-tight mb-6 sm:mb-8">
-            I turn ideas into products people actually use
+          <h2 className="font-title text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-black text-muted-foreground leading-tight mb-6 sm:my-8">
+            I build products that ship and scale.
           </h2>
         </AnimatedSlice>
 
         <AnimatedSlice delay={0.32}>
           <p className="text-muted-foreground font-sans text-sm sm:text-base max-w-lg text-justify leading-relaxed mb-8 sm:mb-10">
-            Designing, building, and shipping web and mobile apps that people
-            actually want to use.
+            Designing, building, and shipping web and mobile apps that people actually want to use.
           </p>
         </AnimatedSlice>
 

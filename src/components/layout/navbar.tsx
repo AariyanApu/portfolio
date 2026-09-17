@@ -32,6 +32,7 @@ export function Navbar() {
           <Link
             key={link.href}
             href={link.href}
+            download={link.href.endsWith(".pdf") || undefined}
             className="font-sans text-sm font-semibold tracking-widest uppercase text-muted-foreground hover:text-foreground transition-colors duration-200"
           >
             {link.label}
@@ -93,6 +94,7 @@ export function Navbar() {
             >
               <Link
                 href={link.href}
+                download={link.href.endsWith(".pdf") || undefined}
                 onClick={() => setOpen(false)}
                 className="font-sans text-sm font-semibold tracking-widest uppercase text-muted-foreground hover:text-teal transition-colors duration-200"
               >

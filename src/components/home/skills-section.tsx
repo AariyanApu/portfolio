@@ -22,7 +22,7 @@ export function SkillsSection() {
         <AnimatedSlice inView delay={0.16}>
           <Image
             src={SKILL_ICONS_WIDE_URL}
-            alt="Tech stack icons"
+            alt="Aariyan Apu tech stack: TypeScript, JavaScript, Python, React, Next.js, Tailwind CSS, Node.js, NestJS, PostgreSQL, MongoDB, Docker and more"
             width={550}
             height={250}
             className="mx-auto w-full max-w-2xl"

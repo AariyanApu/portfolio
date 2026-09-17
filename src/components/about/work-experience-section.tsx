@@ -21,7 +21,11 @@ export function WorkExperienceSection() {
 
           <div className="space-y-4">
             {experiences?.map((exp, i) => (
-              <AnimatedSlice key={exp.company} inView delay={0.1 + i * 0.08}>
+              <AnimatedSlice
+                key={`${exp.company}-${exp.period}`}
+                inView
+                delay={0.1 + i * 0.08}
+              >
                 <div className="relative pl-7 group">
                   <div className="absolute left-0 top-2 -translate-x-1/2 w-2.5 h-2.5 rounded-full border-2 border-teal bg-background group-hover:bg-teal transition-colors duration-300" />
 
@@ -31,16 +35,25 @@ export function WorkExperienceSection() {
                         <h3 className="font-title text-base font-black text-foreground">
                           {exp.role}
                         </h3>
-                        <span className="text-muted-foreground font-sans text-xs">
-                          at
+                        {exp.company && (
+                          <>
+                            <span className="text-muted-foreground font-sans text-xs">
+                              at
+                            </span>
+                            <span className="text-teal font-sans text-sm font-semibold">
+                              {exp.company}
+                            </span>
+                          </>
+                        )}
+                      </div>
+                      <div className="flex items-center gap-2 sm:flex-col sm:items-end sm:gap-0.5">
+                        <span className="font-sans text-xs text-muted-foreground whitespace-nowrap">
+                          {exp.period}
                         </span>
-                        <span className="text-teal font-sans text-sm font-semibold">
-                          {exp.company}
+                        <span className="font-sans text-xs text-muted-foreground/70">
+                          {exp.location}
                         </span>
                       </div>
-                      <span className="font-sans text-xs text-muted-foreground whitespace-nowrap">
-                        {exp.period}
-                      </span>
                     </div>
 
                     <p className="font-sans text-xs text-muted-foreground leading-relaxed mt-1.5 mb-2">

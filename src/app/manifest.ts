@@ -1,14 +1,19 @@
 import type { MetadataRoute } from "next";
+import { SITE_DESCRIPTION } from "@/lib/seo";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Aariyan Apu — Portfolio",
+    id: "/",
+    name: "Aariyan Apu — Full Stack Web Developer",
     short_name: "Aariyan Apu",
-    description: "Full Stack Developer from Bangladesh",
+    description: SITE_DESCRIPTION,
+    lang: "en",
     start_url: "/",
+    scope: "/",
     display: "standalone",
     background_color: "#0a192f",
     theme_color: "#0a192f",
+    categories: ["business", "productivity", "technology"],
     icons: [
       {
         src: "/icons/android-chrome-192x192.png",

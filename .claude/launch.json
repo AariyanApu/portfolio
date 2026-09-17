@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "dev",
+      "runtimeExecutable": "bun",
+      "runtimeArgs": ["run", "dev", "--", "-p", "3222"],
+      "port": 3222
+    },
+    {
+      "name": "prod",
+      "runtimeExecutable": "bunx",
+      "runtimeArgs": ["next", "start", "-p", "3223"],
+      "port": 3223
+    }
+  ]
+}
