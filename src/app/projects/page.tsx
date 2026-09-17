@@ -8,7 +8,7 @@ import { projects, SITE_URL } from "@/utils/constants";
 
 const TITLE = "Projects by Aariyan Apu";
 const DESCRIPTION =
-  "Web and mobile projects built by Aariyan Apu: First Aid Surgical, NonstopGG, Daily Bangladesh Time, TPDO, GBDC, Ahar and the Mellow Bangla radio app — Next.js, React, TypeScript, PostgreSQL, React Native.";
+  "Web and mobile projects by Aariyan Apu: First Aid Surgical, NonstopGG, Daily Bangladesh Time, GBDC, Ahar and the Mellow Bangla radio app. Next.js and React.";
 
 export const metadata: Metadata = {
   title: "Projects",

@@ -19,7 +19,7 @@ type JsonLd = Record<string, unknown>;
 export const SITE_TITLE =
   "Aariyan Apu — Full Stack Web Developer from Bangladesh";
 export const SITE_DESCRIPTION =
-  "Aariyan Apu is a Full Stack Web Developer from Barishal, Bangladesh, building web and mobile apps with Next.js, React, TypeScript, Node.js and PostgreSQL. Available for freelance.";
+  "Aariyan Apu is a Full Stack Web Developer from Barishal, Bangladesh. Builds web and mobile apps with Next.js, React, TypeScript and Node.js. Open to freelance.";
 
 export const PERSON_ID = `${SITE_URL}/#person`;
 export const WEBSITE_ID = `${SITE_URL}/#website`;
